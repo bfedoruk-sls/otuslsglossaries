@@ -3,7 +3,6 @@ id: vectors
 title: >-
   Vectors in $\mathbb{R}^n$
 title_caps: 'VECTORS IN $\mathbb{R}^n$'
-mods: MODULES 4B AND 5
 blurb: >-
   Vectors give linear algebra its geometry: arrows with length and direction, and the lines and
   planes they describe. Most of these ideas come back later in more general settings.
@@ -11,7 +10,6 @@ entries:
 - id: vector
   term: >-
     Vector
-  mod: 4b
   plain: >-
     A quantity with both a size and a direction, often drawn as an arrow.
   def: >-
@@ -29,7 +27,6 @@ entries:
 - id: components
   term: >-
     Components
-  mod: 4b
   plain: >-
     The individual numbers that make up a vector.
   def: >-
@@ -47,7 +44,6 @@ entries:
   term: >-
     Ordered $n$-tuple
   plain_name: Ordered n-tuple
-  mod: 4b
   plain: >-
     A list of $n$ numbers where the order matters.
   def: >-
@@ -62,7 +58,6 @@ entries:
   term: >-
     $n$-space $\mathbb{R}^n$
   plain_name: n-space (Rⁿ)
-  mod: 4b
   plain: >-
     The set of all lists of $n$ real numbers, which are all the vectors with $n$ components.
   def: >-
@@ -76,7 +71,6 @@ entries:
   term: >-
     Euclidean $n$-space
   plain_name: Euclidean n-space
-  mod: 4b
   plain: >-
     $\mathbb{R}^n$ together with the usual ways to add, scale and dot vectors.
   def: >-
@@ -87,7 +81,6 @@ entries:
 - id: dot-product
   term: >-
     Dot product
-  mod: 4b
   plain: >-
     Multiply matching components and add them up. The result is a single number.
   def: >-
@@ -107,7 +100,6 @@ entries:
 - id: norm
   term: >-
     Norm
-  mod: 4b
   plain: >-
     The length of a vector.
   def: >-
@@ -126,7 +118,6 @@ entries:
 - id: unit-vector
   term: >-
     Unit vector
-  mod: 4b
   plain: >-
     A vector of length exactly 1, used to describe a direction only.
   def: >-
@@ -140,7 +131,6 @@ entries:
 - id: standard-unit-vectors
   term: >-
     Standard unit vectors
-  mod: 4b
   plain: >-
     The unit vectors that point along each coordinate axis.
   def: >-
@@ -153,7 +143,6 @@ entries:
 - id: euclidean-distance
   term: >-
     Euclidean distance
-  mod: 4b
   plain: >-
     The straight-line distance between two points.
   def: >-
@@ -166,7 +155,6 @@ entries:
 - id: angle-between
   term: >-
     Angle between vectors
-  mod: 4b
   plain: >-
     The angle between two arrows, found using the dot product.
   def: >-
@@ -182,7 +170,6 @@ entries:
 - id: triangle-inequality
   term: >-
     Triangle inequality
-  mod: 4b
   plain: >-
     Going straight is never longer than taking a detour.
   def: >-
@@ -198,7 +185,6 @@ entries:
   term: >-
     Cauchy–Schwarz inequality
   plain_name: Cauchy–Schwarz inequality
-  mod: 5
   plain: >-
     The dot product of two vectors can never exceed the product of their lengths.
   def: >-
@@ -207,7 +193,7 @@ entries:
     $|\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\|\,\|\mathbf{v}\|$. This is what guarantees
     that $\cos\theta$ in the angle formula is between $-1$ and $1$.
   watch: >-
-    The correct spelling is Schwarz, without a ``t''. Some sources, including one module of the notes,
+    The correct spelling is Schwarz, without a ``t''. Some sources, including part of the course notes,
     spell it ``Schwartz''.
   see: [angle-between, triangle-inequality, inner-product]
 
@@ -215,7 +201,6 @@ entries:
   term: >-
     Pythagorean theorem in $\mathbb{R}^n$
   plain_name: Pythagorean theorem in Rⁿ
-  mod: 5
   plain: >-
     For perpendicular vectors, the squared lengths add, just like the sides of a right triangle.
   def: >-
@@ -230,7 +215,6 @@ entries:
 - id: orthogonal
   term: >-
     Orthogonal
-  mod: 5
   plain: >-
     Perpendicular, meaning the vectors meet at a right angle.
   def: >-
@@ -249,7 +233,6 @@ entries:
 - id: parallel
   term: >-
     Parallel
-  mod: 5
   plain: >-
     Pointing along the same line, either the same way or the opposite way.
   def: >-
@@ -266,7 +249,6 @@ entries:
 - id: projection-onto-vector
   term: >-
     Orthogonal projection onto a vector
-  mod: 5
   plain: >-
     The shadow of $\mathbf{u}$ on the line through $\mathbf{a}$.
   def: >-
@@ -286,7 +268,6 @@ entries:
 - id: component-orthogonal-vector
   term: >-
     Vector component orthogonal to a vector
-  mod: 5
   plain: >-
     What is left of $\mathbf{u}$ after you remove its shadow on $\mathbf{a}$.
   def: >-
@@ -301,7 +282,6 @@ entries:
 - id: normal-vector
   term: >-
     Normal vector
-  mod: 5
   plain: >-
     A vector that sticks straight out of a plane, perpendicular to it.
   def: >-
@@ -317,7 +297,6 @@ entries:
 - id: point-normal
   term: >-
     Point-normal form of a plane
-  mod: 5
   plain: >-
     The equation of a plane built from one point on it and one normal vector.
   def: >-
@@ -330,7 +309,6 @@ entries:
 - id: parametric-line
   term: >-
     Parametric equations of a line
-  mod: 5
   plain: >-
     Describe a line by starting at one point and moving any amount $t$ in a fixed direction.
   def: >-
@@ -348,7 +326,6 @@ entries:
 - id: cross-product
   term: >-
     Cross product
-  mod: 5
   plain: >-
     A way to multiply two vectors in $\mathbb{R}^3$ that gives a third vector perpendicular to both.
   def: >-
@@ -366,7 +343,6 @@ entries:
 - id: right-hand-rule
   term: >-
     Right-hand rule
-  mod: 5
   plain: >-
     A hand trick for finding which way $\mathbf{u} \times \mathbf{v}$ points.
   def: >-
@@ -379,7 +355,6 @@ entries:
 - id: isbn
   term: >-
     ISBN check digit
-  mod: 4b
   app: true
   plain: >-
     The last digit of a book's ISBN, computed with a dot product to catch typos.

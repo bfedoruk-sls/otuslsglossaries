@@ -2,7 +2,6 @@ num: "06"
 id: spaces
 title: >-
   Vector Spaces and Subspaces
-mods: MODULES 6A AND 6B
 blurb: >-
   This is where the course becomes abstract. A vector space is any collection of objects that you can
   add and scale following the same rules as arrows in $\mathbb{R}^n$, whether the objects are matrices,
@@ -11,7 +10,6 @@ entries:
 - id: vector-space
   term: >-
     Vector space
-  mod: 6a
   plain: >-
     Any set of objects that you can add together and multiply by numbers, where all the usual rules of
     arithmetic still work.
@@ -31,7 +29,6 @@ entries:
 - id: axioms
   term: >-
     Vector space axioms
-  mod: 6a
   plain: >-
     The ten rules that addition and scalar multiplication must follow.
   def: >-
@@ -56,7 +53,6 @@ entries:
 - id: zero-vector
   term: >-
     Zero vector
-  mod: 6a
   plain: >-
     The vector that changes nothing when you add it.
   def: >-
@@ -74,7 +70,6 @@ entries:
 - id: negative
   term: >-
     Negative of a vector
-  mod: 6a
   plain: >-
     The vector that cancels $\mathbf{u}$ back to zero.
   def: >-
@@ -88,7 +83,6 @@ entries:
 - id: zero-vector-space
   term: >-
     Zero vector space
-  mod: 6a
   plain: >-
     The smallest possible vector space, containing only the zero vector.
   def: >-
@@ -104,7 +98,6 @@ entries:
   term: >-
     $F(-\infty, \infty)$
   plain_name: F(−∞, ∞) (function space)
-  mod: 6a
   plain: >-
     The vector space whose ``vectors'' are functions.
   def: >-
@@ -121,7 +114,6 @@ entries:
   term: >-
     $P_n$
   plain_name: Pₙ (polynomial space)
-  mod: 6a
   plain: >-
     All polynomials of degree $n$ or less.
   def: >-
@@ -139,7 +131,6 @@ entries:
   term: >-
     $M_{mn}$
   plain_name: Mₘₙ (matrix space)
-  mod: 6a
   plain: >-
     All matrices of one fixed size, treated as vectors.
   def: >-
@@ -152,7 +143,6 @@ entries:
 - id: subspace
   term: >-
     Subspace
-  mod: 6b
   plain: >-
     A smaller vector space sitting inside a bigger one.
   def: >-
@@ -170,7 +160,6 @@ entries:
 - id: closure
   term: >-
     Closure
-  mod: 6b
   plain: >-
     Doing the operation never takes you outside the set.
   def: >-

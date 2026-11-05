@@ -50,7 +50,6 @@ Each entry in a section file looks like this:
 - id: span                      # unique ID used for links
   term: Span                    # the heading (LaTeX allowed)
   plain_name: Span              # optional: plain-text name for bookmarks and the index
-  mod: 7a                       # module tag
   app: true                     # optional: shows the APPLICATION badge
   plain: >-                     # "In plain words" line
     Everything you can build ...

@@ -2,15 +2,13 @@ num: "01"
 id: systems
 title: >-
   Systems of Linear Equations
-mods: MODULES 1A AND 1B
 blurb: >-
-  Every later module builds on these words. They describe equations, their solutions, and the row
+  Everything later in the course builds on these words. They describe equations, their solutions, and the row
   reduction you will use for the rest of the course.
 entries:
 - id: linear-equation
   term: >-
     Linear equation
-  mod: 1a
   plain: >-
     An equation where each variable appears on its own, to the first power, multiplied only by a number.
   def: >-
@@ -28,7 +26,6 @@ entries:
 - id: coefficient
   term: >-
     Coefficient
-  mod: 1a
   plain: >-
     The number multiplying a variable.
   def: >-
@@ -41,7 +38,6 @@ entries:
 - id: unknown
   term: >-
     Unknown
-  mod: 1a
   plain: >-
     Another name for a variable you are solving for.
   def: >-
@@ -53,7 +49,6 @@ entries:
 - id: solution
   term: >-
     Solution
-  mod: 1a
   plain: >-
     A list of values that makes every equation true at the same time.
   def: >-
@@ -67,7 +62,6 @@ entries:
 - id: solution-set
   term: >-
     Solution set
-  mod: 1a
   plain: >-
     The collection of all solutions, not just one of them.
   def: >-
@@ -80,7 +74,6 @@ entries:
 - id: system
   term: >-
     System of linear equations
-  mod: 1a
   plain: >-
     Several linear equations that must all hold at once.
   def: >-
@@ -96,7 +89,6 @@ entries:
 - id: consistent
   term: >-
     Consistent / inconsistent
-  mod: 1a
   plain: >-
     Consistent means the system has at least one solution. Inconsistent means it has none.
   def: >-
@@ -114,7 +106,6 @@ entries:
 - id: augmented-matrix
   term: >-
     Augmented matrix
-  mod: 1a
   plain: >-
     The system's numbers written in a grid, with the right-hand sides tacked on as a last column.
   def: >-
@@ -131,7 +122,6 @@ entries:
 - id: elementary-row-operations
   term: >-
     Elementary row operations
-  mod: 1a
   plain: >-
     The three legal moves you can make on rows without changing the solutions.
   def: >-
@@ -148,7 +138,6 @@ entries:
 - id: row-equivalent
   term: >-
     Row equivalent
-  mod: 3a
   plain: >-
     Two matrices are row equivalent if you can turn one into the other using row operations.
   def: >-
@@ -162,7 +151,6 @@ entries:
 - id: back-substitution
   term: >-
     Back substitution
-  mod: 1a
   plain: >-
     Solve the last equation first, then plug that answer into the equation above it, and so on upward.
   def: >-
@@ -175,7 +163,6 @@ entries:
 - id: ref
   term: >-
     Row echelon form (REF)
-  mod: 1b
   plain: >-
     A staircase shape. Each row starts further right than the row above it, and zero rows sit at the bottom.
   def: >-
@@ -191,7 +178,6 @@ entries:
 - id: rref
   term: >-
     Reduced row echelon form (RREF)
-  mod: 1b
   plain: >-
     The tidiest staircase. It is REF, and every leading 1 is the only nonzero number in its column.
   def: >-
@@ -208,7 +194,6 @@ entries:
 - id: leading-one
   term: >-
     Leading 1
-  mod: 1b
   plain: >-
     The first nonzero entry in a row, scaled to be 1. These mark the steps of the staircase.
   def: >-
@@ -224,7 +209,6 @@ entries:
 - id: leading-variable
   term: >-
     Leading variable / free variable
-  mod: 1b
   plain: >-
     A leading variable has a leading 1 in its column, so it is determined by the others. A free variable
     does not, so it can take any value.
@@ -245,7 +229,6 @@ entries:
 - id: parameter
   term: >-
     Parameter
-  mod: 1b
   plain: >-
     A letter, like $t$ or $s$, that stands for any real number you choose for a free variable.
   def: >-
@@ -258,7 +241,6 @@ entries:
 - id: gaussian-elimination
   term: >-
     Gaussian elimination
-  mod: 1b
   plain: >-
     Row reduce to REF, then finish with back substitution.
   def: >-
@@ -272,7 +254,6 @@ entries:
 - id: gauss-jordan
   term: >-
     Gauss–Jordan elimination
-  mod: 1b
   plain: >-
     Keep row reducing until you reach RREF, then read the answer directly.
   def: >-

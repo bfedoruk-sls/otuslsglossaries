@@ -2,7 +2,6 @@ num: "04"
 id: determinants
 title: >-
   Determinants
-mods: MODULES 3B TO 4B
 blurb: >-
   The determinant turns a square matrix into a single number that tells you whether the matrix is
   invertible. These terms cover how to compute it and what it is good for.
@@ -10,7 +9,6 @@ entries:
 - id: determinant
   term: >-
     Determinant
-  mod: 3b
   plain: >-
     One number calculated from a square matrix. If it is zero, the matrix cannot be inverted.
   def: >-
@@ -31,7 +29,6 @@ entries:
 - id: minor
   term: >-
     Minor
-  mod: 3b
   plain: >-
     The determinant of what is left after you cross out one row and one column.
   def: >-
@@ -48,7 +45,6 @@ entries:
 - id: cofactor
   term: >-
     Cofactor
-  mod: 3b
   plain: >-
     A minor with a plus or minus sign attached, following a checkerboard pattern.
   def: >-
@@ -63,7 +59,6 @@ entries:
 - id: cofactor-expansion
   term: >-
     Cofactor expansion
-  mod: 3b
   plain: >-
     Compute a determinant by working along one row or column, multiplying each entry by its cofactor and adding.
   def: >-
@@ -80,7 +75,6 @@ entries:
   term: >-
     The 3 × 3 trick
   plain_name: The 3 x 3 trick
-  mod: 3b
   plain: >-
     A shortcut using diagonal products. It works only for $3 \times 3$ matrices.
   def: >-
@@ -98,7 +92,6 @@ entries:
   term: >-
     Cramer's Rule
   plain_name: Cramer's Rule
-  mod: 4a
   plain: >-
     Solve a square system one variable at a time using ratios of determinants.
   def: >-

@@ -2,7 +2,6 @@ num: "03"
 id: special
 title: >-
   Special Matrices and Invertibility
-mods: MODULE 3A
 blurb: >-
   Some matrices have shapes that make them easy to work with. This section also covers the
   Equivalence Theorem, which ties together much of the course.
@@ -10,7 +9,6 @@ entries:
 - id: elementary-matrix
   term: >-
     Elementary matrix
-  mod: 3a
   plain: >-
     The identity matrix after exactly one row operation.
   def: >-
@@ -28,7 +26,6 @@ entries:
 - id: diagonal-matrix
   term: >-
     Diagonal matrix
-  mod: 3a
   plain: >-
     A square matrix with zeros everywhere except possibly on the main diagonal.
   def: >-
@@ -45,7 +42,6 @@ entries:
 - id: triangular
   term: >-
     Upper / lower triangular
-  mod: 3a
   plain: >-
     All the zeros sit on one side of the main diagonal.
   def: >-
@@ -65,7 +61,6 @@ entries:
 - id: symmetric
   term: >-
     Symmetric matrix
-  mod: 3a
   plain: >-
     A square matrix that is a mirror image across its main diagonal.
   def: >-
@@ -81,7 +76,6 @@ entries:
 - id: equivalence-theorem
   term: >-
     Equivalence Theorem
-  mod: 3a
   plain: >-
     A master list of statements about a square matrix that are either all true or all false.
   def: >-
@@ -97,8 +91,8 @@ entries:
     If you know that $\det(A) = 0$, every statement fails, so $A\mathbf{x} = \mathbf{0}$ has non-trivial
     solutions and the columns of $A$ are dependent.
   watch: >-
-    It only applies to \emph{square} matrices. The list grows through the course: Module 3a has six
-    statements, Module 8b has seventeen, and Module 10b has the full list of twenty-one.
+    It only applies to \emph{square} matrices. The list grows through the course, from six statements
+    in its first version to twenty-one in the full list.
   see: [invertible, determinant, rank, eigenvalue]
   aka: >-
     Invertible Matrix Theorem (in other sources)
@@ -106,7 +100,6 @@ entries:
 - id: adjacency-matrix
   term: >-
     Adjacency matrix
-  mod: 3a
   app: true
   plain: >-
     A grid recording which pairs of things are connected.
@@ -121,7 +114,6 @@ entries:
 - id: flexibility-matrix
   term: >-
     Flexibility / stiffness matrix
-  mod: 3a
   app: true
   plain: >-
     Engineering matrices that link the forces on a structure to how much it bends.
@@ -135,7 +127,6 @@ entries:
 - id: hill-cipher
   term: >-
     Hill cipher
-  mod: 3a
   app: true
   plain: >-
     A code that scrambles letters by multiplying them by a matrix.

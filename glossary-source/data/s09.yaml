@@ -2,7 +2,6 @@ num: "09"
 id: transformations
 title: >-
   Linear Transformations
-mods: MODULES 9 AND 10A
 blurb: >-
   A matrix is also a machine: put a vector in and a new vector comes out. This section gives the
   vocabulary for describing what that machine does and whether it can be reversed.
@@ -10,7 +9,6 @@ entries:
 - id: function
   term: >-
     Function
-  mod: 9
   plain: >-
     A rule that assigns exactly one output to each input.
   def: >-
@@ -21,7 +19,6 @@ entries:
 - id: domain
   term: >-
     Domain
-  mod: 9
   plain: >-
     The set of allowed inputs.
   def: >-
@@ -34,7 +31,6 @@ entries:
 - id: codomain
   term: >-
     Codomain
-  mod: 9
   plain: >-
     The set where outputs are allowed to land, whether or not every point there is actually reached.
   def: >-
@@ -48,7 +44,6 @@ entries:
 - id: range
   term: >-
     Range
-  mod: 9
   plain: >-
     The set of outputs that are actually produced.
   def: >-
@@ -66,7 +61,6 @@ entries:
 - id: transformation
   term: >-
     Map / transformation
-  mod: 9
   plain: >-
     A function whose inputs and outputs are vectors.
   def: >-
@@ -81,7 +75,6 @@ entries:
 - id: operator
   term: >-
     Operator
-  mod: 9
   plain: >-
     A transformation from a space back into the same space.
   def: >-
@@ -92,7 +85,6 @@ entries:
 - id: linear-transformation
   term: >-
     Linear transformation
-  mod: 9
   plain: >-
     A transformation where every output component is a linear equation in the inputs, with no squares, products or constants.
   def: >-
@@ -112,7 +104,6 @@ entries:
 - id: linear-operator
   term: >-
     Linear operator
-  mod: 9
   plain: >-
     A linear transformation from $\mathbb{R}^n$ back to $\mathbb{R}^n$.
   def: >-
@@ -125,7 +116,6 @@ entries:
 - id: standard-matrix
   term: >-
     Standard matrix
-  mod: 9
   plain: >-
     The matrix that performs the transformation. Its columns are what $T$ does to $\mathbf{e}_1, \mathbf{e}_2, \dots$
   def: >-
@@ -146,7 +136,6 @@ entries:
   term: >-
     Matrix transformation $T_A$
   plain_name: Matrix transformation T_A
-  mod: 9
   plain: >-
     The transformation you get by multiplying vectors by a fixed matrix $A$.
   def: >-
@@ -160,7 +149,6 @@ entries:
 - id: zero-transformation
   term: >-
     Zero transformation
-  mod: 9
   plain: >-
     Sends every vector to zero.
   def: >-
@@ -171,7 +159,6 @@ entries:
 - id: identity-transformation
   term: >-
     Identity transformation
-  mod: 9
   plain: >-
     Leaves every vector exactly as it is.
   def: >-
@@ -182,7 +169,6 @@ entries:
 - id: reflection-operator
   term: >-
     Reflection operator
-  mod: 9
   plain: >-
     Flips each vector across a mirror line or plane.
   def: >-
@@ -196,7 +182,6 @@ entries:
 - id: rotation-operator
   term: >-
     Rotation operator
-  mod: 9
   plain: >-
     Turns each vector through the same angle about the origin.
   def: >-
@@ -212,7 +197,6 @@ entries:
 - id: dilation
   term: >-
     Dilation / contraction
-  mod: 9
   plain: >-
     Stretches or shrinks every vector by the same factor, keeping its direction.
   def: >-
@@ -226,7 +210,6 @@ entries:
 - id: projection-operator
   term: >-
     Projection operator
-  mod: 9
   plain: >-
     Drops each vector straight down onto a line or plane, like casting a shadow.
   def: >-
@@ -242,7 +225,6 @@ entries:
 - id: composition
   term: >-
     Composition
-  mod: 10a
   plain: >-
     Do one transformation, then another.
   def: >-
@@ -259,7 +241,6 @@ entries:
 - id: one-to-one
   term: >-
     One-to-one
-  mod: 10a
   plain: >-
     Different inputs always give different outputs, so no two vectors land in the same place.
   def: >-
@@ -279,7 +260,6 @@ entries:
 - id: kernel
   term: >-
     Kernel
-  mod: 10a
   plain: >-
     All the input vectors that the transformation sends to zero.
   def: >-
@@ -296,7 +276,6 @@ entries:
 - id: inverse-transformation
   term: >-
     Inverse transformation
-  mod: 10a
   plain: >-
     The transformation that undoes $T$, returning every output to its original input.
   def: >-

@@ -2,7 +2,6 @@ num: "02"
 id: matrices
 title: >-
   Matrices and Matrix Algebra
-mods: MODULES 2A AND 2B
 blurb: >-
   Matrices let you write a whole system as one object and do algebra with it. Watch for the places
   where matrix algebra behaves differently from ordinary algebra with numbers.
@@ -10,7 +9,6 @@ entries:
 - id: homogeneous
   term: >-
     Homogeneous system
-  mod: 2a
   plain: >-
     A system where every right-hand side is zero.
   def: >-
@@ -27,7 +25,6 @@ entries:
 - id: trivial-solution
   term: >-
     Trivial / non-trivial solution
-  mod: 2a
   plain: >-
     The trivial solution is the all-zeros answer. A non-trivial solution is any other answer.
   def: >-
@@ -43,7 +40,6 @@ entries:
 - id: matrix
   term: >-
     Matrix
-  mod: 2a
   plain: >-
     A rectangular grid of numbers.
   def: >-
@@ -56,7 +52,6 @@ entries:
 - id: entry
   term: >-
     Entry
-  mod: 2a
   plain: >-
     One number in a matrix, located by its row and column.
   def: >-
@@ -71,7 +66,6 @@ entries:
 - id: size
   term: >-
     Size
-  mod: 2a
   plain: >-
     How many rows and columns a matrix has, always in that order.
   def: >-
@@ -87,7 +81,6 @@ entries:
 - id: square-matrix
   term: >-
     Square matrix
-  mod: 2a
   plain: >-
     A matrix with the same number of rows and columns.
   def: >-
@@ -99,7 +92,6 @@ entries:
 - id: order
   term: >-
     Order
-  mod: 2a
   plain: >-
     For a square matrix, the single number that gives its size.
   def: >-
@@ -114,7 +106,6 @@ entries:
 - id: main-diagonal
   term: >-
     Main diagonal
-  mod: 2a
   plain: >-
     The entries running from the top-left corner to the bottom-right corner.
   def: >-
@@ -124,7 +115,6 @@ entries:
 - id: row-column-vector
   term: >-
     Row vector / column vector
-  mod: 2a
   plain: >-
     A matrix that is only one row tall, or only one column wide.
   def: >-
@@ -141,7 +131,6 @@ entries:
 - id: equal-matrices
   term: >-
     Equal matrices
-  mod: 2a
   plain: >-
     Same size, and every matching entry is the same.
   def: >-
@@ -152,7 +141,6 @@ entries:
 - id: matrix-addition
   term: >-
     Matrix addition
-  mod: 2a
   plain: >-
     Add matching entries. This only works when the sizes match.
   def: >-
@@ -165,7 +153,6 @@ entries:
 - id: scalar
   term: >-
     Scalar
-  mod: 2a
   plain: >-
     Just a number, as opposed to a vector or a matrix.
   def: >-
@@ -177,7 +164,6 @@ entries:
 - id: scalar-multiple
   term: >-
     Scalar multiple
-  mod: 2a
   plain: >-
     Multiply every entry by the same number.
   def: >-
@@ -191,7 +177,6 @@ entries:
 - id: linear-combination
   term: >-
     Linear combination
-  mod: 2a
   plain: >-
     A sum of things, each scaled by a number.
   def: >-
@@ -208,7 +193,6 @@ entries:
 - id: matrix-product
   term: >-
     Matrix product
-  mod: 2a
   plain: >-
     Each entry of $AB$ is a row of $A$ dotted with a column of $B$.
   def: >-
@@ -225,7 +209,6 @@ entries:
 - id: coefficient-matrix
   term: >-
     Coefficient matrix
-  mod: 2a
   plain: >-
     The grid of coefficients of a system, without the right-hand sides.
   def: >-
@@ -240,7 +223,6 @@ entries:
   term: >-
     Matrix form $A\mathbf{x} = \mathbf{b}$
   plain_name: Matrix form Ax = b
-  mod: 2a
   plain: >-
     A whole system of equations written as one matrix equation.
   def: >-
@@ -257,7 +239,6 @@ entries:
 - id: transpose
   term: >-
     Transpose
-  mod: 2a
   plain: >-
     Flip a matrix so that its rows become its columns.
   def: >-
@@ -272,7 +253,6 @@ entries:
 - id: trace
   term: >-
     Trace
-  mod: 2a
   plain: >-
     Add up the numbers on the main diagonal.
   def: >-
@@ -288,7 +268,6 @@ entries:
 - id: zero-matrix
   term: >-
     Zero matrix
-  mod: 2b
   plain: >-
     A matrix full of zeros. It acts like the number 0.
   def: >-
@@ -301,7 +280,6 @@ entries:
 - id: identity-matrix
   term: >-
     Identity matrix
-  mod: 2b
   plain: >-
     1s on the diagonal and 0s everywhere else. It acts like the number 1.
   def: >-
@@ -314,7 +292,6 @@ entries:
 - id: invertible
   term: >-
     Invertible / singular
-  mod: 2b
   plain: >-
     Invertible means the matrix can be undone. Singular means it cannot.
   def: >-
@@ -333,7 +310,6 @@ entries:
 - id: inverse
   term: >-
     Inverse
-  mod: 2b
   plain: >-
     The matrix that undoes $A$, so that multiplying by both gives the identity.
   def: >-
@@ -349,7 +325,6 @@ entries:
 - id: powers
   term: >-
     Powers of a matrix
-  mod: 2b
   plain: >-
     Multiply a square matrix by itself repeatedly.
   def: >-

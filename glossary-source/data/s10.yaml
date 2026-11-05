@@ -2,7 +2,6 @@ num: "10"
 id: eigen
 title: >-
   Eigenvalues and Diagonalization
-mods: MODULES 10B AND 11A
 blurb: >-
   Most vectors change direction when you multiply them by $A$. Eigenvectors are the special ones that
   do not change direction. Finding enough of them lets you rewrite $A$ as a diagonal matrix, which makes
@@ -11,7 +10,6 @@ entries:
 - id: eigenvector
   term: >-
     Eigenvector
-  mod: 10b
   plain: >-
     A nonzero vector that $A$ only stretches or shrinks, without turning it off its line.
   def: >-
@@ -31,7 +29,6 @@ entries:
 - id: eigenvalue
   term: >-
     Eigenvalue
-  mod: 10b
   plain: >-
     The factor by which $A$ stretches its eigenvectors.
   def: >-
@@ -51,7 +48,6 @@ entries:
 - id: characteristic-equation
   term: >-
     Characteristic equation
-  mod: 10b
   plain: >-
     The equation you solve to find the eigenvalues.
   def: >-
@@ -65,7 +61,6 @@ entries:
 - id: characteristic-polynomial
   term: >-
     Characteristic polynomial
-  mod: 10b
   plain: >-
     The polynomial in $\lambda$ that you get by expanding $\det(A - \lambda I)$.
   def: >-
@@ -81,7 +76,6 @@ entries:
 - id: eigenspace
   term: >-
     Eigenspace
-  mod: 10b
   plain: >-
     All the eigenvectors for one eigenvalue, together with the zero vector.
   def: >-
@@ -98,7 +92,6 @@ entries:
 - id: diagonalizable
   term: >-
     Diagonalizable
-  mod: 11a
   plain: >-
     A matrix is diagonalizable if a change of basis turns it into a diagonal matrix.
   def: >-
@@ -118,7 +111,6 @@ entries:
   term: >-
     Diagonalizing matrix $P$
   plain_name: Diagonalizing matrix P
-  mod: 11a
   plain: >-
     The matrix of eigenvectors that converts $A$ into a diagonal matrix.
   def: >-
@@ -134,7 +126,6 @@ entries:
 - id: algebraic-multiplicity
   term: >-
     Algebraic multiplicity
-  mod: 11a
   plain: >-
     How many times an eigenvalue appears as a root of the characteristic polynomial.
   def: >-
@@ -150,7 +141,6 @@ entries:
 - id: geometric-multiplicity
   term: >-
     Geometric multiplicity
-  mod: 11a
   plain: >-
     How many independent eigenvectors an eigenvalue has.
   def: >-
@@ -167,7 +157,6 @@ entries:
 - id: markov-chain
   term: >-
     Markov chain
-  mod: 11a
   app: true
   plain: >-
     A process that moves between states step by step, where the next step depends only on the current state.
@@ -182,7 +171,6 @@ entries:
 - id: transition-matrix
   term: >-
     Transition matrix
-  mod: 11a
   app: true
   plain: >-
     The matrix of probabilities for moving from each state to each other state.
@@ -197,7 +185,6 @@ entries:
 - id: steady-state
   term: >-
     Steady-state vector
-  mod: 11a
   app: true
   plain: >-
     The long-run state of a Markov chain, which stays the same from one step to the next.

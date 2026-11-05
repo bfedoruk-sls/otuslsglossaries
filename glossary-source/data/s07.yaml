@@ -2,7 +2,6 @@ num: "07"
 id: basis
 title: >-
   Span, Independence and Basis
-mods: MODULES 7A AND 7B
 blurb: >-
   These three ideas are easy to blur together. Span is about what you can reach, independence is about
   whether any vector is redundant, and a basis is a set that reaches everything with no redundant vectors.
@@ -10,7 +9,6 @@ entries:
 - id: span
   term: >-
     Span
-  mod: 7a
   plain: >-
     Everything you can build from a set of vectors using linear combinations.
   def: >-
@@ -30,7 +28,6 @@ entries:
 - id: spanning-set
   term: >-
     Spanning set
-  mod: 7a
   plain: >-
     A set of vectors that can build every vector in the space.
   def: >-
@@ -48,7 +45,6 @@ entries:
 - id: linearly-independent
   term: >-
     Linearly independent / dependent
-  mod: 7a
   plain: >-
     Independent means no vector in the set can be built from the others. Dependent means at least one is redundant.
   def: >-
@@ -69,7 +65,6 @@ entries:
 - id: wronskian
   term: >-
     Wronskian
-  mod: 7b
   app: true
   plain: >-
     A determinant that can show a set of functions is linearly independent.
@@ -88,7 +83,6 @@ entries:
 - id: basis
   term: >-
     Basis
-  mod: 7b
   plain: >-
     A minimal toolkit for a space. It reaches every vector, with no redundant pieces.
   def: >-
@@ -107,7 +101,6 @@ entries:
 - id: standard-basis
   term: >-
     Standard basis
-  mod: 7b
   plain: >-
     The most natural basis, built from 1s and 0s.
   def: >-
@@ -121,7 +114,6 @@ entries:
 - id: coordinates
   term: >-
     Coordinates relative to a basis
-  mod: 7b
   plain: >-
     The recipe of how much of each basis vector you need to build $\mathbf{v}$.
   def: >-
@@ -137,7 +129,6 @@ entries:
   term: >-
     Coordinate vector $(\mathbf{v})_S$
   plain_name: Coordinate vector (v)_S
-  mod: 7b
   plain: >-
     The coordinates of $\mathbf{v}$ relative to a basis, collected into a vector.
   def: >-

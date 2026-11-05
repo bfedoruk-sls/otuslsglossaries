@@ -2,7 +2,6 @@ num: "08"
 id: dimension
 title: >-
   Dimension and the Fundamental Subspaces
-mods: MODULES 8A AND 8B
 blurb: >-
   Every matrix comes with subspaces attached to it: its row space, column space and nullspace. Rank,
   nullity and the Dimension Theorem tell you how big each one is, and that tells you a lot about
@@ -12,7 +11,6 @@ entries:
   term: >-
     Finite- / infinite-dimensional
   plain_name: Finite-dimensional / infinite-dimensional
-  mod: 8a
   plain: >-
     A space is finite-dimensional if a finite list of vectors is enough to build all of it.
   def: >-
@@ -27,7 +25,6 @@ entries:
 - id: dimension
   term: >-
     Dimension
-  mod: 8a
   plain: >-
     The number of vectors in any basis, which is the number of independent directions in the space.
   def: >-
@@ -45,7 +42,6 @@ entries:
 - id: nullspace
   term: >-
     Nullspace
-  mod: 8a
   plain: >-
     All the vectors that $A$ sends to zero.
   def: >-
@@ -67,7 +63,6 @@ entries:
 - id: particular-solution
   term: >-
     Particular solution
-  mod: 8a
   plain: >-
     Any one specific solution of $A\mathbf{x} = \mathbf{b}$.
   def: >-
@@ -79,7 +74,6 @@ entries:
 - id: general-solution
   term: >-
     General solution
-  mod: 8a
   plain: >-
     A formula with parameters that describes every solution at once.
   def: >-
@@ -100,7 +94,6 @@ entries:
   term: >-
     Row / column vectors of $A$
   plain_name: Row / column vectors of A
-  mod: 8b
   plain: >-
     The individual rows and columns of a matrix, each treated as a vector.
   def: >-
@@ -115,7 +108,6 @@ entries:
 - id: row-space
   term: >-
     Row space
-  mod: 8b
   plain: >-
     Everything you can build from the rows of $A$.
   def: >-
@@ -130,7 +122,6 @@ entries:
 - id: column-space
   term: >-
     Column space
-  mod: 8b
   plain: >-
     Everything you can build from the columns of $A$, which is every possible output $A\mathbf{x}$.
   def: >-
@@ -151,7 +142,6 @@ entries:
 - id: rank
   term: >-
     Rank
-  mod: 8b
   plain: >-
     The number of independent rows, which always equals the number of independent columns.
   def: >-
@@ -169,7 +159,6 @@ entries:
 - id: nullity
   term: >-
     Nullity
-  mod: 8b
   plain: >-
     The number of free variables, which is how many independent directions $A$ squashes to zero.
   def: >-
@@ -185,7 +174,6 @@ entries:
 - id: rank-nullity
   term: >-
     Dimension Theorem for Matrices
-  mod: 8b
   plain: >-
     Leading variables plus free variables equals total variables.
   def: >-
@@ -204,7 +192,6 @@ entries:
 - id: overdetermined
   term: >-
     Overdetermined / underdetermined
-  mod: 8b
   plain: >-
     Overdetermined means more equations than unknowns. Underdetermined means fewer equations than
     unknowns.
@@ -221,7 +208,6 @@ entries:
   term: >-
     Orthogonal complement $W^{\perp}$
   plain_name: Orthogonal complement (W⊥)
-  mod: 8b
   plain: >-
     Every vector that is perpendicular to everything in $W$.
   def: >-

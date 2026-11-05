@@ -2,7 +2,6 @@ num: "11"
 id: inner
 title: >-
   Inner Products and Orthogonality
-mods: MODULES 11B TO 12B
 blurb: >-
   The dot product is one example of a bigger idea, the inner product. Inner products let you measure
   length, distance and angle in any vector space. The section ends with Gram–Schmidt, which builds
@@ -11,7 +10,6 @@ entries:
 - id: inner-product
   term: >-
     Inner product
-  mod: 11b
   plain: >-
     A rule for ``multiplying'' two vectors to get a number, which works like a dot product.
   def: >-
@@ -29,7 +27,6 @@ entries:
 - id: inner-product-axioms
   term: >-
     Inner product axioms
-  mod: 11b
   plain: >-
     The four rules that any inner product must satisfy.
   def: >-
@@ -46,7 +43,6 @@ entries:
 - id: inner-product-space
   term: >-
     Real inner product space
-  mod: 11b
   plain: >-
     A vector space together with a chosen inner product.
   def: >-
@@ -61,7 +57,6 @@ entries:
 - id: weighted-inner-product
   term: >-
     Weighted Euclidean inner product
-  mod: 11b
   plain: >-
     A dot product where some components count more than others.
   def: >-
@@ -79,7 +74,6 @@ entries:
 - id: norm-ips
   term: >-
     Norm in an inner product space
-  mod: 11b
   plain: >-
     Length, measured using whichever inner product you are working with.
   def: >-
@@ -93,7 +87,6 @@ entries:
 - id: distance-ips
   term: >-
     Distance in an inner product space
-  mod: 11b
   plain: >-
     How far apart two vectors are, measured with the chosen inner product.
   def: >-
@@ -107,7 +100,6 @@ entries:
 - id: unit-sphere
   term: >-
     Unit sphere / unit circle
-  mod: 12a
   plain: >-
     All the vectors of length 1. Its shape depends on the inner product.
   def: >-
@@ -125,7 +117,6 @@ entries:
   term: >-
     $C[a, b]$
   plain_name: C[a, b] (continuous functions)
-  mod: 12a
   plain: >-
     The vector space of continuous functions on an interval, with an inner product defined by an integral.
   def: >-
@@ -141,7 +132,6 @@ entries:
 - id: orthogonal-set
   term: >-
     Orthogonal set
-  mod: 12b
   plain: >-
     A set where every pair of different vectors is perpendicular.
   def: >-
@@ -158,7 +148,6 @@ entries:
 - id: orthonormal
   term: >-
     Orthonormal set
-  mod: 12b
   plain: >-
     Every pair is perpendicular, and every vector has length 1.
   def: >-
@@ -175,7 +164,6 @@ entries:
 - id: orthogonal-basis
   term: >-
     Orthogonal basis
-  mod: 12b
   plain: >-
     A basis whose vectors are all perpendicular to each other.
   def: >-
@@ -188,7 +176,6 @@ entries:
 - id: orthonormal-basis
   term: >-
     Orthonormal basis
-  mod: 12b
   plain: >-
     A basis of perpendicular unit vectors. The standard basis is the model example.
   def: >-
@@ -203,7 +190,6 @@ entries:
 - id: projection-onto-subspace
   term: >-
     Orthogonal projection onto a subspace
-  mod: 12b
   plain: >-
     The closest point in $W$ to $\mathbf{u}$, which is the shadow of $\mathbf{u}$ on a whole subspace.
   def: >-
@@ -221,7 +207,6 @@ entries:
   term: >-
     Component orthogonal to $W$
   plain_name: Component orthogonal to W
-  mod: 12b
   plain: >-
     The part of $\mathbf{u}$ that sticks out of $W$ at a right angle.
   def: >-
@@ -234,7 +219,6 @@ entries:
   term: >-
     Gram–Schmidt process
   plain_name: Gram–Schmidt process
-  mod: 12b
   plain: >-
     Turn any basis into an orthogonal one by subtracting from each vector its shadows on the earlier
     vectors.

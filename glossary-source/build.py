@@ -60,10 +60,10 @@ out = []
 for s in sections:
     terms = "".join(r"\glw{%s}{\textcolor{FutureBlue}{%s}}\par " % (e["id"], e["term"]) for e in s["entries"])
     out.append(r"\glsection{%s}{%s}{%s}{%s}{%s}{%d}{%s}" % (
-        s["num"], s["id"], s["title"], s["mods"], s["blurb"].strip(), len(s["entries"]), terms))
+        s["num"], s["id"], s["title"], "", s["blurb"].strip(), len(s["entries"]), terms))
     for e in s["entries"]:
         out.append(r"\begin{glentry}{%s}{%s}{%s}{%s}{%d}" % (
-            e["id"], e["term"], name(e), e["mod"], 1 if e.get("app") else 0))
+            e["id"], e["term"], name(e), "", 1 if e.get("app") else 0))
         out.append(r"\plainwords{%s}" % e["plain"].strip())
         out.append(r"\definition{%s}" % e["def"].strip())
         if e.get("ex"):
@@ -89,8 +89,8 @@ c.append(r"\end{minipage}\hspace{0.45in}\begin{minipage}[t]{4.2in}\raggedright")
 c.append(colhead("THE TERMS"))
 for s in sections:
     ttl = s.get("title_caps") or plain(s["title"]).upper()
-    c.append(r"\hyperref[s:%s]{\makebox[0.36in][l]{\medium\fontsize{9.5}{11}\selectfont\pageref{s:%s}}\makebox[0.34in][l]{\bfseries\fontsize{16}{11}\selectfont\color{FutureBlue}%s}\parbox[t]{3.4in}{\raggedright{\labelfont\fontsize{8.6}{11}\selectfont %s}\\[1pt]{\light\fontsize{8}{10}\selectfont %s\ \ ·\ \ %d terms}}}\par\vspace{11pt}" % (
-        s["id"], s["id"], s["num"], ttl, s["mods"].replace("MODULES", "Modules").replace("MODULE", "Module").replace(" AND ", " and ").replace(" TO ", " to "), len(s["entries"])))
+    c.append(r"\hyperref[s:%s]{\makebox[0.36in][l]{\medium\fontsize{9.5}{11}\selectfont\pageref{s:%s}}\makebox[0.34in][l]{\bfseries\fontsize{16}{11}\selectfont\color{FutureBlue}%s}\parbox[t]{3.4in}{\raggedright{\labelfont\fontsize{8.6}{11}\selectfont %s}\\[1pt]{\light\fontsize{8}{10}\selectfont %d terms}}}\par\vspace{11pt}" % (
+        s["id"], s["id"], s["num"], ttl, len(s["entries"])))
 c.append(r"\end{minipage}}")
 open(os.path.join(GEN, "contents.tex"), "w").write("\n".join(c))
 
@@ -157,10 +157,10 @@ open(os.path.join(GEN, "howto.tex"), "w").write(open(os.path.join(DATA, "howto.t
 import csv
 with open(os.path.join(ROOT, "glossary_terms.csv"), "w", newline="") as f:
     w = csv.writer(f)
-    w.writerow(["section", "id", "term", "module", "application", "plain_words", "definition", "example", "dont_confuse_with", "see_also", "also_called"])
+    w.writerow(["section", "id", "term", "application", "plain_words", "definition", "example", "dont_confuse_with", "see_also", "also_called"])
     for s in sections:
         for e in s["entries"]:
-            w.writerow([plain(s["title"]), e["id"], name(e), e["mod"], "yes" if e.get("app") else "",
+            w.writerow([plain(s["title"]), e["id"], name(e), "yes" if e.get("app") else "",
                         e["plain"].strip(), e["def"].strip(), (e.get("ex") or "").strip(),
                         (e.get("watch") or "").strip(), "; ".join(e.get("see") or []), (e.get("aka") or "").strip()])
 
