@@ -1,0 +1,72 @@
+- a: span
+  b: basis
+  text: >-
+    A span is \emph{everything} you can build from some vectors. A basis is a set of vectors that builds
+    everything with nothing redundant. Every basis spans its space, but a spanning set might not be a basis.
+- a: nullspace
+  b: column-space
+  text: >-
+    The nullspace is the set of inputs $\mathbf{x}$ with $A\mathbf{x} = \mathbf{0}$, and it lives in $\mathbb{R}^n$.
+    The column space is the set of outputs $A\mathbf{x}$, and it lives in $\mathbb{R}^m$.
+- a: rank
+  b: nullity
+  text: >-
+    Rank counts leading 1s (leading variables). Nullity counts free variables. Together they equal the
+    number of columns.
+- a: eigenvalue
+  b: eigenvector
+  text: >-
+    In $A\mathbf{x} = \lambda\mathbf{x}$, the number $\lambda$ is the eigenvalue and the nonzero vector
+    $\mathbf{x}$ is the eigenvector. $0$ can be an eigenvalue, but $\mathbf{0}$ is never an eigenvector.
+- a: algebraic-multiplicity
+  b: geometric-multiplicity
+  text: >-
+    Algebraic multiplicity is the power of the factor in the characteristic polynomial. Geometric
+    multiplicity is the dimension of the eigenspace. A matrix is diagonalizable exactly when they match for
+    every eigenvalue.
+- a: diagonal-matrix
+  b: diagonalizable
+  text: >-
+    A diagonal matrix already has zeros off the diagonal. A diagonalizable matrix can be
+    \emph{turned into} one by $P^{-1}AP$, but usually is not diagonal itself.
+- a: dot-product
+  b: cross-product
+  text: >-
+    $\mathbf{u} \cdot \mathbf{v}$ is a number, works in any $\mathbb{R}^n$, and is $0$ for orthogonal vectors.
+    $\mathbf{u} \times \mathbf{v}$ is a vector, works only in $\mathbb{R}^3$, and is $\mathbf{0}$ for parallel vectors.
+- a: minor
+  b: cofactor
+  text: >-
+    A minor is a smaller determinant. A cofactor is that minor with a checkerboard sign attached:
+    $C_{ij} = (-1)^{i+j}M_{ij}$.
+- a: codomain
+  b: range
+  text: >-
+    The codomain is where outputs are \emph{allowed} to land. The range is where they \emph{actually} land.
+    For $T_A$, the range is the column space of $A$.
+- a: orthogonal-set
+  b: orthonormal
+  text: >-
+    In an orthogonal set, every pair is perpendicular. An orthonormal set is the same, plus every vector has
+    length 1. Normalize each vector to get from one to the other.
+- a: augmented-matrix
+  b: coefficient-matrix
+  text: >-
+    The coefficient matrix $A$ holds only the coefficients. The augmented matrix $[\,A \mid \mathbf{b}\,]$ adds
+    the column of constants, and it is the one you row reduce to solve a system.
+- a: kernel
+  b: nullspace
+  text: >-
+    These are \emph{the same set} under two names. Use ``kernel'' when talking about a transformation
+    $T_A$, and ``nullspace'' when talking about the matrix $A$.
+- a: projection-onto-vector
+  b: projection-onto-subspace
+  text: >-
+    The same idea at two scales. $\operatorname{proj}_{\mathbf{a}}\mathbf{u}$ projects onto a line.
+    $\operatorname{proj}_W\mathbf{u}$ projects onto a whole subspace, and its formula needs an orthogonal
+    basis for $W$.
+- a: gaussian-elimination
+  b: gauss-jordan
+  text: >-
+    Gaussian elimination stops at REF and finishes with back substitution. Gauss–Jordan elimination
+    continues to RREF and reads the answer directly.

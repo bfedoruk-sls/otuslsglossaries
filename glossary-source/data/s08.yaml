@@ -1,0 +1,239 @@
+num: "08"
+id: dimension
+title: >-
+  Dimension and the Fundamental Subspaces
+mods: MODULES 8A AND 8B
+blurb: >-
+  Every matrix comes with subspaces attached to it: its row space, column space and nullspace. Rank,
+  nullity and the Dimension Theorem tell you how big each one is, and that tells you a lot about
+  solving $A\mathbf{x} = \mathbf{b}$.
+entries:
+- id: finite-dimensional
+  term: >-
+    Finite- / infinite-dimensional
+  plain_name: Finite-dimensional / infinite-dimensional
+  mod: 8a
+  plain: >-
+    A space is finite-dimensional if a finite list of vectors is enough to build all of it.
+  def: >-
+    A nonzero vector space $V$ is \textbf{finite-dimensional} if it has a basis with finitely many vectors.
+    If no such basis exists, $V$ is \textbf{infinite-dimensional}. The zero vector space is considered
+    finite-dimensional.
+  ex: >-
+    $\mathbb{R}^n$, $P_n$ and $M_{mn}$ are finite-dimensional. $F(-\infty, \infty)$ and the space of
+    \emph{all} polynomials are infinite-dimensional.
+  see: [dimension, basis]
+
+- id: dimension
+  term: >-
+    Dimension
+  mod: 8a
+  plain: >-
+    The number of vectors in any basis, which is the number of independent directions in the space.
+  def: >-
+    The dimension of a finite-dimensional vector space $V$, written $\dim(V)$, is the number of vectors in a
+    basis for $V$. The zero vector space has dimension $0$. If $\dim(V) = n$, then any $n$ linearly
+    independent vectors in $V$ form a basis, and so do any $n$ vectors that span $V$.
+  ex: >-
+    $\dim(\mathbb{R}^n) = n$, $\dim(P_n) = n + 1$ and $\dim(M_{mn}) = mn$. A plane through the origin in
+    $\mathbb{R}^3$ has dimension 2.
+  watch: >-
+    Dimension counts basis vectors, not components. A plane in $\mathbb{R}^3$ is made of vectors with
+    3 components, but its dimension is 2.
+  see: [basis, rank, nullity, finite-dimensional]
+
+- id: nullspace
+  term: >-
+    Nullspace
+  mod: 8a
+  plain: >-
+    All the vectors that $A$ sends to zero.
+  def: >-
+    If $A$ is $m \times n$, the solution space of the homogeneous system $A\mathbf{x} = \mathbf{0}$ is a
+    subspace of $\mathbb{R}^n$ called the nullspace of $A$. Find a basis for it by solving
+    $A\mathbf{x} = \mathbf{0}$ in parametric form and splitting the solution into one vector per
+    \gl{parameter}{parameter}.
+  ex: >-
+    If the solution is $\mathbf{x} = s(-2, 1, 0) + t(3, 0, 1)$, then $\{(-2, 1, 0), (3, 0, 1)\}$ is a basis
+    for the nullspace and the \gl{nullity}{nullity} is 2.
+  watch: >-
+    \gl{column-space}{Column space}. The nullspace lives in $\mathbb{R}^n$ (the inputs), while the column
+    space lives in $\mathbb{R}^m$ (the outputs). For a transformation $T_A$, the nullspace is called the
+    \gl{kernel}{kernel}.
+  see: [nullity, kernel, homogeneous, eigenspace]
+  aka: >-
+    null space, solution space of $A\mathbf{x} = \mathbf{0}$, kernel of $T_A$
+
+- id: particular-solution
+  term: >-
+    Particular solution
+  mod: 8a
+  plain: >-
+    Any one specific solution of $A\mathbf{x} = \mathbf{b}$.
+  def: >-
+    If $\mathbf{x}_0$ is any single solution of a consistent system $A\mathbf{x} = \mathbf{b}$, it is called a
+    particular solution. Every solution of $A\mathbf{x} = \mathbf{b}$ is $\mathbf{x}_0$ plus a solution of
+    $A\mathbf{x} = \mathbf{0}$.
+  see: [general-solution, nullspace]
+
+- id: general-solution
+  term: >-
+    General solution
+  mod: 8a
+  plain: >-
+    A formula with parameters that describes every solution at once.
+  def: >-
+    If $\{\mathbf{v}_1, \dots, \mathbf{v}_k\}$ is a basis for the nullspace of $A$, then
+    $c_1\mathbf{v}_1 + \dots + c_k\mathbf{v}_k$ is the \textbf{general solution of $A\mathbf{x} = \mathbf{0}$},
+    and $\mathbf{x}_0 + c_1\mathbf{v}_1 + \dots + c_k\mathbf{v}_k$ is the \textbf{general solution of
+    $A\mathbf{x} = \mathbf{b}$}, where $\mathbf{x}_0$ is a \gl{particular-solution}{particular solution}.
+  ex: >-
+    $\mathbf{x} = \underbrace{(1, 2, 0)}_{\mathbf{x}_0} + t\,\underbrace{(-3, 1, 1)}_{\text{nullspace}}$.
+    Geometrically, this is the nullspace line shifted so that it passes through $\mathbf{x}_0$.
+  watch: >-
+    The same phrase is used for two different objects. The general solution of $A\mathbf{x} = \mathbf{b}$
+    is generally \emph{not} a subspace, because it does not contain $\mathbf{0}$ unless
+    $\mathbf{b} = \mathbf{0}$.
+  see: [particular-solution, nullspace, solution-set, parameter]
+
+- id: row-col-vectors-of-a
+  term: >-
+    Row / column vectors of $A$
+  plain_name: Row / column vectors of A
+  mod: 8b
+  plain: >-
+    The individual rows and columns of a matrix, each treated as a vector.
+  def: >-
+    For an $m \times n$ matrix $A$, the \textbf{row vectors} of $A$ are its $m$ rows, which are vectors in
+    $\mathbb{R}^n$. The \textbf{column vectors} of $A$ are its $n$ columns, which are vectors in
+    $\mathbb{R}^m$.
+  watch: >-
+    Rows live in $\mathbb{R}^{(\text{number of columns})}$ and columns live in
+    $\mathbb{R}^{(\text{number of rows})}$. This is easy to get backwards.
+  see: [row-space, column-space, row-column-vector]
+
+- id: row-space
+  term: >-
+    Row space
+  mod: 8b
+  plain: >-
+    Everything you can build from the rows of $A$.
+  def: >-
+    The row space of an $m \times n$ matrix $A$ is the subspace of $\mathbb{R}^n$ spanned by the row vectors
+    of $A$. Row operations do not change the row space, so the nonzero rows of any
+    \gl{ref}{row echelon form} of $A$ form a basis for it.
+  watch: >-
+    For the row space, take rows from the \emph{echelon form}. For the column space, take columns from the
+    \emph{original} matrix $A$.
+  see: [column-space, rank, orthogonal-complement]
+
+- id: column-space
+  term: >-
+    Column space
+  mod: 8b
+  plain: >-
+    Everything you can build from the columns of $A$, which is every possible output $A\mathbf{x}$.
+  def: >-
+    The column space of an $m \times n$ matrix $A$ is the subspace of $\mathbb{R}^m$ spanned by its column
+    vectors. $A\mathbf{x} = \mathbf{b}$ is consistent \textbf{if and only if} $\mathbf{b}$ is in the column
+    space of $A$. For a basis, row reduce $A$, note which columns have leading 1s, and take
+    \emph{those columns of the original} $A$.
+  ex: >-
+    If the RREF of $A$ has leading 1s in columns 1 and 3, then columns 1 and 3 of $A$ form a basis for its
+    column space.
+  watch: >-
+    Row operations \emph{change} the column space. Use the echelon form only to find which columns to take,
+    not as the basis itself.
+  see: [row-space, rank, range, matrix-form]
+  aka: >-
+    range of $T_A$, image (in other sources)
+
+- id: rank
+  term: >-
+    Rank
+  mod: 8b
+  plain: >-
+    The number of independent rows, which always equals the number of independent columns.
+  def: >-
+    The row space and column space of $A$ always have the same dimension. This common dimension is the
+    rank of $A$, written $\operatorname{rank}(A)$. It equals the number of \gl{leading-one}{leading 1s} in
+    any row echelon form of $A$.
+  ex: >-
+    For a $7 \times 11$ matrix, $\operatorname{rank}(A) \leq 7$, since rank can never exceed the number of
+    rows or the number of columns.
+  watch: >-
+    \gl{nullity}{Nullity}. Rank counts leading variables, while nullity counts free variables. Together they
+    add up to the number of columns.
+  see: [nullity, rank-nullity, row-space, column-space]
+
+- id: nullity
+  term: >-
+    Nullity
+  mod: 8b
+  plain: >-
+    The number of free variables, which is how many independent directions $A$ squashes to zero.
+  def: >-
+    The nullity of $A$, written $\operatorname{nullity}(A)$, is the dimension of the
+    \gl{nullspace}{nullspace} of $A$. It equals the number of \gl{parameter}{parameters} in the general
+    solution of $A\mathbf{x} = \mathbf{0}$.
+  ex: >-
+    A $5 \times 6$ matrix with rank 3 has nullity $6 - 3 = 3$.
+  watch: >-
+    \gl{rank}{Rank}. A square matrix is invertible exactly when its nullity is $0$.
+  see: [nullspace, rank, rank-nullity, geometric-multiplicity]
+
+- id: rank-nullity
+  term: >-
+    Dimension Theorem for Matrices
+  mod: 8b
+  plain: >-
+    Leading variables plus free variables equals total variables.
+  def: >-
+    If $A$ is a matrix with $n$ columns, then
+    $\operatorname{rank}(A) + \operatorname{nullity}(A) = n$. Consequently, if $A\mathbf{x} = \mathbf{b}$ is
+    consistent and $A$ has rank $r$, the general solution has $n - r$ parameters.
+  ex: >-
+    A $4 \times 9$ matrix has rank at most 4, so its nullity is at least $9 - 4 = 5$. Its homogeneous system
+    must therefore have infinitely many solutions.
+  watch: >-
+    $n$ is the number of \emph{columns}, which is the number of unknowns, not the number of rows.
+  see: [rank, nullity, parameter]
+  aka: >-
+    Rank–Nullity Theorem
+
+- id: overdetermined
+  term: >-
+    Overdetermined / underdetermined
+  mod: 8b
+  plain: >-
+    Overdetermined means more equations than unknowns. Underdetermined means fewer equations than
+    unknowns.
+  def: >-
+    A system of $m$ equations in $n$ unknowns is \textbf{overdetermined} if $m > n$ (more constraints than
+    unknowns) and \textbf{underdetermined} if $m < n$. An overdetermined system is inconsistent for at
+    least one choice of $\mathbf{b}$. A consistent underdetermined system has infinitely many solutions.
+  watch: >-
+    Underdetermined does not mean inconsistent. It can still have no solutions, but if it has any, it has
+    infinitely many.
+  see: [rank-nullity, consistent]
+
+- id: orthogonal-complement
+  term: >-
+    Orthogonal complement $W^{\perp}$
+  plain_name: Orthogonal complement (W⊥)
+  mod: 8b
+  plain: >-
+    Every vector that is perpendicular to everything in $W$.
+  def: >-
+    If $W$ is a subspace of $\mathbb{R}^n$ (or of an inner product space $V$), the set of all vectors
+    orthogonal to \emph{every} vector in $W$ is a subspace called the orthogonal complement of $W$, written
+    $W^{\perp}$. It satisfies $(W^{\perp})^{\perp} = W$, $W \cap W^{\perp} = \{\mathbf{0}\}$, and the
+    nullspace of $A$ is the orthogonal complement of the row space of $A$.
+  ex: >-
+    In $\mathbb{R}^3$, the orthogonal complement of the $xy$-plane is the $z$-axis.
+  watch: >-
+    $W^{\perp}$ is not everything \emph{outside} $W$. It is only the vectors at right angles to all of $W$.
+    To show $\mathbf{u}$ is in $W^{\perp}$, it is enough to check $\mathbf{u}$ against a basis of $W$.
+  see: [orthogonal, row-space, nullspace, projection-onto-subspace]
+  aka: >-
+    W perp

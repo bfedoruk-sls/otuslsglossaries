@@ -1,0 +1,282 @@
+num: "01"
+id: systems
+title: >-
+  Systems of Linear Equations
+mods: MODULES 1A AND 1B
+blurb: >-
+  Every later module builds on these words. They describe equations, their solutions, and the row
+  reduction you will use for the rest of the course.
+entries:
+- id: linear-equation
+  term: >-
+    Linear equation
+  mod: 1a
+  plain: >-
+    An equation where each variable appears on its own, to the first power, multiplied only by a number.
+  def: >-
+    A linear equation in the $n$ variables $x_1, x_2, \dots, x_n$ is an equation that can be written as
+    $a_1x_1 + a_2x_2 + \dots + a_nx_n = b$, where $a_1, \dots, a_n$ and $b$ are real constants.
+    If it cannot be written in this form, it is a \textbf{nonlinear equation}.
+  ex: >-
+    $3x_1 - 2x_2 + x_3 = 7$ is linear. $x_1x_2 = 4$, $x_1^2 + x_2 = 1$ and $\sin x_1 = 0$ are nonlinear.
+  watch: >-
+    A \emph{linear} equation is not the same as the equation of a line. In three or more variables, a
+    linear equation describes a plane or a higher-dimensional flat object.
+  see: [coefficient, system]
+  aka: ""
+
+- id: coefficient
+  term: >-
+    Coefficient
+  mod: 1a
+  plain: >-
+    The number multiplying a variable.
+  def: >-
+    In $a_1x_1 + a_2x_2 + \dots + a_nx_n = b$, the constants $a_i$ are the coefficients. The word is reused
+    later for the scalars in a \gl{linear-combination}{linear combination}.
+  ex: >-
+    In $4x - y + 0z = 2$, the coefficients are $4$, $-1$ and $0$.
+  see: [linear-equation, coefficient-matrix]
+
+- id: unknown
+  term: >-
+    Unknown
+  mod: 1a
+  plain: >-
+    Another name for a variable you are solving for.
+  def: >-
+    The variables $x_1, x_2, \dots, x_n$ in a linear equation or system are sometimes called the unknowns.
+  see: [linear-equation, system]
+  aka: >-
+    variable
+
+- id: solution
+  term: >-
+    Solution
+  mod: 1a
+  plain: >-
+    A list of values that makes every equation true at the same time.
+  def: >-
+    A solution of $a_1x_1 + \dots + a_nx_n = b$ is a sequence of $n$ numbers $s_1, \dots, s_n$ such that the
+    equation is satisfied when $x_1 = s_1, \dots, x_n = s_n$. A solution of a \gl{system}{system} must
+    satisfy every equation in it.
+  ex: >-
+    $(x, y) = (2, 1)$ is a solution of $x + y = 3$ and $x - y = 1$.
+  see: [solution-set, consistent]
+
+- id: solution-set
+  term: >-
+    Solution set
+  mod: 1a
+  plain: >-
+    The collection of all solutions, not just one of them.
+  def: >-
+    The set of all solutions of an equation or system is called its solution set. A solution set
+    written with \gl{parameter}{parameters} is often called the \gl{general-solution}{general solution}.
+  ex: >-
+    The solution set of $x + y = 3$ is $\{(3 - t,\ t) : t \in \mathbb{R}\}$, a whole line of points.
+  see: [solution, general-solution]
+
+- id: system
+  term: >-
+    System of linear equations
+  mod: 1a
+  plain: >-
+    Several linear equations that must all hold at once.
+  def: >-
+    A finite set of linear equations in the variables $x_1, \dots, x_n$ is called a system of linear
+    equations (or a linear system). A system of $m$ equations in $n$ unknowns can be written compactly as
+    $A\mathbf{x} = \mathbf{b}$.
+  ex: >-
+    $\begin{aligned} x + 2y &= 5 \\ 3x - y &= 1 \end{aligned}$ is a system of 2 equations in 2 unknowns.
+  see: [consistent, augmented-matrix, matrix-form]
+  aka: >-
+    linear system
+
+- id: consistent
+  term: >-
+    Consistent / inconsistent
+  mod: 1a
+  plain: >-
+    Consistent means the system has at least one solution. Inconsistent means it has none.
+  def: >-
+    A system with at least one solution is \textbf{consistent}. A system with no solutions is
+    \textbf{inconsistent}. Every linear system has either no solutions, exactly one solution, or
+    infinitely many solutions.
+  ex: >-
+    $x + y = 1$ and $x + y = 4$ is inconsistent: two parallel lines never meet. Row reduction shows this as
+    a row $[\,0\ \ 0 \mid c\,]$ with $c \neq 0$.
+  watch: >-
+    Consistent does not mean exactly one solution. A system with infinitely many solutions is still
+    consistent.
+  see: [solution-set, rref, homogeneous]
+
+- id: augmented-matrix
+  term: >-
+    Augmented matrix
+  mod: 1a
+  plain: >-
+    The system's numbers written in a grid, with the right-hand sides tacked on as a last column.
+  def: >-
+    For a system $A\mathbf{x} = \mathbf{b}$, the augmented matrix is $[\,A \mid \mathbf{b}\,]$: the
+    \gl{coefficient-matrix}{coefficient matrix} with the column of constants attached on the right.
+  ex: >-
+    $\begin{aligned} x + 2y &= 5 \\ 3x - y &= 1 \end{aligned}
+    \quad\longrightarrow\quad
+    \left[\begin{array}{cc|c} 1 & 2 & 5 \\ 3 & -1 & 1 \end{array}\right]$
+  watch: >-
+    \gl{coefficient-matrix}{Coefficient matrix}: that is only $A$, without the constants column.
+  see: [elementary-row-operations, coefficient-matrix]
+
+- id: elementary-row-operations
+  term: >-
+    Elementary row operations
+  mod: 1a
+  plain: >-
+    The three legal moves you can make on rows without changing the solutions.
+  def: >-
+    The elementary row operations are: (1) multiply a row by a nonzero constant; (2) interchange two rows;
+    (3) add a multiple of one row to another row.
+  ex: >-
+    $R_2 \to R_2 - 3R_1$ is a type (3) operation.
+  watch: >-
+    Multiplying a row by $0$ is \emph{not} allowed, and you cannot multiply two rows together.
+  see: [row-equivalent, elementary-matrix, gaussian-elimination]
+  aka: >-
+    row operations
+
+- id: row-equivalent
+  term: >-
+    Row equivalent
+  mod: 3a
+  plain: >-
+    Two matrices are row equivalent if you can turn one into the other using row operations.
+  def: >-
+    Matrices that can be obtained from one another by a finite sequence of
+    \gl{elementary-row-operations}{elementary row operations} are said to be row equivalent. Row equivalent
+    augmented matrices represent systems with the same solution set.
+  ex: >-
+    An invertible matrix is row equivalent to the identity matrix $I_n$.
+  see: [elementary-row-operations, equivalence-theorem]
+
+- id: back-substitution
+  term: >-
+    Back substitution
+  mod: 1a
+  plain: >-
+    Solve the last equation first, then plug that answer into the equation above it, and so on upward.
+  def: >-
+    Back substitution solves a system in \gl{ref}{row echelon form} by solving the bottom equation for its
+    leading variable, then substituting into the equations above, working from the bottom row to the top.
+  ex: >-
+    From $z = 2$, then $y + z = 5 \Rightarrow y = 3$, then $x + y - z = 4 \Rightarrow x = 3$.
+  see: [gaussian-elimination, ref]
+
+- id: ref
+  term: >-
+    Row echelon form (REF)
+  mod: 1b
+  plain: >-
+    A staircase shape. Each row starts further right than the row above it, and zero rows sit at the bottom.
+  def: >-
+    A matrix is in row echelon form if: (1) any row that is not all zeros has a first nonzero entry of $1$
+    (a \gl{leading-one}{leading 1}); (2) all rows of zeros are at the bottom; (3) in any two consecutive
+    nonzero rows, the leading 1 in the lower row is further to the right.
+  ex: >-
+    $\begin{bmatrix} 1 & 4 & -2 \\ 0 & 1 & 3 \\ 0 & 0 & 0 \end{bmatrix}$ is in REF but not in RREF.
+  watch: >-
+    \gl{rref}{RREF}. REF is not unique, since different row operations can give different REFs. RREF is unique.
+  see: [rref, leading-one, gaussian-elimination]
+
+- id: rref
+  term: >-
+    Reduced row echelon form (RREF)
+  mod: 1b
+  plain: >-
+    The tidiest staircase. It is REF, and every leading 1 is the only nonzero number in its column.
+  def: >-
+    A matrix is in reduced row echelon form if it satisfies the three conditions for \gl{ref}{REF} and also
+    (4) each column that contains a leading 1 has zeros everywhere else in that column.
+  ex: >-
+    $\left[\begin{array}{ccc|c} 1 & 0 & 2 & 5 \\ 0 & 1 & -1 & 3 \\ 0 & 0 & 0 & 0 \end{array}\right]$
+    is in RREF. Here $x_3$ is free.
+  watch: >-
+    \gl{ref}{REF}. Every matrix has exactly one RREF, so two people who row reduce correctly will agree on
+    the RREF but not necessarily on an REF.
+  see: [ref, gauss-jordan, leading-one]
+
+- id: leading-one
+  term: >-
+    Leading 1
+  mod: 1b
+  plain: >-
+    The first nonzero entry in a row, scaled to be 1. These mark the steps of the staircase.
+  def: >-
+    In row echelon form, the first nonzero number in each nonzero row is a $1$, called a leading 1.
+    Columns containing a leading 1 correspond to \gl{leading-variable}{leading variables}.
+  watch: >-
+    Many other textbooks and online videos call this position a \textbf{pivot}. The pivot idea is the
+    same, though some sources do not require the entry to be scaled to 1.
+  see: [leading-variable, ref, rank]
+  aka: >-
+    pivot (in other sources)
+
+- id: leading-variable
+  term: >-
+    Leading variable / free variable
+  mod: 1b
+  plain: >-
+    A leading variable has a leading 1 in its column, so it is determined by the others. A free variable
+    does not, so it can take any value.
+  def: >-
+    After row reduction, a \textbf{leading variable} is a variable whose column contains a leading 1. A
+    \textbf{free variable} is a variable whose column has no leading 1. Solve for the leading variables in
+    terms of the free variables, then replace each free variable with a \gl{parameter}{parameter}.
+  ex: >-
+    In $\left[\begin{array}{ccc|c} 1 & 0 & 2 & 5 \\ 0 & 1 & -1 & 3 \end{array}\right]$, $x_1$ and $x_2$
+    are leading and $x_3$ is free, so $x_1 = 5 - 2t,\ x_2 = 3 + t,\ x_3 = t$.
+  watch: >-
+    Free variables do not mean the system is inconsistent. A consistent system with at least one free
+    variable has infinitely many solutions.
+  see: [parameter, rref, nullity]
+  aka: >-
+    basic variable (for leading variable)
+
+- id: parameter
+  term: >-
+    Parameter
+  mod: 1b
+  plain: >-
+    A letter, like $t$ or $s$, that stands for any real number you choose for a free variable.
+  def: >-
+    When a system has \gl{leading-variable}{free variables}, each free variable is assigned an arbitrary
+    value called a parameter, and the solution set is written in terms of these parameters.
+  ex: >-
+    $(x, y, z) = (5 - 2t,\ 3 + t,\ t)$, $t \in \mathbb{R}$, has one parameter.
+  see: [general-solution, nullity, rank-nullity]
+
+- id: gaussian-elimination
+  term: >-
+    Gaussian elimination
+  mod: 1b
+  plain: >-
+    Row reduce to REF, then finish with back substitution.
+  def: >-
+    Solving a system by reducing its augmented matrix to \gl{ref}{row echelon form} and then using
+    \gl{back-substitution}{back substitution} is called Gaussian elimination.
+  watch: >-
+    \gl{gauss-jordan}{Gauss–Jordan elimination}. Gaussian elimination stops at REF, while Gauss–Jordan
+    elimination continues all the way to RREF.
+  see: [gauss-jordan, elementary-row-operations]
+
+- id: gauss-jordan
+  term: >-
+    Gauss–Jordan elimination
+  mod: 1b
+  plain: >-
+    Keep row reducing until you reach RREF, then read the answer directly.
+  def: >-
+    Solving a system by reducing its augmented matrix to \gl{rref}{reduced row echelon form} is called
+    Gauss–Jordan elimination. No back substitution is needed. The same process applied to $[\,A \mid I\,]$
+    finds $A^{-1}$.
+  see: [gaussian-elimination, rref, inverse]

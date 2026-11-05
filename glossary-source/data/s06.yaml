@@ -1,0 +1,186 @@
+num: "06"
+id: spaces
+title: >-
+  Vector Spaces and Subspaces
+mods: MODULES 6A AND 6B
+blurb: >-
+  This is where the course becomes abstract. A vector space is any collection of objects that you can
+  add and scale following the same rules as arrows in $\mathbb{R}^n$, whether the objects are matrices,
+  polynomials or functions.
+entries:
+- id: vector-space
+  term: >-
+    Vector space
+  mod: 6a
+  plain: >-
+    Any set of objects that you can add together and multiply by numbers, where all the usual rules of
+    arithmetic still work.
+  def: >-
+    Let $V$ be a nonempty set of objects with two operations defined, addition and multiplication by
+    scalars. If all ten \gl{axioms}{vector space axioms} hold for every $\mathbf{u}, \mathbf{v}, \mathbf{w}$
+    in $V$ and all scalars $k, m$, then $V$ is a vector space and its objects are called
+    \textbf{vectors}.
+  ex: >-
+    $\mathbb{R}^n$, $M_{mn}$ ($m \times n$ matrices), $P_n$ (polynomials of degree at most $n$) and
+    $F(-\infty, \infty)$ (real-valued functions) are all vector spaces under their usual operations.
+  watch: >-
+    Whether a set is a vector space depends on the \emph{operations} as well as the objects. The same set of
+    ordered pairs can be a vector space with one definition of addition and fail with another.
+  see: [axioms, subspace, n-space]
+
+- id: axioms
+  term: >-
+    Vector space axioms
+  mod: 6a
+  plain: >-
+    The ten rules that addition and scalar multiplication must follow.
+  def: >-
+    For all $\mathbf{u}, \mathbf{v}, \mathbf{w}$ in $V$ and scalars $k, m$:
+    (1) $\mathbf{u} + \mathbf{v}$ is in $V$;
+    (2) $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$;
+    (3) $\mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w}$;
+    (4) there is a \gl{zero-vector}{zero vector} $\mathbf{0}$ in $V$ with $\mathbf{u} + \mathbf{0} = \mathbf{u}$;
+    (5) each $\mathbf{u}$ has a \gl{negative}{negative} $-\mathbf{u}$ with $\mathbf{u} + (-\mathbf{u}) = \mathbf{0}$;
+    (6) $k\mathbf{u}$ is in $V$;
+    (7) $k(\mathbf{u} + \mathbf{v}) = k\mathbf{u} + k\mathbf{v}$;
+    (8) $(k + m)\mathbf{u} = k\mathbf{u} + m\mathbf{u}$;
+    (9) $k(m\mathbf{u}) = (km)\mathbf{u}$;
+    (10) $1\mathbf{u} = \mathbf{u}$.
+  ex: >-
+    To show a set is \emph{not} a vector space, one counterexample to one axiom is enough. Axioms 1, 4, 6
+    and 10 are the usual places to look.
+  watch: >-
+    With unusual operations, the zero vector might not be $(0, 0)$. Use the space's own addition to find it.
+  see: [vector-space, closure]
+
+- id: zero-vector
+  term: >-
+    Zero vector
+  mod: 6a
+  plain: >-
+    The vector that changes nothing when you add it.
+  def: >-
+    In a vector space $V$, the zero vector $\mathbf{0}$ is the object satisfying
+    $\mathbf{u} + \mathbf{0} = \mathbf{0} + \mathbf{u} = \mathbf{u}$ for every $\mathbf{u}$ in $V$
+    (\gl{axioms}{axiom 4}). Also $0\mathbf{u} = \mathbf{0}$ and $k\mathbf{0} = \mathbf{0}$.
+  ex: >-
+    In $\mathbb{R}^3$ it is $(0, 0, 0)$. In $M_{22}$ it is the $2 \times 2$ zero matrix. In
+    $F(-\infty, \infty)$ it is the function $f(x) = 0$ for all $x$.
+  watch: >-
+    The \gl{zero-vector-space}{zero vector space} is the space $\{\mathbf{0}\}$, while the zero vector is the
+    single object $\mathbf{0}$ inside a space.
+  see: [negative, subspace, zero-vector-space]
+
+- id: negative
+  term: >-
+    Negative of a vector
+  mod: 6a
+  plain: >-
+    The vector that cancels $\mathbf{u}$ back to zero.
+  def: >-
+    For each $\mathbf{u}$ in $V$, the negative $-\mathbf{u}$ is the object with
+    $\mathbf{u} + (-\mathbf{u}) = \mathbf{0}$ (\gl{axioms}{axiom 5}). In every vector space,
+    $(-1)\mathbf{u} = -\mathbf{u}$.
+  see: [zero-vector, axioms]
+  aka: >-
+    additive inverse
+
+- id: zero-vector-space
+  term: >-
+    Zero vector space
+  mod: 6a
+  plain: >-
+    The smallest possible vector space, containing only the zero vector.
+  def: >-
+    The set $V = \{\mathbf{0}\}$ with $\mathbf{0} + \mathbf{0} = \mathbf{0}$ and $k\mathbf{0} = \mathbf{0}$ is a
+    vector space, called the zero vector space. Its \gl{dimension}{dimension} is defined to be $0$, and
+    $\{\mathbf{0}\}$ is a subspace of every vector space.
+  watch: >-
+    \gl{zero-vector}{Zero vector}. The empty set is \emph{not} a vector space, because every vector space
+    must contain a zero vector.
+  see: [zero-vector, subspace, dimension]
+
+- id: function-space
+  term: >-
+    $F(-\infty, \infty)$
+  plain_name: F(−∞, ∞) (function space)
+  mod: 6a
+  plain: >-
+    The vector space whose ``vectors'' are functions.
+  def: >-
+    $F(-\infty, \infty)$ is the set of all real-valued functions defined on the whole real line, with
+    $(f + g)(x) = f(x) + g(x)$ and $(kf)(x) = k\,f(x)$. It is a vector space whose zero vector is the zero
+    function.
+  watch: >-
+    The vectors here are whole functions, such as $\sin x$ or $x^2$. They are not numbers or points.
+  see: [vector-space, polynomial-space, continuous-functions]
+  aka: >-
+    vector space of functions
+
+- id: polynomial-space
+  term: >-
+    $P_n$
+  plain_name: Pₙ (polynomial space)
+  mod: 6a
+  plain: >-
+    All polynomials of degree $n$ or less.
+  def: >-
+    $P_n$ is the set of all polynomials $a_0 + a_1x + a_2x^2 + \dots + a_nx^n$ with real coefficients, under
+    ordinary polynomial addition and scalar multiplication. It is a vector space of
+    \gl{dimension}{dimension} $n + 1$, with standard basis $\{1, x, x^2, \dots, x^n\}$.
+  ex: >-
+    $3 - x + 4x^2$ is a vector in $P_2$, and so is $5$, a constant polynomial.
+  watch: >-
+    $\dim(P_n) = n + 1$, not $n$, because the constant term counts. The set of polynomials of degree
+    \emph{exactly} $n$ is not a vector space, since it does not contain $0$ and is not closed under addition.
+  see: [vector-space, dimension, standard-basis]
+
+- id: matrix-space
+  term: >-
+    $M_{mn}$
+  plain_name: Mₘₙ (matrix space)
+  mod: 6a
+  plain: >-
+    All matrices of one fixed size, treated as vectors.
+  def: >-
+    $M_{mn}$ is the set of all $m \times n$ matrices with real entries, under matrix addition and scalar
+    multiplication. It is a vector space of dimension $mn$. $M_{nn}$ is often written $M_n$.
+  ex: >-
+    $M_{22}$ has dimension 4.
+  see: [vector-space, matrix-addition, dimension]
+
+- id: subspace
+  term: >-
+    Subspace
+  mod: 6b
+  plain: >-
+    A smaller vector space sitting inside a bigger one.
+  def: >-
+    A subset $W$ of a vector space $V$ is a subspace of $V$ if $W$ is itself a vector space under the
+    addition and scalar multiplication defined on $V$. \textbf{Test:} $W$ is a subspace if and only if it is
+    nonempty and \gl{closure}{closed} under addition and under scalar multiplication.
+  ex: >-
+    Lines and planes through the origin are subspaces of $\mathbb{R}^3$. The line $y = x + 1$ is
+    \emph{not} a subspace of $\mathbb{R}^2$, because it does not contain $(0, 0)$.
+  watch: >-
+    Check for $\mathbf{0}$ first. If the zero vector is not in $W$, then $W$ is not a subspace. Containing
+    $\mathbf{0}$ is not enough on its own, though: you must still check closure.
+  see: [closure, span, nullspace, vector-space]
+
+- id: closure
+  term: >-
+    Closure
+  mod: 6b
+  plain: >-
+    Doing the operation never takes you outside the set.
+  def: >-
+    $W$ is \textbf{closed under addition} if $\mathbf{u} + \mathbf{v}$ is in $W$ whenever $\mathbf{u}$ and
+    $\mathbf{v}$ are. $W$ is \textbf{closed under scalar multiplication} if $k\mathbf{u}$ is in $W$ for
+    every scalar $k$ whenever $\mathbf{u}$ is in $W$.
+  ex: >-
+    The first quadrant $\{(x, y) : x, y \geq 0\}$ is closed under addition but not under scalar
+    multiplication, since $-1 \cdot (1, 1) = (-1, -1)$ leaves the set. So it is not a subspace.
+  watch: >-
+    To prove closure, use general vectors such as $\mathbf{u} = (u_1, u_2)$. To disprove it, one specific
+    counterexample is enough.
+  see: [subspace, axioms]

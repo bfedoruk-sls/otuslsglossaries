@@ -1,0 +1,149 @@
+num: "03"
+id: special
+title: >-
+  Special Matrices and Invertibility
+mods: MODULE 3A
+blurb: >-
+  Some matrices have shapes that make them easy to work with. This section also covers the
+  Equivalence Theorem, which ties together much of the course.
+entries:
+- id: elementary-matrix
+  term: >-
+    Elementary matrix
+  mod: 3a
+  plain: >-
+    The identity matrix after exactly one row operation.
+  def: >-
+    An $n \times n$ matrix is an elementary matrix if it can be obtained from $I_n$ by performing a
+    \emph{single} \gl{elementary-row-operations}{elementary row operation}. Multiplying $EA$ performs that
+    same row operation on $A$. Every elementary matrix is invertible.
+  ex: >-
+    $E = \begin{bmatrix} 1 & 0 \\ -3 & 1 \end{bmatrix}$ comes from $R_2 \to R_2 - 3R_1$ on $I_2$, so $EA$
+    subtracts 3 times row 1 from row 2 of $A$.
+  watch: >-
+    Two row operations in a row do not give an elementary matrix. That gives a \emph{product} of two
+    elementary matrices.
+  see: [elementary-row-operations, equivalence-theorem]
+
+- id: diagonal-matrix
+  term: >-
+    Diagonal matrix
+  mod: 3a
+  plain: >-
+    A square matrix with zeros everywhere except possibly on the main diagonal.
+  def: >-
+    A square matrix in which every entry off the \gl{main-diagonal}{main diagonal} is zero is a diagonal
+    matrix. Powers are easy: raise each diagonal entry to the power. A diagonal matrix is invertible exactly
+    when every diagonal entry is nonzero.
+  ex: >-
+    $D = \begin{bmatrix} 2 & 0 \\ 0 & -3 \end{bmatrix},\ \ D^5 = \begin{bmatrix} 32 & 0 \\ 0 & -243 \end{bmatrix}$
+  watch: >-
+    \gl{diagonalizable}{Diagonalizable}. A diagonalizable matrix is \emph{not} necessarily diagonal. It is
+    one that can be converted into a diagonal matrix by $P^{-1}AP$.
+  see: [diagonalizable, triangular, main-diagonal]
+
+- id: triangular
+  term: >-
+    Upper / lower triangular
+  mod: 3a
+  plain: >-
+    All the zeros sit on one side of the main diagonal.
+  def: >-
+    A square matrix is \textbf{upper triangular} if all entries \emph{below} the main diagonal are zero, and
+    \textbf{lower triangular} if all entries \emph{above} it are zero. A matrix that is either one is
+    \textbf{triangular}. The \gl{determinant}{determinant} of a triangular matrix is the product of its
+    diagonal entries.
+  ex: >-
+    $\begin{bmatrix} 1 & 4 & 2 \\ 0 & 3 & 5 \\ 0 & 0 & -2 \end{bmatrix}$ is upper triangular, with $\det = 1 \cdot 3 \cdot (-2) = -6$.
+  watch: >-
+    The name describes where the \emph{nonzero} part is. In an upper triangular matrix, the zeros are in the
+    lower part.
+  see: [diagonal-matrix, ref, determinant]
+  aka: >-
+    triangular matrix
+
+- id: symmetric
+  term: >-
+    Symmetric matrix
+  mod: 3a
+  plain: >-
+    A square matrix that is a mirror image across its main diagonal.
+  def: >-
+    A square matrix $A$ is symmetric if $A^T = A$, that is, $a_{ij} = a_{ji}$ for all $i, j$. For any matrix
+    $A$, the products $AA^T$ and $A^TA$ are always symmetric.
+  ex: >-
+    $\begin{bmatrix} 1 & 4 & 5 \\ 4 & -3 & 0 \\ 5 & 0 & 7 \end{bmatrix}$ is symmetric.
+  watch: >-
+    The mirror is the \emph{main} diagonal, not the middle row or column. A non-square matrix can never be
+    symmetric.
+  see: [transpose, adjacency-matrix]
+
+- id: equivalence-theorem
+  term: >-
+    Equivalence Theorem
+  mod: 3a
+  plain: >-
+    A master list of statements about a square matrix that are either all true or all false.
+  def: >-
+    If $A$ is $n \times n$, the following are equivalent: $A$ is invertible; $A\mathbf{x} = \mathbf{0}$ has
+    only the trivial solution; the RREF of $A$ is $I_n$; $A$ is a product of elementary matrices;
+    $A\mathbf{x} = \mathbf{b}$ is consistent for every $\mathbf{b}$; $A\mathbf{x} = \mathbf{b}$ has exactly
+    one solution for every $\mathbf{b}$; $\det(A) \neq 0$; the column (or row) vectors of $A$ are linearly
+    independent, span $\mathbb{R}^n$, and form a basis for $\mathbb{R}^n$; $\operatorname{rank}(A) = n$;
+    $\operatorname{nullity}(A) = 0$; the orthogonal complement of the nullspace is $\mathbb{R}^n$ and of the
+    row space is $\{\mathbf{0}\}$; the kernel of $T_A$ is $\{\mathbf{0}\}$, the range of $T_A$ is
+    $\mathbb{R}^n$, and $T_A$ is one-to-one; and $\lambda = 0$ is \emph{not} an eigenvalue of $A$.
+  ex: >-
+    If you know that $\det(A) = 0$, every statement fails, so $A\mathbf{x} = \mathbf{0}$ has non-trivial
+    solutions and the columns of $A$ are dependent.
+  watch: >-
+    It only applies to \emph{square} matrices. The list grows through the course: Module 3a has six
+    statements, Module 8b has seventeen, and Module 10b has the full list of twenty-one.
+  see: [invertible, determinant, rank, eigenvalue]
+  aka: >-
+    Invertible Matrix Theorem (in other sources)
+
+- id: adjacency-matrix
+  term: >-
+    Adjacency matrix
+  mod: 3a
+  app: true
+  plain: >-
+    A grid recording which pairs of things are connected.
+  def: >-
+    For a network of $n$ objects (people, web pages, cities), the adjacency matrix has entry $a_{ij} = 1$ if
+    object $i$ is connected to object $j$, and $0$ otherwise. If connections go both ways, as with
+    friendship, the matrix is \gl{symmetric}{symmetric}.
+  ex: >-
+    In a social network of 4 people, $a_{12} = 1$ means person 1 is friends with person 2, so $a_{21} = 1$ as well.
+  see: [symmetric, matrix]
+
+- id: flexibility-matrix
+  term: >-
+    Flexibility / stiffness matrix
+  mod: 3a
+  app: true
+  plain: >-
+    Engineering matrices that link the forces on a structure to how much it bends.
+  def: >-
+    In a beam model using Hooke's law, $\mathbf{y} = D\mathbf{f}$, where $\mathbf{f}$ lists the forces at
+    several points, $\mathbf{y}$ lists the deflections, and $D$ is the \textbf{flexibility matrix}. Its
+    inverse $D^{-1}$ is the \textbf{stiffness matrix}, which gives the forces needed for a given deflection.
+    Both are \gl{symmetric}{symmetric}.
+  see: [inverse, symmetric]
+
+- id: hill-cipher
+  term: >-
+    Hill cipher
+  mod: 3a
+  app: true
+  plain: >-
+    A code that scrambles letters by multiplying them by a matrix.
+  def: >-
+    In a Hill 2-cipher, letters are converted to numbers (A = 1, \dots, Z = 0), grouped in pairs, and each
+    pair is multiplied by an invertible $2 \times 2$ enciphering matrix $A$, with arithmetic done modulo 26.
+    Decoding multiplies by the inverse of $A$ modulo 26.
+  watch: >-
+    The inverse used for decoding is the inverse \emph{modulo 26}, which is not the ordinary inverse with
+    fractions.
+  see: [inverse, matrix-product]

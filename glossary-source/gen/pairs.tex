@@ -1,0 +1,72 @@
+\begin{multicols}{2}\raggedcolumns
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{span}{\textcolor{FutureBlue}{Span}}\ {\color{Tangerine}\medium vs.}\ \glw{basis}{\textcolor{FutureBlue}{Basis}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont A span is \emph{everything} you can build from some vectors. A basis is a set of vectors that builds everything with nothing redundant. Every basis spans its space, but a spanning set might not be a basis.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{nullspace}{\textcolor{FutureBlue}{Nullspace}}\ {\color{Tangerine}\medium vs.}\ \glw{column-space}{\textcolor{FutureBlue}{Column space}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont The nullspace is the set of inputs $\mathbf{x}$ with $A\mathbf{x} = \mathbf{0}$, and it lives in $\mathbb{R}^n$. The column space is the set of outputs $A\mathbf{x}$, and it lives in $\mathbb{R}^m$.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{rank}{\textcolor{FutureBlue}{Rank}}\ {\color{Tangerine}\medium vs.}\ \glw{nullity}{\textcolor{FutureBlue}{Nullity}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont Rank counts leading 1s (leading variables). Nullity counts free variables. Together they equal the number of columns.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{eigenvalue}{\textcolor{FutureBlue}{Eigenvalue}}\ {\color{Tangerine}\medium vs.}\ \glw{eigenvector}{\textcolor{FutureBlue}{Eigenvector}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont In $A\mathbf{x} = \lambda\mathbf{x}$, the number $\lambda$ is the eigenvalue and the nonzero vector $\mathbf{x}$ is the eigenvector. $0$ can be an eigenvalue, but $\mathbf{0}$ is never an eigenvector.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{algebraic-multiplicity}{\textcolor{FutureBlue}{Algebraic multiplicity}}\ {\color{Tangerine}\medium vs.}\ \glw{geometric-multiplicity}{\textcolor{FutureBlue}{Geometric multiplicity}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont Algebraic multiplicity is the power of the factor in the characteristic polynomial. Geometric multiplicity is the dimension of the eigenspace. A matrix is diagonalizable exactly when they match for every eigenvalue.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{diagonal-matrix}{\textcolor{FutureBlue}{Diagonal matrix}}\ {\color{Tangerine}\medium vs.}\ \glw{diagonalizable}{\textcolor{FutureBlue}{Diagonalizable}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont A diagonal matrix already has zeros off the diagonal. A diagonalizable matrix can be \emph{turned into} one by $P^{-1}AP$, but usually is not diagonal itself.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{dot-product}{\textcolor{FutureBlue}{Dot product}}\ {\color{Tangerine}\medium vs.}\ \glw{cross-product}{\textcolor{FutureBlue}{Cross product}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont $\mathbf{u} \cdot \mathbf{v}$ is a number, works in any $\mathbb{R}^n$, and is $0$ for orthogonal vectors. $\mathbf{u} \times \mathbf{v}$ is a vector, works only in $\mathbb{R}^3$, and is $\mathbf{0}$ for parallel vectors.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{minor}{\textcolor{FutureBlue}{Minor}}\ {\color{Tangerine}\medium vs.}\ \glw{cofactor}{\textcolor{FutureBlue}{Cofactor}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont A minor is a smaller determinant. A cofactor is that minor with a checkerboard sign attached: $C_{ij} = (-1)^{i+j}M_{ij}$.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{codomain}{\textcolor{FutureBlue}{Codomain}}\ {\color{Tangerine}\medium vs.}\ \glw{range}{\textcolor{FutureBlue}{Range}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont The codomain is where outputs are \emph{allowed} to land. The range is where they \emph{actually} land. For $T_A$, the range is the column space of $A$.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{orthogonal-set}{\textcolor{FutureBlue}{Orthogonal set}}\ {\color{Tangerine}\medium vs.}\ \glw{orthonormal}{\textcolor{FutureBlue}{Orthonormal set}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont In an orthogonal set, every pair is perpendicular. An orthonormal set is the same, plus every vector has length 1. Normalize each vector to get from one to the other.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{augmented-matrix}{\textcolor{FutureBlue}{Augmented matrix}}\ {\color{Tangerine}\medium vs.}\ \glw{coefficient-matrix}{\textcolor{FutureBlue}{Coefficient matrix}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont The coefficient matrix $A$ holds only the coefficients. The augmented matrix $[\,A \mid \mathbf{b}\,]$ adds the column of constants, and it is the one you row reduce to solve a system.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{kernel}{\textcolor{FutureBlue}{Kernel}}\ {\color{Tangerine}\medium vs.}\ \glw{nullspace}{\textcolor{FutureBlue}{Nullspace}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont These are \emph{the same set} under two names. Use ``kernel'' when talking about a transformation $T_A$, and ``nullspace'' when talking about the matrix $A$.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{projection-onto-vector}{\textcolor{FutureBlue}{Orthogonal projection onto a vector}}\ {\color{Tangerine}\medium vs.}\ \glw{projection-onto-subspace}{\textcolor{FutureBlue}{Orthogonal projection onto a subspace}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont The same idea at two scales. $\operatorname{proj}_{\mathbf{a}}\mathbf{u}$ projects onto a line. $\operatorname{proj}_W\mathbf{u}$ projects onto a whole subspace, and its formula needs an orthogonal basis for $W$.\par}
+\end{tcolorbox}
+\begin{tcolorbox}[enhanced,breakable=false,colback=white,colframe=white,boxrule=0pt,arc=0pt,
+ left=8pt,right=4pt,top=1pt,bottom=2pt,borderline west={3pt}{0pt}{SimcoeBlue},before skip=0pt,after skip=9pt]
+{\bfseries\fontsize{10.8}{13}\selectfont\glw{gaussian-elimination}{\textcolor{FutureBlue}{Gaussian elimination}}\ {\color{Tangerine}\medium vs.}\ \glw{gauss-jordan}{\textcolor{FutureBlue}{Gauss–Jordan elimination}}\par}
+\vspace{3pt}{\fontsize{8.8}{12}\selectfont Gaussian elimination stops at REF and finishes with back substitution. Gauss–Jordan elimination continues to RREF and reads the answer directly.\par}
+\end{tcolorbox}
+\end{multicols}

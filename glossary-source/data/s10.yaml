@@ -1,0 +1,210 @@
+num: "10"
+id: eigen
+title: >-
+  Eigenvalues and Diagonalization
+mods: MODULES 10B AND 11A
+blurb: >-
+  Most vectors change direction when you multiply them by $A$. Eigenvectors are the special ones that
+  do not change direction. Finding enough of them lets you rewrite $A$ as a diagonal matrix, which makes
+  powers and repeated processes easy.
+entries:
+- id: eigenvector
+  term: >-
+    Eigenvector
+  mod: 10b
+  plain: >-
+    A nonzero vector that $A$ only stretches or shrinks, without turning it off its line.
+  def: >-
+    If $A$ is $n \times n$, a \emph{nonzero} vector $\mathbf{x}$ in $\mathbb{R}^n$ is an eigenvector of $A$ if
+    $A\mathbf{x} = \lambda\mathbf{x}$ for some scalar $\lambda$. We say $\mathbf{x}$ is an eigenvector
+    \textbf{corresponding to} the \gl{eigenvalue}{eigenvalue} $\lambda$. To find them, solve
+    $(\lambda I - A)\mathbf{x} = \mathbf{0}$, or equivalently $(A - \lambda I)\mathbf{x} = \mathbf{0}$, for
+    each eigenvalue.
+  ex: >-
+    For $A = \begin{bmatrix} 3 & 0 \\ 8 & -1 \end{bmatrix}$: $A\begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix} = 3\begin{bmatrix} 1 \\ 2 \end{bmatrix}$,
+    so $(1, 2)$ is an eigenvector with eigenvalue 3.
+  watch: >-
+    \gl{eigenvalue}{Eigenvalue}. The eigenvector is the vector, and the eigenvalue is the scale factor.
+    $\mathbf{0}$ is \emph{never} an eigenvector, but $0$ \emph{can} be an eigenvalue.
+  see: [eigenvalue, eigenspace, characteristic-equation]
+
+- id: eigenvalue
+  term: >-
+    Eigenvalue
+  mod: 10b
+  plain: >-
+    The factor by which $A$ stretches its eigenvectors.
+  def: >-
+    A scalar $\lambda$ is an eigenvalue of the $n \times n$ matrix $A$ if $A\mathbf{x} = \lambda\mathbf{x}$ has a
+    nonzero solution $\mathbf{x}$. Equivalently, $(A - \lambda I)\mathbf{x} = \mathbf{0}$ has non-trivial
+    solutions, or $\lambda$ solves the \gl{characteristic-equation}{characteristic equation}
+    $\det(A - \lambda I) = 0$.
+  ex: >-
+    For $A = \begin{bmatrix} 3 & 0 \\ 8 & -1 \end{bmatrix}$: $\det(A - \lambda I) = (3 - \lambda)(-1 - \lambda) = 0$,
+    so $\lambda = 3$ and $\lambda = -1$. For a \gl{triangular}{triangular} matrix, the eigenvalues are the
+    diagonal entries.
+  watch: >-
+    $A$ is invertible if and only if $0$ is \emph{not} an eigenvalue. Also, row reducing $A$ changes its
+    eigenvalues, so never row reduce before finding them.
+  see: [eigenvector, characteristic-polynomial, algebraic-multiplicity, equivalence-theorem]
+
+- id: characteristic-equation
+  term: >-
+    Characteristic equation
+  mod: 10b
+  plain: >-
+    The equation you solve to find the eigenvalues.
+  def: >-
+    For an $n \times n$ matrix $A$, the equation $\det(A - \lambda I) = 0$ is the characteristic equation of
+    $A$. Its solutions are exactly the eigenvalues of $A$.
+  watch: >-
+    Subtract $\lambda$ only on the \emph{diagonal}. $A - \lambda I$ is not $A$ with $\lambda$ subtracted from
+    every entry.
+  see: [characteristic-polynomial, eigenvalue, determinant]
+
+- id: characteristic-polynomial
+  term: >-
+    Characteristic polynomial
+  mod: 10b
+  plain: >-
+    The polynomial in $\lambda$ that you get by expanding $\det(A - \lambda I)$.
+  def: >-
+    Expanding $\det(A - \lambda I)$ gives a polynomial of degree $n$ in $\lambda$, called the characteristic
+    polynomial of $A$. An $n \times n$ matrix has at most $n$ distinct eigenvalues.
+  ex: >-
+    For $A = \begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}$: $(1 - \lambda)^2 - 4 = \lambda^2 - 2\lambda - 3 = (\lambda - 3)(\lambda + 1)$.
+  watch: >-
+    Factor it fully. The power of each factor is the eigenvalue's \gl{algebraic-multiplicity}{algebraic
+    multiplicity}, which you will need when diagonalizing.
+  see: [characteristic-equation, algebraic-multiplicity]
+
+- id: eigenspace
+  term: >-
+    Eigenspace
+  mod: 10b
+  plain: >-
+    All the eigenvectors for one eigenvalue, together with the zero vector.
+  def: >-
+    For an eigenvalue $\lambda$ of $A$, the solution space of $(A - \lambda I)\mathbf{x} = \mathbf{0}$ is the
+    eigenspace of $A$ corresponding to $\lambda$. It is the \gl{nullspace}{nullspace} of $A - \lambda I$,
+    so it is a subspace. Its nonzero vectors are the eigenvectors for $\lambda$.
+  ex: >-
+    For $A = \begin{bmatrix} 3 & 0 \\ 8 & -1 \end{bmatrix}$ and $\lambda = 3$, the eigenspace is the line $\operatorname{span}\{(1, 2)\}$.
+  watch: >-
+    You usually report a \emph{basis} for each eigenspace. Each basis vector is one eigenvector you can put
+    into $P$ when diagonalizing.
+  see: [eigenvector, nullspace, geometric-multiplicity]
+
+- id: diagonalizable
+  term: >-
+    Diagonalizable
+  mod: 11a
+  plain: >-
+    A matrix is diagonalizable if a change of basis turns it into a diagonal matrix.
+  def: >-
+    A square matrix $A$ is diagonalizable if there is an invertible matrix $P$ such that $P^{-1}AP = D$ is
+    diagonal. An $n \times n$ matrix is diagonalizable if and only if it has $n$ linearly independent
+    eigenvectors. Then $D$ has the eigenvalues on its diagonal, and $A^k = PD^kP^{-1}$.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}$ is diagonalizable, with $D = \begin{bmatrix} 3 & 0 \\ 0 & -1 \end{bmatrix}$.
+    $\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$ is not: $\lambda = 1$ is a double root, but its eigenspace is
+    only one-dimensional.
+  watch: >-
+    Two separate facts: having $n$ \emph{distinct} eigenvalues guarantees diagonalizability, but repeated
+    eigenvalues do not rule it out. Compare the multiplicities to decide.
+  see: [diagonalizing-matrix, geometric-multiplicity, diagonal-matrix, powers]
+
+- id: diagonalizing-matrix
+  term: >-
+    Diagonalizing matrix $P$
+  plain_name: Diagonalizing matrix P
+  mod: 11a
+  plain: >-
+    The matrix of eigenvectors that converts $A$ into a diagonal matrix.
+  def: >-
+    If $P^{-1}AP = D$ with $D$ diagonal, the matrix $P$ is said to \textbf{diagonalize} $A$. To build it,
+    find a basis for each eigenspace and use those $n$ independent eigenvectors as the columns of $P$.
+  ex: >-
+    For $\begin{bmatrix} 1 & 2 \\ 2 & 1 \end{bmatrix}$: $P = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}$ and $D = \begin{bmatrix} 3 & 0 \\ 0 & -1 \end{bmatrix}$.
+  watch: >-
+    The order must match. If column $j$ of $P$ is an eigenvector for $\lambda$, then the $j$th diagonal entry
+    of $D$ must be $\lambda$. $P$ is not unique.
+  see: [diagonalizable, eigenspace]
+
+- id: algebraic-multiplicity
+  term: >-
+    Algebraic multiplicity
+  mod: 11a
+  plain: >-
+    How many times an eigenvalue appears as a root of the characteristic polynomial.
+  def: >-
+    If $\lambda_0$ is an eigenvalue of $A$, the number of times $(\lambda - \lambda_0)$ appears as a factor of
+    the characteristic polynomial is the algebraic multiplicity of $\lambda_0$.
+  ex: >-
+    If the characteristic polynomial is $(\lambda - 2)^3(\lambda + 1)$, then $\lambda = 2$ has algebraic multiplicity 3.
+  watch: >-
+    \gl{geometric-multiplicity}{Geometric multiplicity}. Algebraic multiplicity comes from the
+    \emph{polynomial}, while geometric multiplicity comes from the \emph{eigenspace}.
+  see: [geometric-multiplicity, characteristic-polynomial]
+
+- id: geometric-multiplicity
+  term: >-
+    Geometric multiplicity
+  mod: 11a
+  plain: >-
+    How many independent eigenvectors an eigenvalue has.
+  def: >-
+    The geometric multiplicity of an eigenvalue $\lambda_0$ is the dimension of its eigenspace, which is
+    $\operatorname{nullity}(A - \lambda_0 I)$. Always $1 \leq \text{geometric} \leq \text{algebraic}$. $A$ is
+    diagonalizable if and only if the two are \emph{equal} for every eigenvalue.
+  ex: >-
+    For $\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$, $\lambda = 1$ has algebraic multiplicity 2 but geometric multiplicity 1, so the matrix is not diagonalizable.
+  watch: >-
+    \gl{algebraic-multiplicity}{Algebraic multiplicity}. If the geometric multiplicity is smaller for any
+    eigenvalue, there are not enough eigenvectors to fill $P$.
+  see: [algebraic-multiplicity, eigenspace, nullity, diagonalizable]
+
+- id: markov-chain
+  term: >-
+    Markov chain
+  mod: 11a
+  app: true
+  plain: >-
+    A process that moves between states step by step, where the next step depends only on the current state.
+  def: >-
+    A Markov chain is described by a \gl{transition-matrix}{transition matrix} $P$ and a
+    \textbf{state vector} $\mathbf{x}$ of probabilities. Each step updates the state by
+    $\mathbf{x}^{(k+1)} = P\mathbf{x}^{(k)}$, so $\mathbf{x}^{(k)} = P^k\mathbf{x}^{(0)}$.
+  ex: >-
+    Google's PageRank algorithm, used to rank websites in search results, is based on a Markov chain.
+  see: [transition-matrix, steady-state, powers]
+
+- id: transition-matrix
+  term: >-
+    Transition matrix
+  mod: 11a
+  app: true
+  plain: >-
+    The matrix of probabilities for moving from each state to each other state.
+  def: >-
+    In a Markov chain, entry $p_{ij}$ of the transition matrix $P$ is the probability of moving from state
+    $j$ to state $i$ in one step. Every entry is between 0 and 1, and each column adds to 1.
+  watch: >-
+    Columns, not rows, add to 1 with this convention ($\mathbf{x}^{(k+1)} = P\mathbf{x}^{(k)}$). Some other
+    sources use rows instead.
+  see: [markov-chain, steady-state]
+
+- id: steady-state
+  term: >-
+    Steady-state vector
+  mod: 11a
+  app: true
+  plain: >-
+    The long-run state of a Markov chain, which stays the same from one step to the next.
+  def: >-
+    A steady-state vector $\mathbf{x}$ satisfies $P\mathbf{x} = \mathbf{x}$, so it is an
+    \gl{eigenvector}{eigenvector} of $P$ for the eigenvalue $\lambda = 1$, scaled so that its entries add to 1.
+  ex: >-
+    Solve $(P - I)\mathbf{x} = \mathbf{0}$, then divide the solution by the sum of its entries so that it
+    becomes a probability vector.
+  see: [markov-chain, eigenvector, eigenspace]

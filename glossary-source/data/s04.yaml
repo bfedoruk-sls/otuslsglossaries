@@ -1,0 +1,114 @@
+num: "04"
+id: determinants
+title: >-
+  Determinants
+mods: MODULES 3B TO 4B
+blurb: >-
+  The determinant turns a square matrix into a single number that tells you whether the matrix is
+  invertible. These terms cover how to compute it and what it is good for.
+entries:
+- id: determinant
+  term: >-
+    Determinant
+  mod: 3b
+  plain: >-
+    One number calculated from a square matrix. If it is zero, the matrix cannot be inverted.
+  def: >-
+    The determinant of an $n \times n$ matrix $A$, written $\det(A)$ or $|A|$, is a number computed by
+    \gl{cofactor-expansion}{cofactor expansion}. For a $2 \times 2$ matrix,
+    $\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc$. A square matrix is
+    \gl{invertible}{invertible} if and only if $\det(A) \neq 0$.
+  ex: >-
+    Useful properties: $\det(AB) = \det(A)\det(B)$; $\det(A^T) = \det(A)$;
+    $\det(A^{-1}) = 1/\det(A)$; $\det(kA) = k^n\det(A)$ for $n \times n$ $A$. Swapping two rows changes
+    the sign, scaling a row by $k$ multiplies the determinant by $k$, and adding a multiple of one row to
+    another changes nothing.
+  watch: >-
+    $|A|$ here means determinant, not absolute value, so it can be negative. Also,
+    $\det(A + B) \neq \det(A) + \det(B)$ in general.
+  see: [cofactor-expansion, triangular, characteristic-equation]
+
+- id: minor
+  term: >-
+    Minor
+  mod: 3b
+  plain: >-
+    The determinant of what is left after you cross out one row and one column.
+  def: >-
+    If $A$ is square, the minor of entry $a_{ij}$, written $M_{ij}$, is the determinant of the submatrix
+    that remains after deleting row $i$ and column $j$ from $A$.
+  ex: >-
+    For $A = \begin{bmatrix} 3 & 1 & -4 \\ 2 & 5 & 6 \\ 1 & 4 & 8 \end{bmatrix}$,
+    $M_{11} = \det\begin{bmatrix} 5 & 6 \\ 4 & 8 \end{bmatrix} = 16$.
+  watch: >-
+    \gl{cofactor}{Cofactor}. The cofactor is the minor with a sign attached, and the sign depends on
+    the position.
+  see: [cofactor, cofactor-expansion]
+
+- id: cofactor
+  term: >-
+    Cofactor
+  mod: 3b
+  plain: >-
+    A minor with a plus or minus sign attached, following a checkerboard pattern.
+  def: >-
+    The cofactor of entry $a_{ij}$ is $C_{ij} = (-1)^{i+j}M_{ij}$. The signs follow the checkerboard
+    $\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$.
+  ex: >-
+    In the example under \gl{minor}{Minor}, $C_{11} = +16$ and $C_{12} = -M_{12} = -(16 - 6) = -10$.
+  watch: >-
+    \gl{minor}{Minor}. Where the checkerboard has a $-$, the cofactor is the \emph{negative} of the minor.
+  see: [minor, cofactor-expansion]
+
+- id: cofactor-expansion
+  term: >-
+    Cofactor expansion
+  mod: 3b
+  plain: >-
+    Compute a determinant by working along one row or column, multiplying each entry by its cofactor and adding.
+  def: >-
+    For an $n \times n$ matrix $A$, along row $i$:
+    $\det(A) = a_{i1}C_{i1} + a_{i2}C_{i2} + \dots + a_{in}C_{in}$, or along column $j$:
+    $\det(A) = a_{1j}C_{1j} + \dots + a_{nj}C_{nj}$. Every row and column gives the same answer.
+  ex: >-
+    Expand along the row or column with the most zeros. Each zero entry wipes out a whole term.
+  see: [cofactor, three-by-three-trick, determinant]
+  aka: >-
+    Laplace expansion
+
+- id: three-by-three-trick
+  term: >-
+    The 3 × 3 trick
+  plain_name: The 3 x 3 trick
+  mod: 3b
+  plain: >-
+    A shortcut using diagonal products. It works only for $3 \times 3$ matrices.
+  def: >-
+    For a $3 \times 3$ matrix, copy the first two columns to the right of the matrix. Add the products of
+    the three diagonals running down to the right, then subtract the products of the three diagonals
+    running down to the left.
+  watch: >-
+    It works \emph{only} for $3 \times 3$ matrices. The same pattern on a $4 \times 4$ or larger matrix
+    gives a wrong answer, so use \gl{cofactor-expansion}{cofactor expansion} instead.
+  see: [cofactor-expansion, determinant]
+  aka: >-
+    rule of Sarrus
+
+- id: cramers-rule
+  term: >-
+    Cramer's Rule
+  plain_name: Cramer's Rule
+  mod: 4a
+  plain: >-
+    Solve a square system one variable at a time using ratios of determinants.
+  def: >-
+    If $A\mathbf{x} = \mathbf{b}$ is a system of $n$ equations in $n$ unknowns with $\det(A) \neq 0$, then
+    the system has a unique solution given by
+    $x_j = \dfrac{\det(A_j)}{\det(A)}$, where $A_j$ is $A$ with its $j$th column replaced by $\mathbf{b}$.
+  ex: >-
+    For $\begin{aligned} 2x + y &= 5 \\ x - y &= 1 \end{aligned}$:
+    $\det A = -3$, $\det A_1 = \det\begin{bmatrix} 5 & 1 \\ 1 & -1 \end{bmatrix} = -6$, so $x = 2$.
+  watch: >-
+    It only works when $A$ is square and $\det(A) \neq 0$. It is efficient when you need just one variable
+    from a small system.
+  see: [determinant, matrix-form]

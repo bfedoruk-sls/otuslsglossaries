@@ -1,0 +1,310 @@
+num: "09"
+id: transformations
+title: >-
+  Linear Transformations
+mods: MODULES 9 AND 10A
+blurb: >-
+  A matrix is also a machine: put a vector in and a new vector comes out. This section gives the
+  vocabulary for describing what that machine does and whether it can be reversed.
+entries:
+- id: function
+  term: >-
+    Function
+  mod: 9
+  plain: >-
+    A rule that assigns exactly one output to each input.
+  def: >-
+    A function $f$ from a set $A$ to a set $B$ is a rule that associates each element $a$ of $A$ with
+    exactly one element $b$ of $B$. We write $b = f(a)$ and call $b$ the \textbf{image} of $a$ under $f$.
+  see: [domain, codomain, range, transformation]
+
+- id: domain
+  term: >-
+    Domain
+  mod: 9
+  plain: >-
+    The set of allowed inputs.
+  def: >-
+    For a function $f$ from $A$ to $B$, the set $A$ is the domain. For $T\colon \mathbb{R}^n \to \mathbb{R}^m$,
+    the domain is $\mathbb{R}^n$.
+  ex: >-
+    For $T_A$ with $A$ of size $3 \times 5$, the domain is $\mathbb{R}^5$, matching the number of columns.
+  see: [codomain, range]
+
+- id: codomain
+  term: >-
+    Codomain
+  mod: 9
+  plain: >-
+    The set where outputs are allowed to land, whether or not every point there is actually reached.
+  def: >-
+    For a function $f$ from $A$ to $B$, the set $B$ is the codomain. For $T\colon \mathbb{R}^n \to \mathbb{R}^m$,
+    the codomain is $\mathbb{R}^m$.
+  watch: >-
+    \gl{range}{Range}. The codomain is where outputs \emph{could} go, while the range is where they
+    \emph{actually} go. The range can be smaller than the codomain.
+  see: [domain, range]
+
+- id: range
+  term: >-
+    Range
+  mod: 9
+  plain: >-
+    The set of outputs that are actually produced.
+  def: >-
+    The range of $f$ is the subset of the codomain consisting of all values $f(a)$ as $a$ varies over the
+    domain. For a matrix transformation $T_A$, the range $R(T_A)$ is the set of all $A\mathbf{x}$, which is
+    the \gl{column-space}{column space} of $A$.
+  ex: >-
+    For the projection onto the $x$-axis in $\mathbb{R}^2$, the codomain is $\mathbb{R}^2$ but the range is only the $x$-axis.
+  watch: >-
+    \gl{codomain}{Codomain}. They are equal only when every vector in the codomain is actually reached.
+  see: [codomain, column-space, kernel]
+  aka: >-
+    image (in other sources)
+
+- id: transformation
+  term: >-
+    Map / transformation
+  mod: 9
+  plain: >-
+    A function whose inputs and outputs are vectors.
+  def: >-
+    If $V$ and $W$ are vector spaces and $f$ is a function with domain $V$ and codomain $W$, then $f$ is a
+    map or transformation from $V$ to $W$, written $f\colon V \to W$. We say $f$ \textbf{maps} $V$ to $W$.
+  ex: >-
+    $T\colon \mathbb{R}^3 \to \mathbb{R}^2$, $T(x_1, x_2, x_3) = (x_1x_2,\ 2x_1 - x_3)$ is a transformation, but not a linear one.
+  see: [linear-transformation, operator, function]
+  aka: >-
+    mapping
+
+- id: operator
+  term: >-
+    Operator
+  mod: 9
+  plain: >-
+    A transformation from a space back into the same space.
+  def: >-
+    A transformation $f\colon V \to W$ with $V = W$ is called an operator on $V$. A matrix operator on
+    $\mathbb{R}^n$ comes from an $n \times n$ (square) matrix.
+  see: [linear-operator, transformation]
+
+- id: linear-transformation
+  term: >-
+    Linear transformation
+  mod: 9
+  plain: >-
+    A transformation where every output component is a linear equation in the inputs, with no squares, products or constants.
+  def: >-
+    $T\colon \mathbb{R}^n \to \mathbb{R}^m$ is linear if each component of the output is a linear
+    expression in $x_1, \dots, x_n$, that is, $w_i = a_{i1}x_1 + \dots + a_{in}x_n$. Equivalently, $T$ is
+    linear if $T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$ and $T(k\mathbf{u}) = kT(\mathbf{u})$.
+    Every linear transformation from $\mathbb{R}^n$ to $\mathbb{R}^m$ is multiplication by a matrix:
+    $T(\mathbf{x}) = A\mathbf{x}$.
+  ex: >-
+    $T(x, y) = (2x - y,\ x + 3y)$ is linear. $T(x, y) = (x + 1,\ y)$ is not, because
+    $T(\mathbf{0}) \neq \mathbf{0}$.
+  watch: >-
+    A quick test: every linear transformation sends $\mathbf{0}$ to $\mathbf{0}$. Passing that test is not
+    enough to prove linearity, but failing it proves the transformation is not linear.
+  see: [standard-matrix, matrix-transformation, linear-operator]
+
+- id: linear-operator
+  term: >-
+    Linear operator
+  mod: 9
+  plain: >-
+    A linear transformation from $\mathbb{R}^n$ back to $\mathbb{R}^n$.
+  def: >-
+    A linear transformation $T\colon \mathbb{R}^n \to \mathbb{R}^n$, where $m = n$, is called a linear
+    operator. Its \gl{standard-matrix}{standard matrix} is square.
+  ex: >-
+    Rotations, reflections, projections and dilations of the plane are linear operators on $\mathbb{R}^2$.
+  see: [operator, linear-transformation, rotation-operator]
+
+- id: standard-matrix
+  term: >-
+    Standard matrix
+  mod: 9
+  plain: >-
+    The matrix that performs the transformation. Its columns are what $T$ does to $\mathbf{e}_1, \mathbf{e}_2, \dots$
+  def: >-
+    If $T\colon \mathbb{R}^n \to \mathbb{R}^m$ is linear, the $m \times n$ matrix $A$ with $T(\mathbf{x}) = A\mathbf{x}$
+    is the standard matrix for $T$, written $[T]$. It can be built column by column:
+    $[T] = \big[\, T(\mathbf{e}_1) \mid T(\mathbf{e}_2) \mid \cdots \mid T(\mathbf{e}_n) \,\big]$.
+  ex: >-
+    For $T(x, y) = (2x - y,\ x + 3y)$: $T(\mathbf{e}_1) = (2, 1)$ and $T(\mathbf{e}_2) = (-1, 3)$, so
+    $[T] = \begin{bmatrix} 2 & -1 \\ 1 & 3 \end{bmatrix}$.
+  watch: >-
+    For a composition, $[T_2 \circ T_1] = [T_2][T_1]$. The transformation applied \emph{first} goes on the
+    \emph{right}.
+  see: [standard-unit-vectors, linear-transformation, composition]
+  aka: >-
+    $[T]$
+
+- id: matrix-transformation
+  term: >-
+    Matrix transformation $T_A$
+  plain_name: Matrix transformation T_A
+  mod: 9
+  plain: >-
+    The transformation you get by multiplying vectors by a fixed matrix $A$.
+  def: >-
+    For an $m \times n$ matrix $A$, the transformation $T_A\colon \mathbb{R}^n \to \mathbb{R}^m$ defined by
+    $T_A(\mathbf{x}) = A\mathbf{x}$ is called \textbf{multiplication by $A$}. Here $A$ is the
+    \gl{standard-matrix}{standard matrix} of $T_A$.
+  see: [standard-matrix, kernel, range]
+  aka: >-
+    multiplication by $A$
+
+- id: zero-transformation
+  term: >-
+    Zero transformation
+  mod: 9
+  plain: >-
+    Sends every vector to zero.
+  def: >-
+    The zero transformation $T\colon \mathbb{R}^n \to \mathbb{R}^m$ is $T(\mathbf{x}) = \mathbf{0}$ for every
+    $\mathbf{x}$. Its standard matrix is the $m \times n$ \gl{zero-matrix}{zero matrix}.
+  see: [identity-transformation, zero-matrix]
+
+- id: identity-transformation
+  term: >-
+    Identity transformation
+  mod: 9
+  plain: >-
+    Leaves every vector exactly as it is.
+  def: >-
+    The identity transformation (or identity operator) on $\mathbb{R}^n$ is $T(\mathbf{x}) = \mathbf{x}$. Its
+    standard matrix is $I_n$.
+  see: [zero-transformation, identity-matrix, inverse-transformation]
+
+- id: reflection-operator
+  term: >-
+    Reflection operator
+  mod: 9
+  plain: >-
+    Flips each vector across a mirror line or plane.
+  def: >-
+    A reflection operator maps each vector to its mirror image about a line (in $\mathbb{R}^2$) or a plane
+    (in $\mathbb{R}^3$) through the origin.
+  ex: >-
+    In $\mathbb{R}^2$: about the $x$-axis $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$, about the $y$-axis
+    $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$, and about $y = x$ $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$.
+  see: [rotation-operator, projection-operator, standard-matrix]
+
+- id: rotation-operator
+  term: >-
+    Rotation operator
+  mod: 9
+  plain: >-
+    Turns each vector through the same angle about the origin.
+  def: >-
+    The rotation operator on $\mathbb{R}^2$ rotates each vector counterclockwise through a fixed angle
+    $\theta$. Its standard matrix is
+    $\begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$.
+  ex: >-
+    For $\theta = 90^\circ$, the matrix is $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$, which sends $(1, 0)$ to $(0, 1)$.
+  watch: >-
+    A positive $\theta$ means counterclockwise. A clockwise rotation uses $-\theta$.
+  see: [reflection-operator, linear-operator]
+
+- id: dilation
+  term: >-
+    Dilation / contraction
+  mod: 9
+  plain: >-
+    Stretches or shrinks every vector by the same factor, keeping its direction.
+  def: >-
+    The operator $T(\mathbf{x}) = k\mathbf{x}$ with $k \geq 0$ is a \textbf{dilation} if $k \geq 1$ (it
+    increases length) and a \textbf{contraction} if $0 \leq k \leq 1$ (it decreases length). Its standard
+    matrix is $kI$.
+  ex: >-
+    A contraction by a factor of $\tfrac{1}{5}$ in $\mathbb{R}^2$ has matrix $\begin{bmatrix} 1/5 & 0 \\ 0 & 1/5 \end{bmatrix}$.
+  see: [scalar-multiple, linear-operator]
+
+- id: projection-operator
+  term: >-
+    Projection operator
+  mod: 9
+  plain: >-
+    Drops each vector straight down onto a line or plane, like casting a shadow.
+  def: >-
+    A projection operator maps each vector to its \gl{projection-onto-vector}{orthogonal projection} on a line
+    or plane through the origin.
+  ex: >-
+    Onto the $x$-axis in $\mathbb{R}^2$: $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$. Onto the $xy$-plane
+    in $\mathbb{R}^3$: $\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$.
+  watch: >-
+    A projection is never one-to-one, because it squashes a whole direction to zero. So it has no inverse.
+  see: [projection-onto-vector, one-to-one, kernel]
+
+- id: composition
+  term: >-
+    Composition
+  mod: 10a
+  plain: >-
+    Do one transformation, then another.
+  def: >-
+    If $T_A\colon \mathbb{R}^n \to \mathbb{R}^k$ and $T_B\colon \mathbb{R}^k \to \mathbb{R}^m$, the
+    composition $T_B \circ T_A$ applies $T_A$ first, then $T_B$:
+    $(T_B \circ T_A)(\mathbf{x}) = T_B(T_A(\mathbf{x}))$. Its standard matrix is the product $BA$.
+  ex: >-
+    ``Project onto the $x$-axis, then contract by $\tfrac{1}{5}$'' has matrix $\begin{bmatrix} 1/5 & 0 \\ 0 & 1/5 \end{bmatrix}\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1/5 & 0 \\ 0 & 0 \end{bmatrix}$.
+  watch: >-
+    Read $T_B \circ T_A$ from right to left. Because matrix multiplication is not commutative, the order
+    usually changes the result.
+  see: [matrix-product, standard-matrix]
+
+- id: one-to-one
+  term: >-
+    One-to-one
+  mod: 10a
+  plain: >-
+    Different inputs always give different outputs, so no two vectors land in the same place.
+  def: >-
+    $T\colon \mathbb{R}^n \to \mathbb{R}^m$ is one-to-one if it maps distinct vectors to distinct vectors:
+    $T(\mathbf{u}) = T(\mathbf{v})$ implies $\mathbf{u} = \mathbf{v}$. A linear $T$ is one-to-one if and only
+    if its \gl{kernel}{kernel} is $\{\mathbf{0}\}$. For a square matrix $A$, $T_A$ is one-to-one exactly when
+    $A$ is invertible.
+  ex: >-
+    A rotation of the plane is one-to-one. A projection onto the $x$-axis is not, since $(3, 1)$ and $(3, 5)$ both map to $(3, 0)$.
+  watch: >-
+    One-to-one is about \emph{inputs} never colliding. Whether every output is reached is a different
+    question, about the range (being ``onto'').
+  see: [kernel, inverse-transformation, equivalence-theorem]
+  aka: >-
+    injective (in other sources)
+
+- id: kernel
+  term: >-
+    Kernel
+  mod: 10a
+  plain: >-
+    All the input vectors that the transformation sends to zero.
+  def: >-
+    For a matrix transformation $T_A\colon \mathbb{R}^n \to \mathbb{R}^m$, the set of all $\mathbf{x}$ with
+    $T_A(\mathbf{x}) = \mathbf{0}$ is called the kernel of $T_A$, written $\ker(T_A)$. It is a subspace of
+    $\mathbb{R}^n$, and it equals the \gl{nullspace}{nullspace} of $A$.
+  ex: >-
+    The kernel of the projection onto the $x$-axis in $\mathbb{R}^2$ is the $y$-axis.
+  watch: >-
+    \gl{nullspace}{Nullspace}. Kernel and nullspace describe the same set. ``Kernel'' is used when talking
+    about the transformation, and ``nullspace'' when talking about the matrix.
+  see: [nullspace, range, one-to-one]
+
+- id: inverse-transformation
+  term: >-
+    Inverse transformation
+  mod: 10a
+  plain: >-
+    The transformation that undoes $T$, returning every output to its original input.
+  def: >-
+    If $T_A\colon \mathbb{R}^n \to \mathbb{R}^n$ is a one-to-one linear operator, then $A$ is invertible and
+    $T_A^{-1} = T_{A^{-1}}$ is the inverse of $T_A$. The two cancel each other:
+    $T_A^{-1}(T_A(\mathbf{x})) = \mathbf{x}$.
+  ex: >-
+    For $T(x_1, x_2) = (x_1 + 3x_2,\ 2x_1 + 8x_2)$, $A = \begin{bmatrix} 1 & 3 \\ 2 & 8 \end{bmatrix}$ and
+    $A^{-1} = \tfrac{1}{2}\begin{bmatrix} 8 & -3 \\ -2 & 1 \end{bmatrix}$, so
+    $T^{-1}(w_1, w_2) = (4w_1 - \tfrac{3}{2}w_2,\ -w_1 + \tfrac{1}{2}w_2)$.
+  see: [one-to-one, inverse, identity-transformation]

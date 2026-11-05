@@ -1,0 +1,153 @@
+num: "07"
+id: basis
+title: >-
+  Span, Independence and Basis
+mods: MODULES 7A AND 7B
+blurb: >-
+  These three ideas are easy to blur together. Span is about what you can reach, independence is about
+  whether any vector is redundant, and a basis is a set that reaches everything with no redundant vectors.
+entries:
+- id: span
+  term: >-
+    Span
+  mod: 7a
+  plain: >-
+    Everything you can build from a set of vectors using linear combinations.
+  def: >-
+    If $S = \{\mathbf{v}_1, \dots, \mathbf{v}_r\}$ is a set of vectors in $V$, the set of all
+    \gl{linear-combination}{linear combinations} $k_1\mathbf{v}_1 + \dots + k_r\mathbf{v}_r$ is a subspace of
+    $V$ called the \textbf{space spanned by} $S$, written $\operatorname{span}(S)$ or
+    $\operatorname{span}\{\mathbf{v}_1, \dots, \mathbf{v}_r\}$. We say the vectors \textbf{span} that
+    subspace.
+  ex: >-
+    $\operatorname{span}\{(1, 0, 0), (0, 1, 0)\}$ is the $xy$-plane in $\mathbb{R}^3$. Two non-parallel
+    vectors in $\mathbb{R}^2$ span all of $\mathbb{R}^2$.
+  watch: >-
+    \gl{basis}{Basis}. A spanning set can contain extra, redundant vectors, while a basis cannot. Also,
+    ``span'' is used both as a noun (the span, which is a set) and as a verb (to span, which is a property).
+  see: [spanning-set, linearly-independent, basis, column-space]
+
+- id: spanning-set
+  term: >-
+    Spanning set
+  mod: 7a
+  plain: >-
+    A set of vectors that can build every vector in the space.
+  def: >-
+    $S$ is a spanning set for $V$ (or $S$ spans $V$) if every vector in $V$ is a linear combination of the
+    vectors in $S$, that is, $\operatorname{span}(S) = V$. To test whether $S$ spans $\mathbb{R}^n$, check
+    that $A\mathbf{x} = \mathbf{b}$ is consistent for \emph{every} $\mathbf{b}$, where the columns of $A$
+    are the vectors of $S$.
+  ex: >-
+    $\{(1, 0), (0, 1), (1, 1)\}$ spans $\mathbb{R}^2$, but it is not linearly independent.
+  watch: >-
+    In $\mathbb{R}^n$, you need at least $n$ vectors to span. Having $n$ vectors does not guarantee it, though:
+    they might be dependent.
+  see: [span, basis, dimension]
+
+- id: linearly-independent
+  term: >-
+    Linearly independent / dependent
+  mod: 7a
+  plain: >-
+    Independent means no vector in the set can be built from the others. Dependent means at least one is redundant.
+  def: >-
+    A set $S = \{\mathbf{v}_1, \dots, \mathbf{v}_r\}$ with two or more vectors is \textbf{linearly
+    independent} if no vector in $S$ is a linear combination of the others. Otherwise it is
+    \textbf{linearly dependent}. \textbf{Test:} $S$ is independent if and only if
+    $k_1\mathbf{v}_1 + \dots + k_r\mathbf{v}_r = \mathbf{0}$ has \emph{only} the
+    \gl{trivial-solution}{trivial solution} $k_1 = \dots = k_r = 0$.
+  ex: >-
+    $\{(1, 2), (2, 4)\}$ is dependent because $(2, 4) = 2(1, 2)$. Any set containing $\mathbf{0}$ is
+    dependent. More than $n$ vectors in $\mathbb{R}^n$ are always dependent.
+  watch: >-
+    Dependent does not mean \emph{every} vector is a combination of the others, only that at least one is.
+    The test equation always has the trivial solution, so the question is whether it has any other
+    solutions.
+  see: [span, basis, trivial-solution, wronskian]
+
+- id: wronskian
+  term: >-
+    Wronskian
+  mod: 7b
+  app: true
+  plain: >-
+    A determinant that can show a set of functions is linearly independent.
+  def: >-
+    For functions $f_1, \dots, f_n$ that are $n - 1$ times differentiable, the Wronskian $W(x)$ is the
+    determinant of the $n \times n$ matrix whose first row is $f_1, \dots, f_n$, whose second row is their
+    first derivatives, and so on down to the $(n-1)$st derivatives.
+    If $W(x) \neq 0$ for at least one $x$, the functions are linearly independent.
+  ex: >-
+    For $\{1, x\}$, $W = \begin{vmatrix} 1 & x \\ 0 & 1 \end{vmatrix} = 1 \neq 0$, so they are independent.
+  watch: >-
+    It is a one-way test. If $W(x) = 0$ for every $x$, that alone does \emph{not} prove the functions are
+    dependent. You will see this again in second-year differential equations.
+  see: [linearly-independent, determinant, function-space]
+
+- id: basis
+  term: >-
+    Basis
+  mod: 7b
+  plain: >-
+    A minimal toolkit for a space. It reaches every vector, with no redundant pieces.
+  def: >-
+    A set $S = \{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ in $V$ is a basis for $V$ if (1) $S$ is
+    \gl{linearly-independent}{linearly independent} and (2) $S$ \gl{spanning-set}{spans} $V$. Every vector
+    in $V$ can then be written as a linear combination of the basis vectors in exactly \emph{one} way.
+  ex: >-
+    $\{(1, 1), (1, -1)\}$ is a basis for $\mathbb{R}^2$. In $\mathbb{R}^n$, exactly $n$ vectors form a
+    basis if they are independent \emph{or} if they span, because either condition implies the other.
+  watch: >-
+    A space has many different bases, but they all contain the same number of vectors, which is the
+    \gl{dimension}{dimension}. Saying ``the basis'' is usually wrong unless you mean the
+    \gl{standard-basis}{standard basis}.
+  see: [span, linearly-independent, dimension, coordinate-vector]
+
+- id: standard-basis
+  term: >-
+    Standard basis
+  mod: 7b
+  plain: >-
+    The most natural basis, built from 1s and 0s.
+  def: >-
+    The standard basis for $\mathbb{R}^n$ is $\{\mathbf{e}_1, \mathbf{e}_2, \dots, \mathbf{e}_n\}$, the
+    \gl{standard-unit-vectors}{standard unit vectors}. For $P_n$ it is $\{1, x, x^2, \dots, x^n\}$. For
+    $M_{22}$ it is the four matrices with a single 1 and zeros elsewhere.
+  ex: >-
+    In the standard basis, the coordinate vector of $(4, -2, 7)$ is $(4, -2, 7)$ itself.
+  see: [basis, standard-unit-vectors, standard-matrix]
+
+- id: coordinates
+  term: >-
+    Coordinates relative to a basis
+  mod: 7b
+  plain: >-
+    The recipe of how much of each basis vector you need to build $\mathbf{v}$.
+  def: >-
+    If $S = \{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ is a basis for $V$ and
+    $\mathbf{v} = c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots + c_n\mathbf{v}_n$, then the scalars
+    $c_1, \dots, c_n$ are the coordinates of $\mathbf{v}$ relative to $S$. They are unique because $S$ is a
+    basis.
+  ex: >-
+    With $S = \{(1, 1), (1, -1)\}$: $(5, 1) = 3(1, 1) + 2(1, -1)$, so the coordinates are $3$ and $2$.
+  see: [coordinate-vector, basis]
+
+- id: coordinate-vector
+  term: >-
+    Coordinate vector $(\mathbf{v})_S$
+  plain_name: Coordinate vector (v)_S
+  mod: 7b
+  plain: >-
+    The coordinates of $\mathbf{v}$ relative to a basis, collected into a vector.
+  def: >-
+    The vector $(\mathbf{v})_S = (c_1, c_2, \dots, c_n)$, built from the \gl{coordinates}{coordinates} of
+    $\mathbf{v}$ relative to the basis $S$, is the coordinate vector of $\mathbf{v}$ relative to $S$. If $S$ is
+    \gl{orthonormal-basis}{orthonormal},
+    $(\mathbf{u})_S = (\langle \mathbf{u}, \mathbf{v}_1 \rangle, \dots, \langle \mathbf{u}, \mathbf{v}_n \rangle)$.
+  ex: >-
+    From the example under coordinates, $(\,(5, 1)\,)_S = (3, 2)$.
+  watch: >-
+    The order of the basis vectors matters. Reordering $S$ reorders the coordinate vector. Also,
+    $(\mathbf{v})_S$ is usually different from $\mathbf{v}$ itself.
+  see: [coordinates, basis, orthonormal-basis]

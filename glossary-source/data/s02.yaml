@@ -1,0 +1,360 @@
+num: "02"
+id: matrices
+title: >-
+  Matrices and Matrix Algebra
+mods: MODULES 2A AND 2B
+blurb: >-
+  Matrices let you write a whole system as one object and do algebra with it. Watch for the places
+  where matrix algebra behaves differently from ordinary algebra with numbers.
+entries:
+- id: homogeneous
+  term: >-
+    Homogeneous system
+  mod: 2a
+  plain: >-
+    A system where every right-hand side is zero.
+  def: >-
+    A system of linear equations is homogeneous if all the constant terms are zero, that is, it has the form
+    $A\mathbf{x} = \mathbf{0}$. Every homogeneous system is \gl{consistent}{consistent}, because
+    $\mathbf{x} = \mathbf{0}$ is always a solution.
+  ex: >-
+    $2x - y + z = 0,\ \ x + 3y = 0$ is homogeneous.
+  watch: >-
+    A homogeneous system can never be inconsistent. The only question is whether it has just the trivial
+    solution or infinitely many solutions.
+  see: [trivial-solution, nullspace]
+
+- id: trivial-solution
+  term: >-
+    Trivial / non-trivial solution
+  mod: 2a
+  plain: >-
+    The trivial solution is the all-zeros answer. A non-trivial solution is any other answer.
+  def: >-
+    For a \gl{homogeneous}{homogeneous} system, $x_1 = 0, x_2 = 0, \dots, x_n = 0$ is called the
+    \textbf{trivial solution}. Any other solution is \textbf{non-trivial}. If a homogeneous system has more
+    unknowns than equations, it has infinitely many solutions, so it has non-trivial ones.
+  watch: >-
+    In \gl{linearly-independent}{linear independence}, the trivial solution is the test: vectors are
+    independent exactly when $k_1\mathbf{v}_1 + \dots + k_r\mathbf{v}_r = \mathbf{0}$ has \emph{only} the
+    trivial solution.
+  see: [homogeneous, linearly-independent, equivalence-theorem]
+
+- id: matrix
+  term: >-
+    Matrix
+  mod: 2a
+  plain: >-
+    A rectangular grid of numbers.
+  def: >-
+    A matrix is a rectangular array of numbers. The numbers in the array are its
+    \gl{entry}{entries}. Matrices are usually named with capital letters such as $A$, $B$ or $C$.
+  ex: >-
+    $A = \begin{bmatrix} 2 & 0 & -1 \\ 5 & 3 & 4 \end{bmatrix}$ is a $2 \times 3$ matrix.
+  see: [entry, size, square-matrix]
+
+- id: entry
+  term: >-
+    Entry
+  mod: 2a
+  plain: >-
+    One number in a matrix, located by its row and column.
+  def: >-
+    The entry in row $i$ and column $j$ of $A$ is written $a_{ij}$ or $(A)_{ij}$. The row number always
+    comes first.
+  ex: >-
+    In the matrix $A$ under \gl{matrix}{Matrix}, $a_{13} = -1$ and $a_{21} = 5$.
+  see: [matrix, size]
+  aka: >-
+    element
+
+- id: size
+  term: >-
+    Size
+  mod: 2a
+  plain: >-
+    How many rows and columns a matrix has, always in that order.
+  def: >-
+    A matrix with $m$ rows and $n$ columns has size $m \times n$, read ``$m$ by $n$''.
+  ex: >-
+    A $3 \times 5$ matrix has 3 rows and 5 columns.
+  watch: >-
+    Rows first, columns second. A $2 \times 3$ matrix and a $3 \times 2$ matrix are different sizes.
+  see: [matrix, matrix-product, order]
+  aka: >-
+    dimensions of a matrix
+
+- id: square-matrix
+  term: >-
+    Square matrix
+  mod: 2a
+  plain: >-
+    A matrix with the same number of rows and columns.
+  def: >-
+    A square matrix is a matrix with the same number of rows as columns. An $n \times n$ matrix is said to
+    have \gl{order}{order} $n$. Determinants, inverses, traces, eigenvalues and powers are only defined for
+    square matrices.
+  see: [order, main-diagonal, determinant]
+
+- id: order
+  term: >-
+    Order
+  mod: 2a
+  plain: >-
+    For a square matrix, the single number that gives its size.
+  def: >-
+    An $n \times n$ \gl{square-matrix}{square matrix} is said to be of order $n$.
+  ex: >-
+    $I_3$ is the identity matrix of order 3.
+  watch: >-
+    Order is not the same as \gl{rank}{rank} or \gl{dimension}{dimension}. A matrix of order 3 can have
+    rank 0, 1, 2 or 3.
+  see: [square-matrix, size]
+
+- id: main-diagonal
+  term: >-
+    Main diagonal
+  mod: 2a
+  plain: >-
+    The entries running from the top-left corner to the bottom-right corner.
+  def: >-
+    The main diagonal of a square matrix $A$ consists of the entries $a_{11}, a_{22}, \dots, a_{nn}$.
+  see: [trace, diagonal-matrix, triangular]
+
+- id: row-column-vector
+  term: >-
+    Row vector / column vector
+  mod: 2a
+  plain: >-
+    A matrix that is only one row tall, or only one column wide.
+  def: >-
+    A matrix with only one column is a \textbf{column vector} (or column matrix). A matrix with only one
+    row is a \textbf{row vector} (or row matrix). Vectors in $\mathbb{R}^n$ are usually written as column
+    vectors when doing matrix algebra.
+  ex: >-
+    $\begin{bmatrix} 3 \\ -1 \end{bmatrix}$ is a column vector, and $[\,5\ \ -7\,]$ is a row vector.
+  watch: >-
+    \gl{row-col-vectors-of-a}{The row and column vectors \emph{of} a matrix}: those are the individual rows
+    and columns pulled out of a bigger matrix.
+  see: [vector, row-col-vectors-of-a]
+
+- id: equal-matrices
+  term: >-
+    Equal matrices
+  mod: 2a
+  plain: >-
+    Same size, and every matching entry is the same.
+  def: >-
+    Two matrices are equal if they have the same size and their corresponding entries are equal:
+    $a_{ij} = b_{ij}$ for all $i$ and $j$.
+  see: [size, entry]
+
+- id: matrix-addition
+  term: >-
+    Matrix addition
+  mod: 2a
+  plain: >-
+    Add matching entries. This only works when the sizes match.
+  def: >-
+    If $A$ and $B$ have the same size, $A + B$ is the matrix with entries $(A + B)_{ij} = a_{ij} + b_{ij}$.
+    Matrices of different sizes cannot be added.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} + \begin{bmatrix} 0 & 5 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 1 & 7 \\ 2 & 6 \end{bmatrix}$
+  see: [scalar-multiple, zero-matrix]
+
+- id: scalar
+  term: >-
+    Scalar
+  mod: 2a
+  plain: >-
+    Just a number, as opposed to a vector or a matrix.
+  def: >-
+    A scalar is a real number. In vector language, quantities that are completely determined by a single
+    number (such as temperature or mass) are scalars, while quantities that need both
+    \gl{vector}{magnitude and direction} are vectors.
+  see: [scalar-multiple, vector]
+
+- id: scalar-multiple
+  term: >-
+    Scalar multiple
+  mod: 2a
+  plain: >-
+    Multiply every entry by the same number.
+  def: >-
+    If $A$ is a matrix and $c$ is a scalar, then $cA$ is the matrix with entries $(cA)_{ij} = c\,a_{ij}$. The
+    matrix $cA$ is called a scalar multiple of $A$. The same idea applies to vectors: $k\mathbf{v}$ scales
+    every component of $\mathbf{v}$ by $k$.
+  ex: >-
+    $3\begin{bmatrix} 1 & -2 \\ 0 & 4 \end{bmatrix} = \begin{bmatrix} 3 & -6 \\ 0 & 12 \end{bmatrix}$
+  see: [scalar, linear-combination, parallel]
+
+- id: linear-combination
+  term: >-
+    Linear combination
+  mod: 2a
+  plain: >-
+    A sum of things, each scaled by a number.
+  def: >-
+    If $\mathbf{v}_1, \dots, \mathbf{v}_r$ are vectors (or matrices of the same size) and $k_1, \dots, k_r$
+    are scalars, then $k_1\mathbf{v}_1 + k_2\mathbf{v}_2 + \dots + k_r\mathbf{v}_r$ is a linear combination
+    of them. The scalars $k_i$ are the \gl{coefficient}{coefficients} of the linear combination.
+  ex: >-
+    $(7, 1) = 2(2, -1) + 3(1, 1)$ is a linear combination of $(2,-1)$ and $(1,1)$.
+  watch: >-
+    \gl{span}{Span}. A linear combination is one particular vector. The span is the set of
+    \emph{all} possible linear combinations.
+  see: [span, linearly-independent, matrix-form]
+
+- id: matrix-product
+  term: >-
+    Matrix product
+  mod: 2a
+  plain: >-
+    Each entry of $AB$ is a row of $A$ dotted with a column of $B$.
+  def: >-
+    If $A$ is $m \times r$ and $B$ is $r \times n$, then $AB$ is the $m \times n$ matrix whose $(i,j)$ entry
+    is row $i$ of $A$ times column $j$ of $B$: $(AB)_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{ir}b_{rj}$.
+    The product is undefined unless the number of columns of $A$ equals the number of rows of $B$.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix}\begin{bmatrix} 4 \\ 5 \end{bmatrix} = \begin{bmatrix} 14 \\ 15 \end{bmatrix}$
+  watch: >-
+    Matrix multiplication is \textbf{not commutative}: usually $AB \neq BA$, and one of them may not even
+    be defined. Also, $AB = 0$ does not force $A = 0$ or $B = 0$.
+  see: [size, dot-product, composition]
+
+- id: coefficient-matrix
+  term: >-
+    Coefficient matrix
+  mod: 2a
+  plain: >-
+    The grid of coefficients of a system, without the right-hand sides.
+  def: >-
+    For a system written as $A\mathbf{x} = \mathbf{b}$, the $m \times n$ matrix $A$ of coefficients is the
+    coefficient matrix. The vector $\mathbf{x}$ holds the unknowns and $\mathbf{b}$ holds the constants.
+  watch: >-
+    \gl{augmented-matrix}{Augmented matrix}: that is $[\,A \mid \mathbf{b}\,]$, which includes the
+    constants.
+  see: [matrix-form, augmented-matrix]
+
+- id: matrix-form
+  term: >-
+    Matrix form $A\mathbf{x} = \mathbf{b}$
+  plain_name: Matrix form Ax = b
+  mod: 2a
+  plain: >-
+    A whole system of equations written as one matrix equation.
+  def: >-
+    Any system of $m$ linear equations in $n$ unknowns can be written as $A\mathbf{x} = \mathbf{b}$, where
+    $A$ is the $m \times n$ \gl{coefficient-matrix}{coefficient matrix}, $\mathbf{x}$ is the column vector of
+    unknowns, and $\mathbf{b}$ is the column vector of constants. $A\mathbf{x}$ is a
+    \gl{linear-combination}{linear combination} of the columns of $A$, with the entries of $\mathbf{x}$ as
+    the coefficients.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 \\ 3 & -1 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 5 \\ 1 \end{bmatrix}$
+    is the system $x + 2y = 5,\ 3x - y = 1$.
+  see: [system, column-space]
+
+- id: transpose
+  term: >-
+    Transpose
+  mod: 2a
+  plain: >-
+    Flip a matrix so that its rows become its columns.
+  def: >-
+    If $A$ is $m \times n$, its transpose $A^T$ is the $n \times m$ matrix with $(A^T)_{ij} = a_{ji}$.
+    Useful rules: $(A^T)^T = A$, $(A + B)^T = A^T + B^T$, and $(AB)^T = B^TA^T$.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}^T = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$
+  watch: >-
+    $(AB)^T = B^TA^T$. The order reverses, just as it does for inverses.
+  see: [symmetric, inverse]
+
+- id: trace
+  term: >-
+    Trace
+  mod: 2a
+  plain: >-
+    Add up the numbers on the main diagonal.
+  def: >-
+    If $A$ is a square matrix, the trace of $A$, written $\operatorname{tr}(A)$, is the sum of the entries on
+    the \gl{main-diagonal}{main diagonal}. The trace is undefined if $A$ is not square.
+  ex: >-
+    $\operatorname{tr}\begin{bmatrix} 2 & 7 \\ -1 & 3 \end{bmatrix} = 2 + 3 = 5$
+  watch: >-
+    \gl{determinant}{Determinant}. Both turn a square matrix into one number, but the trace is a
+    \emph{sum} of the diagonal entries and has nothing to do with invertibility.
+  see: [main-diagonal, determinant]
+
+- id: zero-matrix
+  term: >-
+    Zero matrix
+  mod: 2b
+  plain: >-
+    A matrix full of zeros. It acts like the number 0.
+  def: >-
+    A matrix whose entries are all zero is a zero matrix, written $0$ or $0_{m \times n}$. For any matrix
+    $A$ of the same size, $A + 0 = A$ and $A - A = 0$.
+  watch: >-
+    Unlike with numbers, $AB = 0$ is possible even when neither $A$ nor $B$ is a zero matrix.
+  see: [identity-matrix, zero-vector]
+
+- id: identity-matrix
+  term: >-
+    Identity matrix
+  mod: 2b
+  plain: >-
+    1s on the diagonal and 0s everywhere else. It acts like the number 1.
+  def: >-
+    A square matrix with 1s on the main diagonal and 0s everywhere else is an identity matrix, written $I$
+    or $I_n$. If $A$ is $m \times n$, then $AI_n = A$ and $I_mA = A$.
+  ex: >-
+    $I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$
+  see: [inverse, rref, identity-transformation]
+
+- id: invertible
+  term: >-
+    Invertible / singular
+  mod: 2b
+  plain: >-
+    Invertible means the matrix can be undone. Singular means it cannot.
+  def: >-
+    A square matrix $A$ is \textbf{invertible} if there is a matrix $B$ of the same size with $AB = BA = I$.
+    If no such $B$ exists, $A$ is \textbf{singular}. A square matrix is invertible exactly when
+    $\det(A) \neq 0$.
+  ex: >-
+    $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$ is singular, because $\det = 1\cdot 4 - 2 \cdot 2 = 0$.
+  watch: >-
+    Singular means \emph{not} invertible. It is easy to read it as ``special'' or ``single''. Only square
+    matrices can be invertible.
+  see: [inverse, equivalence-theorem, determinant]
+  aka: >-
+    nonsingular (for invertible)
+
+- id: inverse
+  term: >-
+    Inverse
+  mod: 2b
+  plain: >-
+    The matrix that undoes $A$, so that multiplying by both gives the identity.
+  def: >-
+    If $A$ is invertible, the matrix $B$ with $AB = BA = I$ is unique and is called the inverse of $A$,
+    written $A^{-1}$. For a $2 \times 2$ matrix,
+    $\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \dfrac{1}{ad - bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
+    provided $ad - bc \neq 0$. In general, row reduce $[\,A \mid I\,]$ to $[\,I \mid A^{-1}\,]$.
+  watch: >-
+    $(AB)^{-1} = B^{-1}A^{-1}$. The order reverses. Also, $A^{-1}$ does \emph{not} mean $1/A$: matrices
+    cannot be divided.
+  see: [invertible, gauss-jordan, inverse-transformation]
+
+- id: powers
+  term: >-
+    Powers of a matrix
+  mod: 2b
+  plain: >-
+    Multiply a square matrix by itself repeatedly.
+  def: >-
+    For a square matrix $A$: $A^0 = I$ and $A^n = AA\cdots A$ ($n$ factors). If $A$ is invertible,
+    $A^{-n} = (A^{-1})^n$. The laws $A^rA^s = A^{r+s}$ and $(A^r)^s = A^{rs}$ hold.
+  watch: >-
+    $A^2$ is $AA$, not the matrix of squared entries. Also, $(AB)^2 \neq A^2B^2$ in general.
+  see: [diagonalizable, matrix-product]

@@ -1,0 +1,44 @@
+- {name: "3 × 3 trick", to: three-by-three-trick}
+- {name: "Additive inverse", to: negative}
+- {name: "Basic variable", to: leading-variable}
+- {name: "Closure under addition", to: closure}
+- {name: "Closure under scalar multiplication", to: closure}
+- {name: "Contraction", to: dilation}
+- {name: "Direction", to: vector}
+- {name: "Euclidean inner product", to: dot-product}
+- {name: "Euclidean norm", to: norm}
+- {name: "Free variable", to: leading-variable}
+- {name: "Image", to: range}
+- {name: "Inconsistent", to: consistent}
+- {name: "Initial point", to: components}
+- {name: "Injective", to: one-to-one}
+- {name: "Invertible Matrix Theorem", to: equivalence-theorem}
+- {name: "Laplace expansion", to: cofactor-expansion}
+- {name: "Length", to: norm}
+- {name: "Linearly dependent", to: linearly-independent}
+- {name: "Lower triangular", to: triangular}
+- {name: "Magnitude", to: vector}
+- {name: "Mapping", to: transformation}
+- {name: "Multiplication by A", to: matrix-transformation}
+- {name: "Nonlinear equation", to: linear-equation}
+- {name: "Nonsingular", to: invertible}
+- {name: "Non-trivial solution", to: trivial-solution}
+- {name: "Normalizing", to: unit-vector}
+- {name: "Null space", to: nullspace}
+- {name: "Perpendicular", to: orthogonal}
+- {name: "Pivot", to: leading-one}
+- {name: "Rank–Nullity Theorem", to: rank-nullity}
+- {name: "Row operations", to: elementary-row-operations}
+- {name: "Rule of Sarrus", to: three-by-three-trick}
+- {name: "Scalar product", to: dot-product}
+- {name: "Singular", to: invertible}
+- {name: "Solution space", to: nullspace}
+- {name: "State vector", to: markov-chain}
+- {name: "Stiffness matrix", to: flexibility-matrix}
+- {name: "Terminal point", to: components}
+- {name: "Underdetermined", to: overdetermined}
+- {name: "Unit circle", to: unit-sphere}
+- {name: "Upper triangular", to: triangular}
+- {name: "Variable", to: unknown}
+- {name: "Vector component along a", to: projection-onto-vector}
+- {name: "W perp", to: orthogonal-complement}

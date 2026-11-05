@@ -1,0 +1,392 @@
+num: "05"
+id: vectors
+title: >-
+  Vectors in $\mathbb{R}^n$
+title_caps: 'VECTORS IN $\mathbb{R}^n$'
+mods: MODULES 4B AND 5
+blurb: >-
+  Vectors give linear algebra its geometry: arrows with length and direction, and the lines and
+  planes they describe. Most of these ideas come back later in more general settings.
+entries:
+- id: vector
+  term: >-
+    Vector
+  mod: 4b
+  plain: >-
+    A quantity with both a size and a direction, often drawn as an arrow.
+  def: >-
+    Quantities that need both \textbf{magnitude} (size) and \textbf{direction} to be completely determined
+    are vectors. In $\mathbb{R}^n$, a vector is an ordered list of $n$ numbers called its
+    \gl{components}{components}. Vectors are written in bold, as in $\mathbf{u}$, $\mathbf{v}$ or
+    $\mathbf{w}$.
+  ex: >-
+    A velocity of 80 km/h heading north is a vector. A temperature of 21 degrees is a scalar.
+  watch: >-
+    \gl{vector-space}{Vector space}. Later in the course, a ``vector'' means any object in a vector space,
+    such as a matrix, a polynomial or a function, not just an arrow.
+  see: [components, scalar, norm, vector-space]
+
+- id: components
+  term: >-
+    Components
+  mod: 4b
+  plain: >-
+    The individual numbers that make up a vector.
+  def: >-
+    If a vector is drawn from an \textbf{initial point} (its tail) to a \textbf{terminal point} (its tip),
+    then, with its initial point at the origin, the coordinates of the terminal point are the components of
+    the vector: $\mathbf{u} = (u_1, u_2, \dots, u_n)$. The vector from $P_1(x_1, y_1)$ to $P_2(x_2, y_2)$ is
+    $\overrightarrow{P_1P_2} = (x_2 - x_1,\ y_2 - y_1)$.
+  ex: >-
+    The vector from $(1, 4)$ to $(6, 2)$ has components $(5, -2)$.
+  watch: >-
+    Terminal minus initial, in that order. Reversing it gives the vector pointing the opposite way.
+  see: [vector, ordered-n-tuple, coordinates]
+
+- id: ordered-n-tuple
+  term: >-
+    Ordered $n$-tuple
+  plain_name: Ordered n-tuple
+  mod: 4b
+  plain: >-
+    A list of $n$ numbers where the order matters.
+  def: >-
+    If $n$ is a positive integer, an ordered $n$-tuple is a sequence of $n$ real numbers
+    $(a_1, a_2, \dots, a_n)$. An ordered 2-tuple is an ordered pair, and an ordered 3-tuple is an ordered
+    triple.
+  ex: >-
+    $(1, 2, 3)$ and $(3, 2, 1)$ are different ordered triples.
+  see: [n-space, components]
+
+- id: n-space
+  term: >-
+    $n$-space $\mathbb{R}^n$
+  plain_name: n-space (Rⁿ)
+  mod: 4b
+  plain: >-
+    The set of all lists of $n$ real numbers, which are all the vectors with $n$ components.
+  def: >-
+    The set of all \gl{ordered-n-tuple}{ordered $n$-tuples} is called $n$-space and is written
+    $\mathbb{R}^n$. $\mathbb{R}^2$ is the plane, $\mathbb{R}^3$ is 3-space, and $\mathbb{R}^n$ for
+    $n \geq 4$ is the algebraic extension of the same idea. Two vectors in $\mathbb{R}^n$ are
+    \textbf{equal} if all their corresponding components are equal.
+  see: [euclidean-n-space, vector-space, standard-basis]
+
+- id: euclidean-n-space
+  term: >-
+    Euclidean $n$-space
+  plain_name: Euclidean n-space
+  mod: 4b
+  plain: >-
+    $\mathbb{R}^n$ together with the usual ways to add, scale and dot vectors.
+  def: >-
+    $\mathbb{R}^n$ with the standard operations of addition, scalar multiplication and the
+    \gl{dot-product}{Euclidean inner product} (dot product) is called Euclidean $n$-space.
+  see: [n-space, dot-product, inner-product-space]
+
+- id: dot-product
+  term: >-
+    Dot product
+  mod: 4b
+  plain: >-
+    Multiply matching components and add them up. The result is a single number.
+  def: >-
+    For $\mathbf{u} = (u_1, \dots, u_n)$ and $\mathbf{v} = (v_1, \dots, v_n)$ in $\mathbb{R}^n$,
+    $\mathbf{u} \cdot \mathbf{v} = u_1v_1 + u_2v_2 + \dots + u_nv_n$. Geometrically,
+    $\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\|\,\|\mathbf{v}\|\cos\theta$. As column vectors,
+    $\mathbf{u} \cdot \mathbf{v} = \mathbf{v}^T\mathbf{u}$.
+  ex: >-
+    $(2, -1, 0, 5) \cdot (1, 3, 5, -2) = 2 - 3 + 0 - 10 = -11$
+  watch: >-
+    \gl{cross-product}{Cross product}. The dot product gives a \emph{number} and works in any
+    $\mathbb{R}^n$. The cross product gives a \emph{vector} and only works in $\mathbb{R}^3$.
+  see: [norm, angle-between, orthogonal, inner-product]
+  aka: >-
+    Euclidean inner product, scalar product
+
+- id: norm
+  term: >-
+    Norm
+  mod: 4b
+  plain: >-
+    The length of a vector.
+  def: >-
+    The Euclidean norm of $\mathbf{u} = (u_1, \dots, u_n)$ is
+    $\|\mathbf{u}\| = \sqrt{\mathbf{u} \cdot \mathbf{u}} = \sqrt{u_1^2 + u_2^2 + \dots + u_n^2}$. For any
+    scalar $k$, $\|k\mathbf{u}\| = |k|\,\|\mathbf{u}\|$.
+  ex: >-
+    $\|(3, -4)\| = \sqrt{9 + 16} = 5$
+  watch: >-
+    $\|\mathbf{u}\|$ uses double bars. Single bars $|k|$ mean the absolute value of a number, and $|A|$
+    means a determinant.
+  see: [unit-vector, euclidean-distance, norm-ips]
+  aka: >-
+    Euclidean norm, length, magnitude
+
+- id: unit-vector
+  term: >-
+    Unit vector
+  mod: 4b
+  plain: >-
+    A vector of length exactly 1, used to describe a direction only.
+  def: >-
+    $\mathbf{u}$ is a unit vector if $\|\mathbf{u}\| = 1$. For any nonzero $\mathbf{v}$, the vector
+    $\dfrac{1}{\|\mathbf{v}\|}\mathbf{v}$ is a unit vector in the same direction. Producing it is called
+    \textbf{normalizing} $\mathbf{v}$.
+  ex: >-
+    Normalizing $(3, -4)$ gives $\left(\tfrac{3}{5}, -\tfrac{4}{5}\right)$.
+  see: [norm, standard-unit-vectors, orthonormal]
+
+- id: standard-unit-vectors
+  term: >-
+    Standard unit vectors
+  mod: 4b
+  plain: >-
+    The unit vectors that point along each coordinate axis.
+  def: >-
+    The standard unit vectors in $\mathbb{R}^n$ are $\mathbf{e}_1 = (1, 0, \dots, 0)$,
+    $\mathbf{e}_2 = (0, 1, 0, \dots, 0)$, \dots, $\mathbf{e}_n = (0, \dots, 0, 1)$. In $\mathbb{R}^3$ they are
+    often written $\mathbf{i}$, $\mathbf{j}$ and $\mathbf{k}$. Every vector is a combination of them:
+    $(v_1, \dots, v_n) = v_1\mathbf{e}_1 + \dots + v_n\mathbf{e}_n$.
+  see: [standard-basis, unit-vector, standard-matrix]
+
+- id: euclidean-distance
+  term: >-
+    Euclidean distance
+  mod: 4b
+  plain: >-
+    The straight-line distance between two points.
+  def: >-
+    The distance between $\mathbf{u}$ and $\mathbf{v}$ in $\mathbb{R}^n$ is
+    $d(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\| = \sqrt{(u_1 - v_1)^2 + \dots + (u_n - v_n)^2}$.
+  ex: >-
+    $d\big((1, 2, 0), (1, 3, 1)\big) = \sqrt{0 + 1 + 1} = \sqrt{2}$
+  see: [norm, distance-ips]
+
+- id: angle-between
+  term: >-
+    Angle between vectors
+  mod: 4b
+  plain: >-
+    The angle between two arrows, found using the dot product.
+  def: >-
+    For nonzero $\mathbf{u}$ and $\mathbf{v}$, the angle $\theta$ between them, with
+    $0 \leq \theta \leq \pi$, satisfies
+    $\cos\theta = \dfrac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\,\|\mathbf{v}\|}$. The sign of
+    $\mathbf{u} \cdot \mathbf{v}$ tells you the type of angle: positive means acute, zero means a right
+    angle, and negative means obtuse.
+  ex: >-
+    For $\mathbf{u} = (5, 3)$ and $\mathbf{v} = (4, -1)$, $\cos\theta = \dfrac{17}{\sqrt{34}\sqrt{17}} = \dfrac{1}{\sqrt{2}}$, so $\theta = \pi/4$.
+  see: [dot-product, orthogonal, cauchy-schwarz]
+
+- id: triangle-inequality
+  term: >-
+    Triangle inequality
+  mod: 4b
+  plain: >-
+    Going straight is never longer than taking a detour.
+  def: >-
+    For vectors $\mathbf{u}$, $\mathbf{v}$ in $\mathbb{R}^n$ (or any inner product space),
+    $\|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|$. For distances,
+    $d(\mathbf{u}, \mathbf{v}) \leq d(\mathbf{u}, \mathbf{w}) + d(\mathbf{w}, \mathbf{v})$.
+  watch: >-
+    Lengths do not simply add: $\|\mathbf{u} + \mathbf{v}\| = \|\mathbf{u}\| + \|\mathbf{v}\|$ only
+    when the vectors point in the same direction.
+  see: [norm, cauchy-schwarz, pythagorean]
+
+- id: cauchy-schwarz
+  term: >-
+    Cauchy–Schwarz inequality
+  plain_name: Cauchy–Schwarz inequality
+  mod: 5
+  plain: >-
+    The dot product of two vectors can never exceed the product of their lengths.
+  def: >-
+    For any $\mathbf{u}$, $\mathbf{v}$ in $\mathbb{R}^n$,
+    $|\mathbf{u} \cdot \mathbf{v}| \leq \|\mathbf{u}\|\,\|\mathbf{v}\|$. In an inner product space,
+    $|\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\|\,\|\mathbf{v}\|$. This is what guarantees
+    that $\cos\theta$ in the angle formula is between $-1$ and $1$.
+  watch: >-
+    The correct spelling is Schwarz, without a ``t''. Some sources, including one module of the notes,
+    spell it ``Schwartz''.
+  see: [angle-between, triangle-inequality, inner-product]
+
+- id: pythagorean
+  term: >-
+    Pythagorean theorem in $\mathbb{R}^n$
+  plain_name: Pythagorean theorem in Rⁿ
+  mod: 5
+  plain: >-
+    For perpendicular vectors, the squared lengths add, just like the sides of a right triangle.
+  def: >-
+    If $\mathbf{u}$ and $\mathbf{v}$ are \gl{orthogonal}{orthogonal}, then
+    $\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2$. The same result holds in any inner
+    product space.
+  watch: >-
+    It only holds for orthogonal vectors. In general,
+    $\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + 2\,\mathbf{u} \cdot \mathbf{v} + \|\mathbf{v}\|^2$.
+  see: [orthogonal, triangle-inequality]
+
+- id: orthogonal
+  term: >-
+    Orthogonal
+  mod: 5
+  plain: >-
+    Perpendicular, meaning the vectors meet at a right angle.
+  def: >-
+    Vectors $\mathbf{u}$ and $\mathbf{v}$ in $\mathbb{R}^n$ are orthogonal if
+    $\mathbf{u} \cdot \mathbf{v} = 0$. In an inner product space, they are orthogonal if
+    $\langle \mathbf{u}, \mathbf{v} \rangle = 0$. The zero vector is orthogonal to every vector.
+  ex: >-
+    $(1, 2, -1) \cdot (3, -1, 1) = 3 - 2 - 1 = 0$, so they are orthogonal.
+  watch: >-
+    \gl{parallel}{Parallel}. Orthogonal vectors have a dot product of $0$, while parallel vectors are scalar
+    multiples of each other.
+  see: [dot-product, orthogonal-set, orthogonal-complement]
+  aka: >-
+    perpendicular
+
+- id: parallel
+  term: >-
+    Parallel
+  mod: 5
+  plain: >-
+    Pointing along the same line, either the same way or the opposite way.
+  def: >-
+    Nonzero vectors $\mathbf{u}$ and $\mathbf{v}$ are parallel if one is a
+    \gl{scalar-multiple}{scalar multiple} of the other: $\mathbf{u} = k\mathbf{v}$ for some scalar $k$.
+    Parallel vectors point in the same direction if $k > 0$ and in opposite directions if $k < 0$.
+  ex: >-
+    $(2, -6, 4) = 2(1, -3, 2)$, so these vectors are parallel.
+  watch: >-
+    In $\mathbb{R}^2$ and $\mathbb{R}^3$, two vectors are linearly dependent exactly when they are parallel
+    or one of them is $\mathbf{0}$.
+  see: [orthogonal, scalar-multiple, linearly-independent]
+
+- id: projection-onto-vector
+  term: >-
+    Orthogonal projection onto a vector
+  mod: 5
+  plain: >-
+    The shadow of $\mathbf{u}$ on the line through $\mathbf{a}$.
+  def: >-
+    If $\mathbf{a} \neq \mathbf{0}$, the \textbf{vector component of $\mathbf{u}$ along $\mathbf{a}$} is
+    $\operatorname{proj}_{\mathbf{a}}\mathbf{u} = \dfrac{\mathbf{u} \cdot \mathbf{a}}{\|\mathbf{a}\|^2}\,\mathbf{a}$.
+    It is a vector parallel to $\mathbf{a}$.
+  ex: >-
+    For $\mathbf{u} = (2, -1, 3)$ and $\mathbf{a} = (1, 0, 2)$: $\operatorname{proj}_{\mathbf{a}}\mathbf{u} = \tfrac{8}{5}(1, 0, 2)$.
+  watch: >-
+    The denominator is $\|\mathbf{a}\|^2$, the squared length of the vector you project \emph{onto}, not of
+    $\mathbf{u}$. Later the same word is used for projecting onto a whole subspace, under
+    \gl{projection-onto-subspace}{$\operatorname{proj}_W\mathbf{u}$}.
+  see: [component-orthogonal-vector, projection-onto-subspace, projection-operator]
+  aka: >-
+    vector component of u along a
+
+- id: component-orthogonal-vector
+  term: >-
+    Vector component orthogonal to a vector
+  mod: 5
+  plain: >-
+    What is left of $\mathbf{u}$ after you remove its shadow on $\mathbf{a}$.
+  def: >-
+    The vector component of $\mathbf{u}$ orthogonal to $\mathbf{a}$ is
+    $\mathbf{u} - \operatorname{proj}_{\mathbf{a}}\mathbf{u}$. It is orthogonal to $\mathbf{a}$, and
+    $\mathbf{u} = \operatorname{proj}_{\mathbf{a}}\mathbf{u} + (\mathbf{u} - \operatorname{proj}_{\mathbf{a}}\mathbf{u})$
+    splits $\mathbf{u}$ into a part parallel to $\mathbf{a}$ and a part perpendicular to it.
+  ex: >-
+    Continuing the example under projection: $(2, -1, 3) - \tfrac{8}{5}(1, 0, 2) = \left(\tfrac{2}{5}, -1, -\tfrac{1}{5}\right)$.
+  see: [projection-onto-vector, component-orthogonal-w, gram-schmidt]
+
+- id: normal-vector
+  term: >-
+    Normal vector
+  mod: 5
+  plain: >-
+    A vector that sticks straight out of a plane, perpendicular to it.
+  def: >-
+    A nonzero vector $\mathbf{n}$ is a normal to a plane if it is orthogonal to every vector lying in the
+    plane. For the plane $ax + by + cz = d$, the vector $\mathbf{n} = (a, b, c)$ is a normal.
+  ex: >-
+    $(3, -1, 6)$ is normal to $3x - y + 6z = 8$.
+  watch: >-
+    Here ``normal'' means perpendicular, not ordinary. Two planes are parallel exactly when their normals
+    are parallel.
+  see: [point-normal, orthogonal, cross-product]
+
+- id: point-normal
+  term: >-
+    Point-normal form of a plane
+  mod: 5
+  plain: >-
+    The equation of a plane built from one point on it and one normal vector.
+  def: >-
+    The plane through $(x_0, y_0, z_0)$ with normal $\mathbf{n} = (a, b, c)$ has point-normal equation
+    $a(x - x_0) + b(y - y_0) + c(z - z_0) = 0$. Expanding gives the general form $ax + by + cz = d$.
+  ex: >-
+    Through $(1, 0, 2)$ with $\mathbf{n} = (2, -1, 3)$: $2(x - 1) - y + 3(z - 2) = 0$, or $2x - y + 3z = 8$.
+  see: [normal-vector, parametric-line]
+
+- id: parametric-line
+  term: >-
+    Parametric equations of a line
+  mod: 5
+  plain: >-
+    Describe a line by starting at one point and moving any amount $t$ in a fixed direction.
+  def: >-
+    The line in $\mathbb{R}^3$ through $(x_0, y_0, z_0)$ and parallel to the nonzero vector
+    $\mathbf{v} = (a, b, c)$ has parametric equations $x = x_0 + ta$, $y = y_0 + tb$, $z = z_0 + tc$, for
+    $-\infty < t < \infty$.
+  ex: >-
+    The line through $(5, -2, 7)$ perpendicular to $3x - y + 6z = 8$ uses the plane's normal as its direction:
+    $x = 5 + 3t$, $y = -2 - t$, $z = 7 + 6t$.
+  watch: >-
+    A line in $\mathbb{R}^3$ has no single equation like $y = mx + b$. You need either parametric equations
+    or two plane equations.
+  see: [parameter, point-normal, normal-vector]
+
+- id: cross-product
+  term: >-
+    Cross product
+  mod: 5
+  plain: >-
+    A way to multiply two vectors in $\mathbb{R}^3$ that gives a third vector perpendicular to both.
+  def: >-
+    For $\mathbf{u} = (u_1, u_2, u_3)$ and $\mathbf{v} = (v_1, v_2, v_3)$,
+    $\mathbf{u} \times \mathbf{v} = (u_2v_3 - u_3v_2,\ u_3v_1 - u_1v_3,\ u_1v_2 - u_2v_1)$. A shortcut is
+    cofactor expansion of $\begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{vmatrix}$
+    along row 1. Then $\mathbf{u} \times \mathbf{v}$ is orthogonal to both $\mathbf{u}$ and $\mathbf{v}$.
+  ex: >-
+    $(3, -2, 1) \times (7, 0, 6) = (-12 - 0,\ 7 - 18,\ 0 + 14) = (-12, -11, 14)$
+  watch: >-
+    Order matters: $\mathbf{v} \times \mathbf{u} = -(\mathbf{u} \times \mathbf{v})$. It is only defined in
+    $\mathbb{R}^3$.
+  see: [right-hand-rule, dot-product, normal-vector]
+
+- id: right-hand-rule
+  term: >-
+    Right-hand rule
+  mod: 5
+  plain: >-
+    A hand trick for finding which way $\mathbf{u} \times \mathbf{v}$ points.
+  def: >-
+    Point the fingers of your right hand along $\mathbf{u}$ and curl them toward $\mathbf{v}$. Your thumb
+    points in the direction of $\mathbf{u} \times \mathbf{v}$.
+  ex: >-
+    $\mathbf{i} \times \mathbf{j} = \mathbf{k}$, $\mathbf{j} \times \mathbf{k} = \mathbf{i}$, and $\mathbf{k} \times \mathbf{i} = \mathbf{j}$.
+  see: [cross-product]
+
+- id: isbn
+  term: >-
+    ISBN check digit
+  mod: 4b
+  app: true
+  plain: >-
+    The last digit of a book's ISBN, computed with a dot product to catch typos.
+  def: >-
+    For a 10-digit ISBN, let $\mathbf{a} = (1, 2, \dots, 9)$ and let $\mathbf{b}$ be the vector of the first
+    nine digits. The check digit $c$ is the remainder when $\mathbf{a} \cdot \mathbf{b}$ is divided by 11,
+    with $c = 10$ written as X.
+  ex: >-
+    For ISBN 0495011665, $\mathbf{a} \cdot \mathbf{b} = 170$ and $170 = 15 \cdot 11 + 5$, so the check digit is 5.
+  see: [dot-product]

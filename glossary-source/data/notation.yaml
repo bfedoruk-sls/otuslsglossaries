@@ -1,0 +1,66 @@
+- group: Matrices and systems
+  rows:
+  - {sym: '$A,\ B,\ C$', read: 'Capital letters name matrices', link: '\gl{matrix}{Matrix}'}
+  - {sym: '$a_{ij}$, $(A)_{ij}$', read: 'The entry in row $i$, column $j$ of $A$', link: '\gl{entry}{Entry}'}
+  - {sym: '$m \times n$', read: '``$m$ by $n$'''': $m$ rows and $n$ columns', link: '\gl{size}{Size}'}
+  - {sym: '$[\,A \mid \mathbf{b}\,]$', read: 'Augmented matrix of $A\mathbf{x} = \mathbf{b}$', link: '\gl{augmented-matrix}{Augmented matrix}'}
+  - {sym: '$A\mathbf{x} = \mathbf{b}$', read: 'A linear system in matrix form', link: '\gl{matrix-form}{Matrix form}'}
+  - {sym: '$R_2 \to R_2 - 3R_1$', read: 'Row operation: replace row 2 by row 2 minus 3 times row 1', link: '\gl{elementary-row-operations}{Row operations}'}
+  - {sym: '$I$, $I_n$', read: 'Identity matrix of order $n$', link: '\gl{identity-matrix}{Identity matrix}'}
+  - {sym: '$0$, $0_{m \times n}$', read: 'Zero matrix', link: '\gl{zero-matrix}{Zero matrix}'}
+  - {sym: '$A^T$', read: '``$A$ transpose''''', link: '\gl{transpose}{Transpose}'}
+  - {sym: '$A^{-1}$', read: '``$A$ inverse'''' (not $1/A$)', link: '\gl{inverse}{Inverse}'}
+  - {sym: '$A^k$', read: '$A$ multiplied by itself $k$ times', link: '\gl{powers}{Powers of a matrix}'}
+  - {sym: '$\operatorname{tr}(A)$', read: 'Trace: the sum of the diagonal entries', link: '\gl{trace}{Trace}'}
+  - {sym: '$E$', read: 'An elementary matrix', link: '\gl{elementary-matrix}{Elementary matrix}'}
+- group: Determinants
+  rows:
+  - {sym: '$\det(A)$, $|A|$', read: 'Determinant of $A$ (can be negative)', link: '\gl{determinant}{Determinant}'}
+  - {sym: '$M_{ij}$', read: 'Minor of entry $a_{ij}$', link: '\gl{minor}{Minor}'}
+  - {sym: '$C_{ij}$', read: 'Cofactor of entry $a_{ij}$, $= (-1)^{i+j}M_{ij}$', link: '\gl{cofactor}{Cofactor}'}
+  - {sym: '$A_j$', read: '$A$ with column $j$ replaced by $\mathbf{b}$', link: '\gl{cramers-rule}{Cramer''s Rule}'}
+- group: Vectors
+  rows:
+  - {sym: '$\mathbf{u},\ \mathbf{v},\ \mathbf{w}$', read: 'Bold lower-case letters name vectors', link: '\gl{vector}{Vector}'}
+  - {sym: '$(u_1, u_2, \dots, u_n)$', read: 'A vector written by its components', link: '\gl{components}{Components}'}
+  - {sym: '$\overrightarrow{P_1P_2}$', read: 'The vector from point $P_1$ to point $P_2$', link: '\gl{components}{Components}'}
+  - {sym: '$\mathbf{u} \cdot \mathbf{v}$', read: 'Dot product (a number)', link: '\gl{dot-product}{Dot product}'}
+  - {sym: '$\mathbf{u} \times \mathbf{v}$', read: 'Cross product (a vector, $\mathbb{R}^3$ only)', link: '\gl{cross-product}{Cross product}'}
+  - {sym: '$\|\mathbf{v}\|$', read: 'Norm (length) of $\mathbf{v}$', link: '\gl{norm}{Norm}'}
+  - {sym: '$d(\mathbf{u}, \mathbf{v})$', read: 'Distance between $\mathbf{u}$ and $\mathbf{v}$', link: '\gl{euclidean-distance}{Euclidean distance}'}
+  - {sym: '$\mathbf{e}_i$;\ $\mathbf{i},\ \mathbf{j},\ \mathbf{k}$', read: 'Standard unit vectors', link: '\gl{standard-unit-vectors}{Standard unit vectors}'}
+  - {sym: '$\theta$', read: 'Angle between two vectors, $0 \leq \theta \leq \pi$', link: '\gl{angle-between}{Angle between vectors}'}
+  - {sym: '$\operatorname{proj}_{\mathbf{a}}\mathbf{u}$', read: 'Projection of $\mathbf{u}$ onto $\mathbf{a}$', link: '\gl{projection-onto-vector}{Projection onto a vector}'}
+  - {sym: '$\mathbf{n}$', read: 'A normal vector to a plane', link: '\gl{normal-vector}{Normal vector}'}
+- group: Vector spaces and subspaces
+  rows:
+  - {sym: '$\mathbb{R}^n$', read: '$n$-space: all vectors with $n$ real components', link: '\gl{n-space}{$n$-space}'}
+  - {sym: '$V,\ W$', read: 'A vector space and (often) a subspace of it', link: '\gl{vector-space}{Vector space}'}
+  - {sym: '$\mathbf{0}$;\ $\{\mathbf{0}\}$', read: 'Zero vector;\ zero vector space', link: '\gl{zero-vector}{Zero vector}'}
+  - {sym: '$P_n$', read: 'Polynomials of degree at most $n$', link: '\gl{polynomial-space}{$P_n$}'}
+  - {sym: '$M_{mn}$', read: 'All $m \times n$ matrices', link: '\gl{matrix-space}{$M_{mn}$}'}
+  - {sym: '$F(-\infty, \infty)$', read: 'All real-valued functions on $\mathbb{R}$', link: '\gl{function-space}{Function space}'}
+  - {sym: '$C[a, b]$', read: 'Continuous functions on $[a, b]$', link: '\gl{continuous-functions}{$C[a, b]$}'}
+  - {sym: '$\operatorname{span}(S)$', read: 'All linear combinations of the vectors in $S$', link: '\gl{span}{Span}'}
+  - {sym: '$(\mathbf{v})_S$', read: 'Coordinate vector of $\mathbf{v}$ relative to basis $S$', link: '\gl{coordinate-vector}{Coordinate vector}'}
+  - {sym: '$\dim(V)$', read: 'Dimension of $V$', link: '\gl{dimension}{Dimension}'}
+  - {sym: '$\operatorname{rank}(A)$', read: 'Rank of $A$', link: '\gl{rank}{Rank}'}
+  - {sym: '$\operatorname{nullity}(A)$', read: 'Nullity of $A$', link: '\gl{nullity}{Nullity}'}
+  - {sym: '$W^{\perp}$', read: '``$W$ perp'''': the orthogonal complement of $W$', link: '\gl{orthogonal-complement}{Orthogonal complement}'}
+- group: Transformations
+  rows:
+  - {sym: '$T\colon V \to W$', read: '$T$ maps $V$ (domain) to $W$ (codomain)', link: '\gl{transformation}{Transformation}'}
+  - {sym: '$T_A$', read: 'Multiplication by $A$:\ $T_A(\mathbf{x}) = A\mathbf{x}$', link: '\gl{matrix-transformation}{Matrix transformation}'}
+  - {sym: '$[T]$', read: 'Standard matrix of $T$', link: '\gl{standard-matrix}{Standard matrix}'}
+  - {sym: '$T_B \circ T_A$', read: 'Do $T_A$ first, then $T_B$', link: '\gl{composition}{Composition}'}
+  - {sym: '$\ker(T_A)$', read: 'Kernel of $T_A$ (the nullspace of $A$)', link: '\gl{kernel}{Kernel}'}
+  - {sym: '$R(T_A)$', read: 'Range of $T_A$ (the column space of $A$)', link: '\gl{range}{Range}'}
+  - {sym: '$T^{-1}$', read: 'Inverse transformation', link: '\gl{inverse-transformation}{Inverse transformation}'}
+- group: Eigenvalues and inner products
+  rows:
+  - {sym: '$\lambda$', read: '``lambda'''': an eigenvalue', link: '\gl{eigenvalue}{Eigenvalue}'}
+  - {sym: '$\det(A - \lambda I) = 0$', read: 'Characteristic equation', link: '\gl{characteristic-equation}{Characteristic equation}'}
+  - {sym: '$P^{-1}AP = D$', read: '$P$ diagonalizes $A$;\ $D$ is diagonal', link: '\gl{diagonalizable}{Diagonalizable}'}
+  - {sym: '$\langle \mathbf{u}, \mathbf{v} \rangle$', read: 'Inner product of $\mathbf{u}$ and $\mathbf{v}$', link: '\gl{inner-product}{Inner product}'}
+  - {sym: '$\operatorname{proj}_W\mathbf{u}$', read: 'Orthogonal projection of $\mathbf{u}$ on subspace $W$', link: '\gl{projection-onto-subspace}{Projection onto a subspace}'}
+  - {sym: '$\operatorname{proj}_{W^{\perp}}\mathbf{u}$', read: 'Component of $\mathbf{u}$ orthogonal to $W$', link: '\gl{component-orthogonal-w}{Component orthogonal to $W$}'}

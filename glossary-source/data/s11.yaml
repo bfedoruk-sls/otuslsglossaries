@@ -1,0 +1,254 @@
+num: "11"
+id: inner
+title: >-
+  Inner Products and Orthogonality
+mods: MODULES 11B TO 12B
+blurb: >-
+  The dot product is one example of a bigger idea, the inner product. Inner products let you measure
+  length, distance and angle in any vector space. The section ends with Gram–Schmidt, which builds
+  perpendicular bases.
+entries:
+- id: inner-product
+  term: >-
+    Inner product
+  mod: 11b
+  plain: >-
+    A rule for ``multiplying'' two vectors to get a number, which works like a dot product.
+  def: >-
+    An inner product on a real vector space $V$ is a function that assigns a real number
+    $\langle \mathbf{u}, \mathbf{v} \rangle$ to each pair of vectors so that, for all $\mathbf{u}, \mathbf{v}, \mathbf{w}$
+    and scalars $k$, the \gl{inner-product-axioms}{inner product axioms} hold.
+  ex: >-
+    The dot product on $\mathbb{R}^n$ is an inner product. On $M_{22}$,
+    $\langle U, V \rangle = u_1v_1 + u_2v_2 + u_3v_3 + u_4v_4$ (multiply matching entries and add) is one too.
+  watch: >-
+    \gl{dot-product}{Dot product}. The dot product is \emph{one} inner product on $\mathbb{R}^n$, but there
+    are others, such as weighted ones. Unless told otherwise, assume the dot product.
+  see: [inner-product-axioms, inner-product-space, weighted-inner-product]
+
+- id: inner-product-axioms
+  term: >-
+    Inner product axioms
+  mod: 11b
+  plain: >-
+    The four rules that any inner product must satisfy.
+  def: >-
+    (1) Symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \langle \mathbf{v}, \mathbf{u} \rangle$.
+    (2) Additivity: $\langle \mathbf{u} + \mathbf{v}, \mathbf{w} \rangle = \langle \mathbf{u}, \mathbf{w} \rangle + \langle \mathbf{v}, \mathbf{w} \rangle$.
+    (3) Homogeneity: $\langle k\mathbf{u}, \mathbf{v} \rangle = k\langle \mathbf{u}, \mathbf{v} \rangle$.
+    (4) Positivity: $\langle \mathbf{v}, \mathbf{v} \rangle \geq 0$, with $\langle \mathbf{v}, \mathbf{v} \rangle = 0$
+    if and only if $\mathbf{v} = \mathbf{0}$.
+  watch: >-
+    Check positivity first, since it is the axiom most likely to fail. Look for a nonzero vector with
+    $\langle \mathbf{v}, \mathbf{v} \rangle \leq 0$.
+  see: [inner-product, axioms]
+
+- id: inner-product-space
+  term: >-
+    Real inner product space
+  mod: 11b
+  plain: >-
+    A vector space together with a chosen inner product.
+  def: >-
+    A real vector space with an inner product is called a real inner product space. Once an inner product
+    is chosen, norm, distance, angle and orthogonality are all defined in terms of it.
+  ex: >-
+    $\mathbb{R}^n$ with the dot product (Euclidean $n$-space) is the standard example.
+  see: [inner-product, norm-ips, euclidean-n-space]
+  aka: >-
+    inner product space
+
+- id: weighted-inner-product
+  term: >-
+    Weighted Euclidean inner product
+  mod: 11b
+  plain: >-
+    A dot product where some components count more than others.
+  def: >-
+    With \emph{positive} weights $w_1, \dots, w_n$, the formula
+    $\langle \mathbf{u}, \mathbf{v} \rangle = w_1u_1v_1 + w_2u_2v_2 + \dots + w_nu_nv_n$ is an inner product on
+    $\mathbb{R}^n$, called a weighted Euclidean inner product.
+  ex: >-
+    With $\langle \mathbf{u}, \mathbf{v} \rangle = 7u_1v_1 + 3u_2v_2$, the vector $\mathbf{u} = (1, 0)$ has norm
+    $\sqrt{7}$ instead of 1.
+  watch: >-
+    The weights must be strictly positive. With a zero weight, positivity fails, since a nonzero vector such
+    as $(0, 1)$ with $w_2 = 0$ would have $\langle \mathbf{v}, \mathbf{v} \rangle = 0$.
+  see: [inner-product, norm-ips]
+
+- id: norm-ips
+  term: >-
+    Norm in an inner product space
+  mod: 11b
+  plain: >-
+    Length, measured using whichever inner product you are working with.
+  def: >-
+    In an inner product space $V$, the norm (or length) of $\mathbf{v}$ is
+    $\|\mathbf{v}\| = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}$. With the dot product, this is the usual
+    \gl{norm}{Euclidean norm}.
+  ex: >-
+    With $\langle \mathbf{u}, \mathbf{v} \rangle = 7u_1v_1 + 3u_2v_2$: $\|(1, 0)\| = \sqrt{7}$ and $\|(0, 1)\| = \sqrt{3}$.
+  see: [norm, distance-ips, unit-sphere]
+
+- id: distance-ips
+  term: >-
+    Distance in an inner product space
+  mod: 11b
+  plain: >-
+    How far apart two vectors are, measured with the chosen inner product.
+  def: >-
+    In an inner product space, the distance between $\mathbf{u}$ and $\mathbf{v}$ is
+    $d(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\| = \sqrt{\langle \mathbf{u} - \mathbf{v},\ \mathbf{u} - \mathbf{v} \rangle}$.
+  ex: >-
+    With $\langle \mathbf{u}, \mathbf{v} \rangle = 7u_1v_1 + 3u_2v_2$:
+    $d\big((1, 0), (0, 1)\big) = \sqrt{7(1)^2 + 3(-1)^2} = \sqrt{10}$, compared with $\sqrt{2}$ under the dot product.
+  see: [euclidean-distance, norm-ips]
+
+- id: unit-sphere
+  term: >-
+    Unit sphere / unit circle
+  mod: 12a
+  plain: >-
+    All the vectors of length 1. Its shape depends on the inner product.
+  def: >-
+    In an inner product space $V$, the set of all $\mathbf{u}$ with $\|\mathbf{u}\| = 1$ is the unit sphere
+    (in $\mathbb{R}^2$, the unit circle) of $V$.
+  ex: >-
+    With the dot product, the unit circle in $\mathbb{R}^2$ is $x^2 + y^2 = 1$. With
+    $\langle \mathbf{u}, \mathbf{v} \rangle = \tfrac{1}{9}u_1v_1 + \tfrac{1}{4}u_2v_2$, it is the ellipse
+    $\tfrac{x^2}{9} + \tfrac{y^2}{4} = 1$.
+  watch: >-
+    A ``circle'' here means the points at distance 1 from the origin, which need not look round on a graph.
+  see: [norm-ips, unit-vector]
+
+- id: continuous-functions
+  term: >-
+    $C[a, b]$
+  plain_name: C[a, b] (continuous functions)
+  mod: 12a
+  plain: >-
+    The vector space of continuous functions on an interval, with an inner product defined by an integral.
+  def: >-
+    The functions $f(x)$ that are continuous for all $x$ in $[a, b]$ form a vector space $C[a, b]$. The formula
+    $\langle f, g \rangle = \displaystyle\int_a^b f(x)g(x)\,dx$ defines an inner product on it.
+  ex: >-
+    On $C[-1, 1]$, $\langle x, x^2 \rangle = \int_{-1}^{1} x^3\,dx = 0$, so $x$ and $x^2$ are orthogonal there.
+  watch: >-
+    In the notes this example is enrichment and is not tested, but the idea of treating functions as
+    vectors is.
+  see: [function-space, inner-product]
+
+- id: orthogonal-set
+  term: >-
+    Orthogonal set
+  mod: 12b
+  plain: >-
+    A set where every pair of different vectors is perpendicular.
+  def: >-
+    A set of vectors in an inner product space is an orthogonal set if all pairs of distinct vectors in it
+    are \gl{orthogonal}{orthogonal}. An orthogonal set of \emph{nonzero} vectors is always
+    \gl{linearly-independent}{linearly independent}.
+  ex: >-
+    $\{(0, 1, 0), (1, 0, 1), (1, 0, -1)\}$ is an orthogonal set in $\mathbb{R}^3$.
+  watch: >-
+    \gl{orthonormal}{Orthonormal}. An orthogonal set only needs right angles, while an orthonormal set also
+    needs every vector to have length 1.
+  see: [orthonormal, orthogonal-basis, orthogonal]
+
+- id: orthonormal
+  term: >-
+    Orthonormal set
+  mod: 12b
+  plain: >-
+    Every pair is perpendicular, and every vector has length 1.
+  def: >-
+    An orthogonal set in which each vector has norm 1 is called orthonormal. To turn a set of nonzero
+    orthogonal vectors into an orthonormal one, \gl{unit-vector}{normalize} each vector:
+    $\mathbf{v} \mapsto \mathbf{v}/\|\mathbf{v}\|$.
+  ex: >-
+    Normalizing the set under orthogonal set gives $\left\{(0, 1, 0), \left(\tfrac{1}{\sqrt{2}}, 0, \tfrac{1}{\sqrt{2}}\right), \left(\tfrac{1}{\sqrt{2}}, 0, -\tfrac{1}{\sqrt{2}}\right)\right\}$.
+  watch: >-
+    \gl{orthogonal-set}{Orthogonal set}. Normalizing changes the lengths but not the angles, so it
+    never breaks orthogonality.
+  see: [orthogonal-set, orthonormal-basis, unit-vector]
+
+- id: orthogonal-basis
+  term: >-
+    Orthogonal basis
+  mod: 12b
+  plain: >-
+    A basis whose vectors are all perpendicular to each other.
+  def: >-
+    A basis of an inner product space consisting of orthogonal vectors is an orthogonal basis. With one,
+    coordinates are easy:
+    $\mathbf{u} = \dfrac{\langle \mathbf{u}, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1 + \dots + \dfrac{\langle \mathbf{u}, \mathbf{v}_n \rangle}{\|\mathbf{v}_n\|^2}\mathbf{v}_n$,
+    with no system to solve.
+  see: [orthonormal-basis, gram-schmidt, basis]
+
+- id: orthonormal-basis
+  term: >-
+    Orthonormal basis
+  mod: 12b
+  plain: >-
+    A basis of perpendicular unit vectors. The standard basis is the model example.
+  def: >-
+    A basis of an inner product space consisting of orthonormal vectors is an orthonormal basis. If
+    $S = \{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ is one, then
+    $\mathbf{u} = \langle \mathbf{u}, \mathbf{v}_1 \rangle\mathbf{v}_1 + \dots + \langle \mathbf{u}, \mathbf{v}_n \rangle\mathbf{v}_n$,
+    and norms and inner products can be computed directly from \gl{coordinate-vector}{coordinate vectors}.
+  ex: >-
+    $\{\mathbf{e}_1, \dots, \mathbf{e}_n\}$ is an orthonormal basis for $\mathbb{R}^n$ under the dot product.
+  see: [orthogonal-basis, gram-schmidt, coordinate-vector]
+
+- id: projection-onto-subspace
+  term: >-
+    Orthogonal projection onto a subspace
+  mod: 12b
+  plain: >-
+    The closest point in $W$ to $\mathbf{u}$, which is the shadow of $\mathbf{u}$ on a whole subspace.
+  def: >-
+    If $W$ is a finite-dimensional subspace of an inner product space $V$, every $\mathbf{u}$ in $V$ can be
+    written uniquely as $\mathbf{u} = \mathbf{w}_1 + \mathbf{w}_2$ with $\mathbf{w}_1$ in $W$ and $\mathbf{w}_2$
+    in $W^{\perp}$. The vector $\mathbf{w}_1 = \operatorname{proj}_W\mathbf{u}$ is the orthogonal projection of
+    $\mathbf{u}$ on $W$. If $\{\mathbf{v}_1, \dots, \mathbf{v}_r\}$ is an \emph{orthogonal} basis for $W$, then
+    $\operatorname{proj}_W\mathbf{u} = \sum_i \dfrac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2}\mathbf{v}_i$.
+  watch: >-
+    The formula needs an \emph{orthogonal} basis for $W$. If your basis is not orthogonal, apply
+    Gram–Schmidt first.
+  see: [component-orthogonal-w, projection-onto-vector, orthogonal-complement, gram-schmidt]
+
+- id: component-orthogonal-w
+  term: >-
+    Component orthogonal to $W$
+  plain_name: Component orthogonal to W
+  mod: 12b
+  plain: >-
+    The part of $\mathbf{u}$ that sticks out of $W$ at a right angle.
+  def: >-
+    The vector $\mathbf{w}_2 = \mathbf{u} - \operatorname{proj}_W\mathbf{u}$ is the component of $\mathbf{u}$
+    orthogonal to $W$, written $\operatorname{proj}_{W^{\perp}}\mathbf{u}$. So
+    $\mathbf{u} = \operatorname{proj}_W\mathbf{u} + \operatorname{proj}_{W^{\perp}}\mathbf{u}$.
+  see: [projection-onto-subspace, orthogonal-complement, component-orthogonal-vector]
+
+- id: gram-schmidt
+  term: >-
+    Gram–Schmidt process
+  plain_name: Gram–Schmidt process
+  mod: 12b
+  plain: >-
+    Turn any basis into an orthogonal one by subtracting from each vector its shadows on the earlier
+    vectors.
+  def: >-
+    Given a basis $\{\mathbf{u}_1, \dots, \mathbf{u}_n\}$:
+    $\mathbf{v}_1 = \mathbf{u}_1$;
+    $\mathbf{v}_2 = \mathbf{u}_2 - \dfrac{\langle \mathbf{u}_2, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1$;
+    $\mathbf{v}_3 = \mathbf{u}_3 - \dfrac{\langle \mathbf{u}_3, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1 - \dfrac{\langle \mathbf{u}_3, \mathbf{v}_2 \rangle}{\|\mathbf{v}_2\|^2}\mathbf{v}_2$;
+    and so on. This gives an \gl{orthogonal-basis}{orthogonal basis}. Normalize each $\mathbf{v}_i$ for an
+    \gl{orthonormal-basis}{orthonormal} one.
+  ex: >-
+    $\mathbf{u}_1 = (1, 1)$, $\mathbf{u}_2 = (0, 1)$: $\mathbf{v}_1 = (1, 1)$, and
+    $\mathbf{v}_2 = (0, 1) - \tfrac{1}{2}(1, 1) = \left(-\tfrac{1}{2}, \tfrac{1}{2}\right)$.
+  watch: >-
+    Use the new $\mathbf{v}$s, not the original $\mathbf{u}$s, in the denominators and second slots. Check
+    that each new vector is orthogonal to all the earlier ones as you go.
+  see: [orthogonal-basis, projection-onto-subspace, component-orthogonal-vector]

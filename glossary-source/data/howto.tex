@@ -1,0 +1,60 @@
+{\light\fontsize{11.5}{16}\selectfont\color{SpiritNavy}
+Linear algebra has a lot of vocabulary, and many of the words sound alike. This glossary gives each term
+from MATH 1850U in plain language first, then the precise definition, a small example, and a mistake
+students often make with it.\par}
+
+\vspace{14pt}
+\lbl[SimcoeBlue]{Anatomy of an entry}\par\vspace{3pt}{\color{FutureBlue}\rule{\linewidth}{0.8pt}}\par\vspace{12pt}
+
+% ---- annotated sample entry (not linked, not bookmarked)
+\newcommand{\callout}[2]{\makebox[0pt][r]{\tikz[baseline=-0.6ex]{\fill[Tangerine] (0,0) circle (6.5pt);
+  \node[white,font=\bfseries\fontsize{8}{8}\selectfont] at (0,0) {#1};}\hspace{6pt}}#2}
+\noindent\begin{minipage}[t]{\leftcol}\raggedright
+  {\bfseries\fontsize{12.6}{14.6}\selectfont\color{FutureBlue}\callout{1}{Span}\par}%
+  \vspace{5pt}\termtag{\callout{2}{MODULE 7A}}
+\end{minipage}\hfill
+\begin{minipage}[t]{\dimexpr\linewidth-\leftcol-0.22in\relax}\raggedright\fontsize{9.6}{13.4}\selectfont
+  \plainwords{\callout{3}{Everything you can build from a set of vectors using linear combinations.}}
+  \begin{defbox}\callout{4}{\lbl[SimcoeBlue]{Definition}}\par\vspace{2pt}
+    The set of all \textcolor{SimcoeBlue}{\medium linear combinations} $k_1\mathbf{v}_1 + \dots + k_r\mathbf{v}_r$
+    of the vectors in $S$, written $\operatorname{span}(S)$.\end{defbox}
+  \begin{exbox}\callout{5}{\lbl[DarkGrey]{Example}}\par\vspace{2pt}
+    $\operatorname{span}\{(1, 0, 0), (0, 1, 0)\}$ is the $xy$-plane in $\mathbb{R}^3$.\end{exbox}
+  \begin{watchbox}\callout{6}{\lbl[FutureBlue]{Don't confuse with}}\par\vspace{2pt}
+    \textcolor{SimcoeBlue}{\medium Basis}. A spanning set can contain redundant vectors, while a basis cannot.\end{watchbox}
+  \par\vspace{6pt}{\fontsize{8.6}{12}\selectfont\callout{7}{\lbl[DarkGrey]{See also}}\hspace{5pt}%
+    \textcolor{SimcoeBlue}{\medium Spanning set, Basis, Column space}\par}
+\end{minipage}
+
+\vspace{14pt}
+{\fontsize{9}{12.4}\selectfont
+\begin{multicols}{2}\raggedright
+\newcommand{\key}[2]{\noindent\makebox[0.3in][l]{\tikz[baseline=-0.6ex]{\fill[Tangerine] (0,0) circle (6.5pt);
+  \node[white,font=\bfseries\fontsize{8}{8}\selectfont] at (0,0) {#1};}}\parbox[t]{\dimexpr\linewidth-0.3in}{#2}\par\vspace{5pt}}
+\key{1}{\textbf{The term}, as it is written in the course notes.}
+\key{2}{\textbf{Module} where the term is introduced. An \textbf{Application} badge marks terms that come
+  from an applied example rather than the core theory.}
+\key{3}{\textbf{In plain words.} Start here if the formal definition does not make sense yet.}
+\key{4}{\textbf{Definition.} The precise version to use on assignments and tests.}
+\key{5}{\textbf{Example.} A small, concrete case.}
+\key{6}{\textbf{Don't confuse with.} A common mix-up for this term and how to tell the two apart.}
+\key{7}{\textbf{See also} and \textbf{also called}. Related terms and other names you may see in other
+  textbooks or videos.}
+\end{multicols}}
+
+\vspace{4pt}
+\lbl[SimcoeBlue]{Finding your way around}\par\vspace{3pt}{\color{FutureBlue}\rule{\linewidth}{0.8pt}}\par\vspace{10pt}
+{\fontsize{9}{12.4}\selectfont
+\begin{itemize}[leftmargin=1em,itemsep=2pt]
+  \item[\textcolor{Tangerine}{\rule{4pt}{4pt}}] \textbf{Everything in \textcolor{SimcoeBlue}{blue} is a link.}
+    Click a term to jump to its entry.
+  \item[\textcolor{Tangerine}{\rule{4pt}{4pt}}] The \textbf{footer} on every page links back to the
+    \hyperref[p:contents]{\textcolor{SimcoeBlue}{\medium Contents}},
+    \hyperref[p:notation]{\textcolor{SimcoeBlue}{\medium Notation decoder}},
+    \hyperref[p:pairs]{\textcolor{SimcoeBlue}{\medium Common mix-ups}} and
+    \hyperref[p:index]{\textcolor{SimcoeBlue}{\medium A-Z index}}.
+  \item[\textcolor{Tangerine}{\rule{4pt}{4pt}}] Open your PDF viewer's \textbf{bookmarks} panel to see
+    every section and term in a sidebar.
+  \item[\textcolor{Tangerine}{\rule{4pt}{4pt}}] Terms are grouped in \textbf{course order}, so each section
+    builds on the ones before it. Use the A-Z index if you only know the word.
+\end{itemize}}

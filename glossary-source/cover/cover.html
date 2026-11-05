@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<title>Linear Algebra Glossary cover</title>
+<style>
+  @font-face { font-family: "Ubuntu"; font-weight: 300; src: url("../fonts/Ubuntu-Light.ttf"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 400; src: url("../fonts/Ubuntu-Regular.ttf"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 500; src: url("../fonts/Ubuntu-Medium.ttf"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 700; src: url("../fonts/Ubuntu-Bold.ttf"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 300; font-style: italic; src: url("../fonts/Ubuntu-LightItalic.ttf"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 700; font-style: italic; src: url("../fonts/Ubuntu-BoldItalic.ttf"); }
+
+  :root {
+    --future: #003C71;   /* Future Blue */
+    --simcoe: #0077CA;   /* Simcoe Blue */
+    --tangerine: #E75D2A;/* Tech Tangerine (digital) */
+    --navy: #00283C;     /* Spirit Navy */
+    --white: #FFFFFF;
+  }
+  @page { size: 8.5in 11in; margin: 0; }
+  html, body { margin: 0; padding: 0; background: var(--future); }
+  .page {
+    position: relative; width: 8.5in; height: 11in; overflow: hidden;
+    background: var(--future); color: var(--white);
+    font-family: "Ubuntu", sans-serif;
+  }
+  svg.art { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  .logo { position: absolute; left: 0.8in; top: 0.78in; width: 2.45in; }
+
+  .kicker {
+    position: absolute; left: 0.8in; top: 6.32in;
+    font-weight: 500; font-size: 10pt; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .kicker .pill {
+    display: inline-block; border: 1.2pt solid var(--white); padding: 4pt 9pt 3.5pt;
+    margin-right: 10pt; letter-spacing: 0.18em;
+  }
+  h1 {
+    position: absolute; left: 0.74in; top: 6.72in; margin: 0;
+    font-weight: 700; font-size: 70pt; line-height: 0.98; letter-spacing: -0.012em;
+  }
+  h1 .accent { color: var(--tangerine); }
+  .rule { position: absolute; left: 0.8in; top: 8.92in; width: 0.95in; height: 6pt; background: var(--tangerine); }
+  .sub {
+    position: absolute; left: 0.8in; top: 9.18in; width: 5.6in;
+    font-weight: 300; font-size: 14.5pt; line-height: 1.38;
+  }
+  .foot {
+    position: absolute; left: 0.8in; right: 0.8in; bottom: 0.62in;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-weight: 500; font-size: 8.5pt; letter-spacing: 0.2em; text-transform: uppercase;
+    border-top: 1pt solid rgba(255,255,255,1); padding-top: 9pt;
+  }
+  .foot span.light { font-weight: 300; letter-spacing: 0.12em; }
+</style>
+</head>
+<body>
+<div class="page">
+  <svg class="art" viewBox="0 0 850 1100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Brand arcs, upper right -->
+    <circle cx="930" cy="240" r="268" fill="none" stroke="#0077CA" stroke-width="122"/>
+    <circle cx="930" cy="240" r="382" fill="none" stroke="#FFFFFF" stroke-width="26"/>
+    <!-- Dot grid (Simcoe Blue) -->
+    <g fill="#0077CA"></g>
+    <!-- u, v and u + v -->
+    <g transform="translate(132 548)" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 270 -80 L 370 -315" stroke-width="2.4" stroke-dasharray="2 8"/>
+      <path d="M 100 -235 L 370 -315" stroke-width="2.4" stroke-dasharray="2 8"/>
+      <line x1="0" y1="0" x2="252" y2="-75" stroke-width="6"/>
+      <path d="M 270 -80 L 244 -88 L 250 -61 Z" fill="#FFFFFF" stroke-width="2"/>
+      <line x1="0" y1="0" x2="93" y2="-218" stroke-width="6"/>
+      <path d="M 100 -235 L 80 -217 L 106 -212 Z" fill="#FFFFFF" stroke-width="2"/>
+      <line x1="0" y1="0" x2="357" y2="-303" stroke="#E75D2A" stroke-width="6"/>
+      <path d="M 370 -315 L 343 -307 L 361 -287 Z" fill="#E75D2A" stroke="#E75D2A" stroke-width="2"/>
+      <circle cx="0" cy="0" r="7" fill="#FFFFFF" stroke="none"/>
+    </g>
+    <g font-family="Ubuntu" font-style="italic" font-weight="700" font-size="30">
+      <text x="414" y="502" fill="#FFFFFF">u</text>
+      <text x="196" y="300" fill="#FFFFFF">v</text>
+      <text x="396" y="206" fill="#E75D2A">u + v</text>
+    </g>
+    <!-- Arrow device -->
+    <path d="M 712 0 L 790 0 L 790 78 L 751 78 L 751 39 L 712 39 Z" fill="#E75D2A"/>
+  </svg>
+
+  <img class="logo" src="../logo/logo_white_clean.svg" alt="Ontario Tech University">
+
+  <div class="kicker"><span class="pill">MATH 1850U</span>Student Learning Support</div>
+  <h1>Linear Algebra<br><span class="accent">Glossary</span></h1>
+  <div class="rule"></div>
+  <div class="sub">The terms you need for first-year linear algebra, in plain language, with examples and the mix-ups to avoid.</div>
+  <div class="foot"><span>Teaching and Learning Centre</span><span class="light">Ontario Tech University</span></div>
+</div>
+</body>
+</html>
